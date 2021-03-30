@@ -1,10 +1,12 @@
 monolog:
+    channels: ['fail2ban']
+
     handlers:
         main:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
-            channels: ["!event"]
+            channels: ["!event", "!fail2ban"]
         # uncomment to get logging in your browser
         # you may have to allow bigger header sizes in your Web server configuration
         #firephp:
@@ -17,3 +19,10 @@ monolog:
             type: console
             process_psr_3_messages: false
             channels: ["!event", "!doctrine", "!console"]
+
+        fail2ban:
+            type: stream
+            # log to var/log/(environment).log
+            path: "%kernel.logs_dir%/fail2ban_%kernel.environment%.log"
+            level: error
+            channels: [fail2ban]

@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">{% trans %}homepage.welcome{% endtrans %}</h1>
+        <p class="lead">{% trans %}homepage.explaination{% endtrans %}</p>
+        <hr class="my-4">
+        <p>{% trans with { '%support_email%': support_email} %}homepage.support{% endtrans %}</p>
+       {# <a class="btn btn-primary btn-lg" href="{{ path("payment_order_new") }}" role="button">{% trans %}payment_order.new{% endtrans %}</a> #}
+    </div>
+{% endblock %}
