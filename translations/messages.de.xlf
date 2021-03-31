@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+  <file id="messages.de">
+    <unit id="0kY58Gt" name="audit.header.home">
+      <segment>
+        <source>audit.header.home</source>
+        <target>Startseite</target>
+      </segment>
+    </unit>
+    <unit id="LD_yNcZ" name="audit.header.audited_entities">
+      <segment>
+        <source>audit.header.audited_entities</source>
+        <target>Überwachte Objekte</target>
+      </segment>
+    </unit>
+    <unit id="EOMRY6D" name="audit.table_headers.entity">
+      <segment>
+        <source>audit.table_headers.entity</source>
+        <target>Objekt</target>
+      </segment>
+    </unit>
+    <unit id="Xd.vh8w" name="audit.table_headers.table">
+      <segment>
+        <source>audit.table_headers.table</source>
+        <target>Tabelle</target>
+      </segment>
+    </unit>
+    <unit id="KKAj6Ro" name="audit.table_headers.activity">
+      <segment>
+        <source>audit.table_headers.activity</source>
+        <target>Aktivität</target>
+      </segment>
+    </unit>
+    <unit id="yCQ8Lde" name="audit.audit_details.view_audit">
+      <segment>
+        <source>audit.audit_details.view_audit</source>
+        <target>Audits anzeigen</target>
+      </segment>
+    </unit>
+    <unit id="PeWrzGR" name="audit.audit_details.most_recent">
+      <segment>
+        <source>audit.audit_details.most_recent</source>
+        <target>(neueste zuerst)</target>
+      </segment>
+    </unit>
+    <unit id="zM9JcEk" name="audit.audit_details.entry_title">
+      <segment>
+        <source>audit.audit_details.entry_title</source>
+        <target>Alle Operationen dieser Transaktion anzeigen</target>
+      </segment>
+    </unit>
+    <unit id="ljuF9TK" name="audit.audit_details.property">
+      <segment>
+        <source>audit.audit_details.property</source>
+        <target>Eigenschaft</target>
+      </segment>
+    </unit>
+    <unit id="sTX1_j_" name="audit.audit_details.old_value">
+      <segment>
+        <source>audit.audit_details.old_value</source>
+        <target>Alter Wert</target>
+      </segment>
+    </unit>
+    <unit id="Boegl60" name="audit.audit_details.new_value">
+      <segment>
+        <source>audit.audit_details.new_value</source>
+        <target>Neuer Wert</target>
+      </segment>
+    </unit>
+    <unit id="jen1FOv" name="audit.audit_details.transaction">
+      <segment>
+        <source>audit.audit_details.transaction</source>
+        <target>Transaktion</target>
+      </segment>
+    </unit>
+    <unit id="nVItfFI" name="audit.audit_details.entity_per_entity">
+      <segment>
+        <source>audit.audit_details.entity_per_entity</source>
+        <target>(Objekt pro Objekt)</target>
+      </segment>
+    </unit>
+    <unit id="wJ66SL9" name="audit.pager.first">
+      <segment>
+        <source>audit.pager.first</source>
+        <target>Erste</target>
+      </segment>
+    </unit>
+    <unit id="uCB2eZK" name="audit.pager.previous">
+      <segment>
+        <source>audit.pager.previous</source>
+        <target>Vorherige</target>
+      </segment>
+    </unit>
+    <unit id="Gj7QZ65" name="audit.pager.last">
+      <segment>
+        <source>audit.pager.last</source>
+        <target>Letzte</target>
+      </segment>
+    </unit>
+    <unit id="QuAj4Rc" name="audit.pager.next">
+      <segment>
+        <source>audit.pager.next</source>
+        <target>Weiter</target>
+      </segment>
+    </unit>
+    <unit id="3yAf9U1" name="audit.pager.current">
+      <segment>
+        <source>audit.pager.current</source>
+        <target>aktuell</target>
+      </segment>
+    </unit>
+    <unit id="D_EFj_u" name="Last modified">
+      <segment>
+        <source>Last modified</source>
+        <target>Zuletzt bearbeitet</target>
+      </segment>
+    </unit>
+    <unit id="bk0LHGc" name="Creation date">
+      <segment>
+        <source>Creation date</source>
+        <target>Erstellungsdatum</target>
+      </segment>
+    </unit>
+
+    <unit id="1QzYM50" name="select.choose_value">
+      <segment>
+        <source>select.choose_value</source>
+        <target>Bitte wählen Sie ein Element aus</target>
+      </segment>
+    </unit>
+    <unit id="NehzWgk" name="flash.error">
+      <segment>
+        <source>flash.error</source>
+        <target>Fehler</target>
+      </segment>
+    </unit>
+    <unit id="GaY3q3t" name="flash.error.check_input">
+      <segment>
+        <source>flash.error.check_input</source>
+        <target>Überprüfen Sie ihre Eingaben!</target>
+      </segment>
+    </unit>
+    <unit id="g4ahva6" name="flash.success">
+      <segment>
+        <source>flash.success</source>
+        <target>Erfolg</target>
+      </segment>
+    </unit>
+    <unit id="ry4m8Eq" name="flash.saved_successfully">
+      <segment>
+        <source>flash.saved_successfully</source>
+        <target>Zahlungsauftrag wurde erfolgreich übermittelt.</target>
+      </segment>
+    </unit>
+    <unit id="_eaBSeV" name="footer.impress">
+      <segment>
+        <source>footer.impress</source>
+        <target>Impressum</target>
+      </segment>
+    </unit>
+    <unit id="m6d6qSk" name="footer.privacy">
+      <segment>
+        <source>footer.privacy</source>
+        <target>Datenschutz</target>
+      </segment>
+    </unit>
+    <unit id="89cKxJI" name="password.new">
+      <segment>
+        <source>password.new</source>
+        <target>Neues Passwort</target>
+      </segment>
+    </unit>
+    <unit id="swIf4he" name="password.repeat">
+      <segment>
+        <source>password.repeat</source>
+        <target>Wiederholen</target>
+      </segment>
+    </unit>
+    <unit id="S4Z.EZY" name="user.label">
+      <segment>
+        <source>user.label</source>
+        <target>Benutzer</target>
+      </segment>
+    </unit>
+    <unit id="oX4P2rM" name="user.username.label">
+      <segment>
+        <source>user.username.label</source>
+        <target>Benutzername</target>
+      </segment>
+    </unit>
+    <unit id="Mwvv8H." name="user.first_name.label">
+      <segment>
+        <source>user.first_name.label</source>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="HM4xASr" name="user.last_name.label">
+      <segment>
+        <source>user.last_name.label</source>
+        <target>Nachname</target>
+      </segment>
+    </unit>
+    <unit id="cDu6Rok" name="user.email.label">
+      <segment>
+        <source>user.email.label</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="zydvDNX" name="user.role_description.label">
+      <segment>
+        <source>user.role_description.label</source>
+        <target>Funktion</target>
+      </segment>
+    </unit>
+    <unit id="QsSMNif" name="user.section.password">
+      <segment>
+        <source>user.section.password</source>
+        <target>Passwort</target>
+      </segment>
+    </unit>
+    <unit id="4PeZU9c" name="user.section.password.help">
+      <segment>
+        <source>user.section.password.help</source>
+        <target>Fülle die unteren Felder aus um ein neues Passwort zu setzen. Wenn die Felder leer gelassen werden, wird das Password nicht geändert.</target>
+      </segment>
+    </unit>
+    <unit id="yFBylec" name="user.id.label">
+      <segment>
+        <source>user.id.label</source>
+        <target>ID</target>
+      </segment>
+    </unit>
+    <unit id="zyG2Utf" name="user.fullName.label">
+      <segment>
+        <source>user.fullName.label</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="K2JB8dO" name="payment_order.labelp">
+      <segment>
+        <source>payment_order.labelp</source>
+        <target>Zahlungsaufträge</target>
+      </segment>
+    </unit>
+    <unit id="wUA9m3p" name="department.labelp">
+      <segment>
+        <source>department.labelp</source>
+        <target>Organisationen</target>
+      </segment>
+    </unit>
+    <unit id="UFjTALq" name="user.labelp">
+      <segment>
+        <source>user.labelp</source>
+        <target>Benutzer</target>
+      </segment>
+    </unit>
+    <unit id="dGdv64A" name="creation_date">
+      <segment>
+        <source>creation_date</source>
+        <target>Erstellt</target>
+      </segment>
+    </unit>
+    <unit id="jKxgewM" name="department.comment.label">
+      <segment>
+        <source>department.comment.label</source>
+        <target>Kommentar</target>
+      </segment>
+    </unit>
+    <unit id="ebGPTqc" name="dashboard.menu.homepage">
+      <segment>
+        <source>dashboard.menu.homepage</source>
+        <target>Homepage</target>
+      </segment>
+    </unit>
+    <unit id="g0cEPJ_" name="dashboard.menu.stura">
+      <segment>
+        <source>dashboard.menu.stura</source>
+        <target>StuRa Website</target>
+      </segment>
+    </unit>
+    <unit id="tj.43TE" name="dashboard.welcome">
+      <segment>
+        <source>dashboard.welcome</source>
+        <target>Willkommen im Administrationsbereich</target>
+      </segment>
+    </unit>
+    <unit id="fl0NRjN" name="dashboard.explanation">
+      <segment>
+        <source>dashboard.explanation</source>
+        <target>Hier kannst du abhängig von deinen Berechtigungen, Anträge bearbeiten, neue Nutzer und Organisationen anlegen und anderes. Die Links findest du in der Sidebar links.</target>
+      </segment>
+    </unit>
+    <unit id="0ep_czU" name="dashboard.contact_info">
+      <segment>
+        <source>dashboard.contact_info</source>
+        <target><![CDATA[Bei Fragen oder Problemen kontaktiere: <a href="mailto:%email%">%email%</a>]]></target>
+      </segment>
+    </unit>
+    <unit id="3bqLM8Q" name="dashboard.title">
+      <segment>
+        <source>dashboard.title</source>
+        <target>Start</target>
+      </segment>
+    </unit>
+    <unit id="O91DX8B" name="last_modified">
+      <segment>
+        <source>last_modified</source>
+        <target>Zuletzt bearbeitet</target>
+      </segment>
+    </unit>
+    <unit id="RfpKaIp" name="navbar.choose_language">
+      <segment>
+        <source>navbar.choose_language</source>
+        <target>Sprache wählen</target>
+      </segment>
+    </unit>
+    <unit id="DI1GAwT" name="navbar.admin_login">
+      <segment>
+        <source>navbar.admin_login</source>
+        <target>Adminbereich</target>
+      </segment>
+    </unit>
+    <unit id="Zq_tDey" name="user.settings.title">
+      <segment>
+        <source>user.settings.title</source>
+        <target>Benutzereinstellungen</target>
+      </segment>
+    </unit>
+    <unit id="E9DlrbB" name="password.change_pw.title">
+      <segment>
+        <source>password.change_pw.title</source>
+        <target>Passwort ändern</target>
+      </segment>
+    </unit>
+    <unit id="y3Ds7Ka" name="password.old">
+      <segment>
+        <source>password.old</source>
+        <target>Bisheriges Passwort</target>
+      </segment>
+    </unit>
+    <unit id="dUkL17k" name="submit">
+      <segment>
+        <source>submit</source>
+        <target>Absenden</target>
+      </segment>
+    </unit>
+    <unit id="wgjsxq3" name="password.changed_successful">
+      <segment>
+        <source>password.changed_successful</source>
+        <target>Passwort erfolgreich geändert!</target>
+      </segment>
+    </unit>
+    <unit id="vLfg6nz" name="user.roles.label">
+      <segment>
+        <source>user.roles.label</source>
+        <target>Berechtigungen</target>
+      </segment>
+    </unit>
+    <unit id="TYDprKl" name="user.role.access_admin">
+      <segment>
+        <source>user.role.access_admin</source>
+        <target>Auf Adminbereich zugreifen</target>
+      </segment>
+    </unit>
+    <unit id="STYojTt" name="user.role.edit_user">
+      <segment>
+        <source>user.role.edit_user</source>
+        <target>Benutzer bearbeiten/anlegen</target>
+      </segment>
+    </unit>
+    <unit id="xi95zJW" name="user.role.edit_organisations">
+      <segment>
+        <source>user.role.edit_organisations</source>
+        <target>Organisationen bearbeiten/anlegen</target>
+      </segment>
+    </unit>
+    <unit id="vJXzLDQ" name="user.role.show_payment_orders">
+      <segment>
+        <source>user.role.show_payment_orders</source>
+        <target>Zahlungsaufträge anzeigen</target>
+      </segment>
+    </unit>
+    <unit id="rSz9n89" name="user.role.edit_payment_orders">
+      <segment>
+        <source>user.role.edit_payment_orders</source>
+        <target>Zahlungsaufträge bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="QD__4os" name="user.role.edit_po_factually">
+      <segment>
+        <source>user.role.edit_po_factually</source>
+        <target>"Sachlich richtig" bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="uBXjFSy" name="user.role.edit_po_mathematically">
+      <segment>
+        <source>user.role.edit_po_mathematically</source>
+        <target>"Rechnerisch richtig" bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="_Fh8M7G" name="user.tfa_enabled.label">
+      <segment>
+        <source>user.tfa_enabled.label</source>
+        <target>2FA</target>
+      </segment>
+    </unit>
+    <unit id="Wcwc592" name="user.tfa_enabled.help">
+      <segment>
+        <source>user.tfa_enabled.help</source>
+        <target>Gibt an ob der Benutzer eine Zwei-Faktor-Authentifizierung (2FA) eingerichtet hat.</target>
+      </segment>
+    </unit>
+    <unit id="6O05gNK" name="tfa.settings.title">
+      <segment>
+        <source>tfa.settings.title</source>
+        <target>Zwei-Faktor-Authentifizierung</target>
+      </segment>
+    </unit>
+    <unit id="AYt4Z2k" name="tfa_google.disable.confirm_title">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:33</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:33</note>
+      </notes>
+      <segment>
+        <source>tfa_google.disable.confirm_title</source>
+        <target>Möchten Sie die Authenticator App wirklich deaktivieren?</target>
+      </segment>
+    </unit>
+    <unit id="lTwm.J0" name="tfa_google.disable.confirm_message">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:33</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:33</note>
+      </notes>
+      <segment>
+        <source>tfa_google.disable.confirm_message</source>
+        <target><![CDATA[Wenn Sie die Authenticator App deaktivieren, werden alle Backupcodes gelöscht, daher sie müssen sie evtl. neu ausdrucken.<br>
+          Beachten Sie außerdem, dass ihr Account ohne Zwei-Faktor-Authentifizierung nicht mehr so gut gegen Angreifer geschützt ist!]]></target>
+      </segment>
+    </unit>
+    <unit id="VYOAO2c" name="tfa_google.disabled_message">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:39</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:39</note>
+      </notes>
+      <segment>
+        <source>tfa_google.disabled_message</source>
+        <target>Authenticator App deaktiviert</target>
+      </segment>
+    </unit>
+    <unit id="cW3GnIC" name="tfa_google.step.download">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:48</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:48</note>
+      </notes>
+      <segment>
+        <source>tfa_google.step.download</source>
+        <target><![CDATA[Laden Sie eine Authenticator App herunter (z.B. <a class="link-external" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a> oder <a class="link-external" target="_blank" href="https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp">FreeOTP Authenticator</a>)]]></target>
+      </segment>
+    </unit>
+    <unit id="TXv.pXw" name="tfa_google.step.scan">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:49</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:49</note>
+      </notes>
+      <segment>
+        <source>tfa_google.step.scan</source>
+        <target>Scannen Sie den nebenstehenden QR-Code mit der App oder geben Sie die Daten manuell ein</target>
+      </segment>
+    </unit>
+    <unit id="A9Ex8CO" name="tfa_google.step.input_code">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:50</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:50</note>
+      </notes>
+      <segment>
+        <source>tfa_google.step.input_code</source>
+        <target>Geben Sie den erzeugten Code in das untere Feld ein und bestätigen Sie</target>
+      </segment>
+    </unit>
+    <unit id="RqoGsnx" name="tfa_google.step.download_backup">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:51</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:51</note>
+      </notes>
+      <segment>
+        <source>tfa_google.step.download_backup</source>
+        <target>Drucken Sie ihre Backupcodes aus und lagern sie an einem sicherem Ort</target>
+      </segment>
+    </unit>
+    <unit id="EygadTb" name="tfa_google.manual_setup">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:58</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:58</note>
+      </notes>
+      <segment>
+        <source>tfa_google.manual_setup</source>
+        <target>Manuelle Einrichtung</target>
+      </segment>
+    </unit>
+    <unit id="4jE4fvm" name="tfa_google.manual_setup.type">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:62</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:62</note>
+      </notes>
+      <segment>
+        <source>tfa_google.manual_setup.type</source>
+        <target>Typ</target>
+      </segment>
+    </unit>
+    <unit id="NqQTgh6" name="tfa_google.manual_setup.username">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:63</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:63</note>
+      </notes>
+      <segment>
+        <source>tfa_google.manual_setup.username</source>
+        <target>Benutzername</target>
+      </segment>
+    </unit>
+    <unit id="pkupOqy" name="tfa_google.manual_setup.secret">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:64</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:64</note>
+      </notes>
+      <segment>
+        <source>tfa_google.manual_setup.secret</source>
+        <target>Secret</target>
+      </segment>
+    </unit>
+    <unit id="zabzs3X" name="tfa_google.manual_setup.digit_count">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:65</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:65</note>
+      </notes>
+      <segment>
+        <source>tfa_google.manual_setup.digit_count</source>
+        <target>Anzahl Stellen</target>
+      </segment>
+    </unit>
+    <unit id="FvB0dIm" name="tfa_google.enabled_message">
+      <notes>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:74</note>
+        <note priority="1">Part-DB1\templates\Users\_2fa_settings.html.twig:74</note>
+      </notes>
+      <segment>
+        <source>tfa_google.enabled_message</source>
+        <target>Authenticator App aktiv</target>
+      </segment>
+    </unit>
+    <unit id="3WtQFdr" name="tfa.check.title">
+      <notes>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:3</note>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:5</note>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:3</note>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:5</note>
+      </notes>
+      <segment>
+        <source>tfa.check.title</source>
+        <target>Zwei-Faktor-Authentifizierung benötigt</target>
+      </segment>
+    </unit>
+    <unit id="FPvJfPr" name="tfa.code.trusted_pc">
+      <notes>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:39</note>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:39</note>
+      </notes>
+      <segment>
+        <source>tfa.code.trusted_pc</source>
+        <target>Dies ist ein vertrauenswürdiger Computer (wenn dies aktiviert ist, werden auf diesem Computer keine weiteren Zwei-Faktor-Abfragen durchgeführt)</target>
+      </segment>
+    </unit>
+    <unit id="XtrGxkd" name="login.btn">
+      <notes>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:52</note>
+        <note priority="1">Part-DB1\templates\security\login.html.twig:58</note>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:52</note>
+        <note priority="1">Part-DB1\templates\security\login.html.twig:58</note>
+      </notes>
+      <segment>
+        <source>login.btn</source>
+        <target>Login</target>
+      </segment>
+    </unit>
+    <unit id="okzpfQC" name="user.logout">
+      <notes>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:53</note>
+        <note priority="1">Part-DB1\templates\security\U2F\u2f_login.html.twig:13</note>
+        <note priority="1">Part-DB1\templates\_navbar.html.twig:42</note>
+        <note priority="1">Part-DB1\templates\security\2fa_base_form.html.twig:53</note>
+        <note priority="1">Part-DB1\templates\security\U2F\u2f_login.html.twig:13</note>
+        <note priority="1">Part-DB1\templates\_navbar.html.twig:40</note>
+      </notes>
+      <segment>
+        <source>user.logout</source>
+        <target>Ausloggen</target>
+      </segment>
+    </unit>
+    <unit id="INlwXoR" name="tfa.check.code.label">
+      <notes>
+        <note priority="1">Part-DB1\templates\security\2fa_form.html.twig:6</note>
+        <note priority="1">Part-DB1\templates\security\2fa_form.html.twig:6</note>
+      </notes>
+      <segment>
+        <source>tfa.check.code.label</source>
+        <target>Authenticator App Code</target>
+      </segment>
+    </unit>
+    <unit id="TUbr0_A" name="tfa.check.code.help">
+      <notes>
+        <note priority="1">Part-DB1\templates\security\2fa_form.html.twig:10</note>
+        <note priority="1">Part-DB1\templates\security\2fa_form.html.twig:10</note>
+      </notes>
+      <segment>
+        <source>tfa.check.code.help</source>
+        <target>Geben Sie hier den 6-stelligen Code aus ihrer Authenticator App ein oder einen ihrer Backupcodes, wenn der Authenticator nicht verfügbar ist.</target>
+      </segment>
+    </unit>
+    <unit id="XTe6pUU" name="tfa.provider.google">
+      <segment>
+        <source>tfa.provider.google</source>
+        <target>Authenticator App</target>
+      </segment>
+    </unit>
+    <unit id="g7Bwb96" name="tfa_google.disable">
+      <segment>
+        <source>tfa_google.disable</source>
+        <target>Authentikator App deaktivieren</target>
+      </segment>
+    </unit>
+    <unit id="xy.2mkA" name="user.settings.2fa.google.activated">
+      <segment>
+        <source>user.settings.2fa.google.activated</source>
+        <target>Zwei-Faktor-Authentifizierung aktiviert</target>
+      </segment>
+    </unit>
+    <unit id="wPnvtWt" name="tfa_google.enable">
+      <segment>
+        <source>tfa_google.enable</source>
+        <target>Authenticator aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="lj4_PUd" name="tfa_google.code">
+      <segment>
+        <source>tfa_google.code</source>
+        <target>Code</target>
+      </segment>
+    </unit>
+    <unit id="6nafcsi" name="tfa.settings.trustedDevices.tab">
+      <segment>
+        <source>tfa.settings.trustedDevices.tab</source>
+        <target>Vertrauenswürdige Geräte</target>
+      </segment>
+    </unit>
+    <unit id="h.BcrtU" name="tfa_trustedDevice.invalidate.success">
+      <segment>
+        <source>tfa_trustedDevice.invalidate.success</source>
+        <target>Vertrauenswürdige Geräte erfolgreich zurückgesetzt.</target>
+      </segment>
+    </unit>
+    <unit id="JNqROE2" name="tfa_trustedDevices.explanation">
+      <segment>
+        <source>tfa_trustedDevices.explanation</source>
+        <target><![CDATA[Bei der Überprüfung des zweiten Faktors, kann der aktuelle Computer als vertrauenswürdig gekennzeichnet werden, daher es werden keine Zwei-Faktor-Überprüfungen mehr an diesem Computer benötigt.
+          Wenn Sie dies fehlerhafterweise gemacht haben oder ein Computer nicht mehr vertrauenswürdig ist, können Sie hier den Status <i>aller </i>Computer zurücksetzen.]]></target>
+      </segment>
+    </unit>
+    <unit id="xRB9q2I" name="tfa_trustedDevices.invalidate.confirm_title">
+      <segment>
+        <source>tfa_trustedDevices.invalidate.confirm_title</source>
+        <target>Wirklich alle vertrauenswürdigen Computer entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="r7Z3.L4" name="tfa_trustedDevices.invalidate.confirm_message">
+      <segment>
+        <source>tfa_trustedDevices.invalidate.confirm_message</source>
+        <target>Sie werden auf allen Rechnern erneut eine Zwei-Faktor-Authentifizierung durchführen müssen. Achten Sie darauf, dass Sie ihr Zwei-Faktor-Gerät zur Hand haben.</target>
+      </segment>
+    </unit>
+    <unit id="jiNvzqA" name="tfa_trustedDevices.invalidate.btn">
+      <segment>
+        <source>tfa_trustedDevices.invalidate.btn</source>
+        <target>Alle vertrauenswürdigen Geräte entfernen</target>
+      </segment>
+    </unit>
+    <unit id="_OcjXRe" name="tfa_backup.no_codes_enabled">
+      <notes>
+        <note priority="1">Part-DB1\src\Controller\UserSettingsController.php:101</note>
+        <note priority="1">Part-DB1\src\Controller\UserSettingsController.php:92</note>
+      </notes>
+      <segment>
+        <source>tfa_backup.no_codes_enabled</source>
+        <target>Es sind keine Backupcodes aktiviert!</target>
+      </segment>
+    </unit>
+    <unit id="n13qerD" name="tfa_backup.regenerate_codes">
+      <notes>
+        <note priority="1">obsolete</note>
+        <note priority="1">obsolete</note>
+      </notes>
+      <segment>
+        <source>tfa_backup.regenerate_codes</source>
+        <target>Neue Backupcodes erzeugen</target>
+      </segment>
+    </unit>
+    <unit id="7v_PSOf" name="tfa_backup.remaining_tokens">
+      <segment>
+        <source>tfa_backup.remaining_tokens</source>
+        <target>Verbleibende Backupcodes</target>
+      </segment>
+    </unit>
+    <unit id="xhNIm7L" name="tfa_backup.generation_date">
+      <segment>
+        <source>tfa_backup.generation_date</source>
+        <target>Erzeugungsdatum der Backupcodes</target>
+      </segment>
+    </unit>
+    <unit id="xd6VhOm" name="tfa_backup.codes.title">
+      <segment>
+        <source>tfa_backup.codes.title</source>
+        <target>Backupcodes</target>
+      </segment>
+    </unit>
+    <unit id="DE6_hcj" name="tfa_backup.codes.explanation">
+      <segment>
+        <source>tfa_backup.codes.explanation</source>
+        <target>Drucken Sie diese Codes aus und bewahren Sie sie an einem sicherem Ort auf!</target>
+      </segment>
+    </unit>
+    <unit id="q3Apy0z" name="tfa_backup.codes.help">
+      <segment>
+        <source>tfa_backup.codes.help</source>
+        <target>Wenn Sie keinen Zugriff auf ihr Gerät mit der Authenticator App mehr haben sollten (Smartphone verloren, Datenverlust, etc.) können Sie einen dieser Codes benutzen, um Zugriff auf ihren Account zu erhalten und evtl. eine neue Authenticator App einzurichten. Jeder dieser Codes lässt sich einmal einsetzen, es empfiehlt sich benutzte Codes zu streichen. Jeder mit Zugriff auf diese Codes kann potentiell auf ihren Account zugreifen, daher bewahren Sie sie an einem sicheren Ort auf.</target>
+      </segment>
+    </unit>
+    <unit id="iPcPo4t" name="tfa_backup.username">
+      <segment>
+        <source>tfa_backup.username</source>
+        <target>Benutzername</target>
+      </segment>
+    </unit>
+    <unit id="g7XKOBR" name="tfa_backup.codes.page_generated_on">
+      <segment>
+        <source>tfa_backup.codes.page_generated_on</source>
+        <target>Codes abgerufen am %date%</target>
+      </segment>
+    </unit>
+    <unit id="3Qg6WkA" name="tfa_backup.codes.print">
+      <segment>
+        <source>tfa_backup.codes.print</source>
+        <target>Drucken</target>
+      </segment>
+    </unit>
+    <unit id="atzHEe7" name="tfa_backup.disabled">
+      <segment>
+        <source>tfa_backup.disabled</source>
+        <target>Backupcodes deaktiviert. Authenticator App einrichten, um Backupcodes zu aktivieren.</target>
+      </segment>
+    </unit>
+    <unit id=".T4.dPM" name="tfa_backup.explanation">
+      <segment>
+        <source>tfa_backup.explanation</source>
+        <target>Mithilfe dieser Backupcodes können Sie auf ihren Account zugreifen, selbst wenn Sie das Gerät mit der Authenticator App verlieren sollten. Drucken Sie die Codes aus und bewahren Sie sie an einem sicherem Ort auf.</target>
+      </segment>
+    </unit>
+    <unit id="o5LtJ9_" name="tfa_backup.enabled">
+      <segment>
+        <source>tfa_backup.enabled</source>
+        <target>Backupcodes aktiviert</target>
+      </segment>
+    </unit>
+    <unit id="kqmz5H_" name="tfa_backup.show_codes">
+      <segment>
+        <source>tfa_backup.show_codes</source>
+        <target>Backupcodes anzeigen</target>
+      </segment>
+    </unit>
+    <unit id="vmHdm45" name="tfa.settings.backup.tab">
+      <segment>
+        <source>tfa.settings.backup.tab</source>
+        <target>Backup Codes</target>
+      </segment>
+    </unit>
+    <unit id="4ZUxld3" name="user.settings.2fa.backup_codes.regenerated">
+      <segment>
+        <source>user.settings.2fa.backup_codes.regenerated</source>
+        <target>Neue Backupcodes erfolgreich erstellt.</target>
+      </segment>
+    </unit>
+    <unit id="RXjFD7H" name="user.settings.2fa.google.disabled">
+      <segment>
+        <source>user.settings.2fa.google.disabled</source>
+        <target>Zwei-Faktor-Authentifizierung erfolgreich deaktiviert.</target>
+      </segment>
+    </unit>
+    <unit id="GFpVDYm" name="user.section.tfa">
+      <segment>
+        <source>user.section.tfa</source>
+        <target>Zwei-Faktor-Authentifizierung</target>
+      </segment>
+    </unit>
+    <unit id="wtwYoH0" name="user.section.tfa.help">
+      <segment>
+        <source>user.section.tfa.help</source>
+        <target><![CDATA[Aus Sicherheitsgründen kann die Zwei-Faktor-Authentifizierung eines Benutzers nicht über die Weboberfläche deaktiviert werden.
+Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/console app:user-disable-2fa [username]</code> deaktivieren.]]></target>
+      </segment>
+    </unit>
+    <unit id="XhS3Bkw" name="form.label.delete">
+      <segment>
+        <source>form.label.delete</source>
+        <target>Löschen</target>
+      </segment>
+    </unit>
+    <unit id="Rc1M3PN" name="mail.footer.email_sent_by">
+      <segment>
+        <source>mail.footer.email_sent_by</source>
+        <target>Diese Email wurde automatisch erstellt vom </target>
+      </segment>
+    </unit>
+    <unit id="AchaWxK" name="mail.footer.dont_reply">
+      <segment>
+        <source>mail.footer.dont_reply</source>
+        <target>mail.footer.dont_reply</target>
+      </segment>
+    </unit>
+    <unit id="DRl6loh" name="homepage.welcome">
+      <segment>
+        <source>homepage.welcome</source>
+        <target>Finanzsystem des Studierendenrates der Friedrich-Schiller-Universität</target>
+      </segment>
+    </unit>
+    <unit id="0AmiUaU" name="dashboard.menu.github">
+      <segment>
+        <source>dashboard.menu.github</source>
+        <target>Quellcode</target>
+      </segment>
+    </unit>
+    <unit id="YA5xZMy" name="flash.info">
+      <segment>
+        <source>flash.info</source>
+        <target>Info</target>
+      </segment>
+    </unit>
+    <unit id="icEbaa6" name="dashboard.warning">
+      <segment>
+        <source>dashboard.warning</source>
+        <target>Achtung: Diese Software dient nur der Organisation der internen Abläufe. Rechtlich verbindlich sind nur die originalen Belege und Abrechnungen!</target>
+      </segment>
+    </unit>
+    <unit id="haOas0X" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Ja</target>
+      </segment>
+    </unit>
+    <unit id="HqRCoTS" name="No">
+      <segment>
+        <source>No</source>
+        <target>Nein</target>
+      </segment>
+    </unit>
+    <unit id="LXWv5dM" name="dashboard.menu.audits">
+      <segment>
+        <source>dashboard.menu.audits</source>
+        <target>Auditlogs</target>
+      </segment>
+    </unit>
+    <unit id="vOu4_0t" name="action.show_logs">
+      <segment>
+        <source>action.show_logs</source>
+        <target>Änderungslog zeigen</target>
+      </segment>
+    </unit>
+    <unit id="Fhgj3CZ" name="user.role.view_audit_logs">
+      <segment>
+        <source>user.role.view_audit_logs</source>
+        <target>Auditlogs anzeigen</target>
+      </segment>
+    </unit>
+    <unit id="rp7ZYlt" name="field.datetime.days_ago">
+      <segment>
+        <source>field.datetime.days_ago</source>
+        <target>Vor {{ days }} Tagen</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

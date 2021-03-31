@@ -1,6 +1,15 @@
 controllers:
-    resource: ../../src/Controller/
+    resource: '../../src/Controller/'
+    #exclude: '../../src/Controller/Admin/*'
     type: annotation
+    prefix:
+        de: ''
+        de_DE: '/de'
+        en: '/en'
+
+#controllers_admin:
+#    resource: ../../src/Controller/Admin
+#    type: annotation
 
 kernel:
     resource: ../../src/Kernel.php
