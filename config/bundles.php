@@ -17,5 +17,5 @@ return [
     Scheb\TwoFactorBundle\SchebTwoFactorBundle::class => ['all' => true],
     DAMA\DoctrineTestBundle\DAMADoctrineTestBundle::class => ['test' => true],
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
-    Translation\Bundle\TranslationBundle::class => ['dev' => true],
+    Translation\Bundle\TranslationBundle::class => ['all' => true],
 ];
