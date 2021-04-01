@@ -121,7 +121,6 @@
         <target>Erstellungsdatum</target>
       </segment>
     </unit>
-
     <unit id="1QzYM50" name="select.choose_value">
       <segment>
         <source>select.choose_value</source>
@@ -881,6 +880,138 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
       <segment>
         <source>field.datetime.days_ago</source>
         <target>Vor {{ days }} Tagen</target>
+      </segment>
+    </unit>
+    <unit id="344zp4s" name="registration.new">
+      <segment>
+        <source>registration.new</source>
+        <target>Antrag auf Abstimmung per Brief</target>
+      </segment>
+    </unit>
+    <unit id="SkqZZZ8" name="registration.new.general">
+      <segment>
+        <source>registration.new.general</source>
+        <target>Allgemein</target>
+      </segment>
+    </unit>
+    <unit id="1QRa7Rq" name="registration.first_name">
+      <segment>
+        <source>registration.first_name</source>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="9Sliakr" name="registration.last_name">
+      <segment>
+        <source>registration.last_name</source>
+        <target>Nachname</target>
+      </segment>
+    </unit>
+    <unit id="8xu4JEZ" name="registration.email">
+      <segment>
+        <source>registration.email</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="4VM9LSA" name="registration.student_number">
+      <segment>
+        <source>registration.student_number</source>
+        <target>Matrikelnummer</target>
+      </segment>
+    </unit>
+    <unit id="oq6vVPQ" name="registration.voting_kit_requested">
+      <segment>
+        <source>registration.voting_kit_requested</source>
+        <target>Wahlschein und Briefumschläge müssen zugeschickt werden</target>
+      </segment>
+    </unit>
+    <unit id="ndO0rUK" name="registration.new.shipping">
+      <segment>
+        <source>registration.new.shipping</source>
+        <target>Anschrift</target>
+      </segment>
+    </unit>
+    <unit id="UBhYsS3" name="address.street_and_number">
+      <segment>
+        <source>address.street_and_number</source>
+        <target>Straße und Hausnummer</target>
+      </segment>
+    </unit>
+    <unit id="LK708fD" name="address.address_addition">
+      <segment>
+        <source>address.address_addition</source>
+        <target>Adresszusatz</target>
+      </segment>
+    </unit>
+    <unit id="qb3hRYV" name="address.postal_code">
+      <segment>
+        <source>address.postal_code</source>
+        <target>PLZ</target>
+      </segment>
+    </unit>
+    <unit id="dTJ7GaX" name="address.city">
+      <segment>
+        <source>address.city</source>
+        <target>Ort</target>
+      </segment>
+    </unit>
+    <unit id="7xUAK.3" name="address.country">
+      <segment>
+        <source>address.country</source>
+        <target>Land</target>
+      </segment>
+    </unit>
+    <unit id=".BesFJ." name="registration.id">
+      <segment>
+        <source>registration.id</source>
+        <target>ID</target>
+      </segment>
+    </unit>
+    <unit id="OfOYQEf" name="registration.label">
+      <segment>
+        <source>registration.label</source>
+        <target>Briefwahlregistrierung</target>
+      </segment>
+    </unit>
+    <unit id="P830QC0" name="registration.labelp">
+      <segment>
+        <source>registration.labelp</source>
+        <target>Briefwahlregistrierungen</target>
+      </segment>
+    </unit>
+    <unit id="WTh5IYp" name="Last Modified">
+      <segment>
+        <source>Last Modified</source>
+        <target>Zuletzt bearbeitet</target>
+      </segment>
+    </unit>
+    <unit id="nvspBdk" name="registration.status">
+      <segment>
+        <source>registration.status</source>
+        <target>Status</target>
+      </segment>
+    </unit>
+    <unit id="9biJroG" name="registration.confirmation_date">
+      <segment>
+        <source>registration.confirmation_date</source>
+        <target>Bestätigungsdatum</target>
+      </segment>
+    </unit>
+    <unit id="5vg8gv6" name="registration.printed">
+      <segment>
+        <source>registration.printed</source>
+        <target>Wahlschein gedruckt</target>
+      </segment>
+    </unit>
+    <unit id="hN0WjRh" name="registration.counted">
+      <segment>
+        <source>registration.counted</source>
+        <target>Wahlschein eingegangen</target>
+      </segment>
+    </unit>
+    <unit id="v6355hE" name="registration.secret">
+      <segment>
+        <source>registration.secret</source>
+        <target>Kennwort</target>
       </segment>
     </unit>
   </file>

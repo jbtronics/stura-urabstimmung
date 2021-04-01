@@ -1,0 +1,66 @@
+{% extends "main_card.html.twig" %}
+
+{% block card_title %}<i class="fas fa-vote-yea fa-fw"></i> {% trans %}registration.new{% endtrans %}{% endblock %}
+
+{% block card_content %}
+    <p class="text-muted">
+    </p>
+
+    {{ form_start(form) }}
+
+    {{ form_errors(form) }}
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <fieldset>
+                <legend>{% trans %}registration.new.general{% endtrans %}</legend>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{ form_row(form.first_name) }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_row(form.last_name) }}
+                    </div>
+                </div>
+
+                {{ form_row(form.email) }}
+
+                {{ form_row(form.student_number) }}
+
+                {{ form_row(form.voting_kit_requested) }}
+
+            </fieldset>
+
+        </div>
+
+        <div class="col-sm-6">
+            <fieldset>
+                <legend>{% trans %}registration.new.shipping{% endtrans %}</legend>
+                {{ form_row(form.address.street_and_number) }}
+                {{ form_row(form.address.address_addition) }}
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{ form_row(form.address.postal_code) }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_row(form.address.city) }}
+                    </div>
+                </div>
+                {{ form_row(form.address.country) }}
+            </fieldset>
+
+
+        </div>
+
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12">
+            {{ form_widget(form.submit) }}
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}

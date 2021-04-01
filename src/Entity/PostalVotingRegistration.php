@@ -6,24 +6,28 @@ namespace App\Entity;
 
 use App\Entity\Contracts\DBElementInterface;
 use App\Entity\Contracts\TimestampedElementInterface;
+use App\Entity\Contracts\UUIDDBElementInterface;
 use App\Entity\Embeddable\Address;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\IdGenerator\UuidV4Generator;
 
 /**
  * @ORM\Entity()
  * @ORM\HasLifecycleCallbacks()
  * @UniqueEntity(fields={"email"}, message="validator.email_already_used")
  */
-class PostalVotingApplication implements DBElementInterface, TimestampedElementInterface
+class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedElementInterface
 {
     use TimestampTrait;
 
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class=UuidV4Generator::class)
      */
     private $id;
 
@@ -53,7 +57,7 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
     /**
      * @var string The student number of the student
      * @ORM\Column(type="string")
-     * @Assert\Regex("/^\d[1-6]$/", message="validator.invalid_student_number")
+     * @Assert\Regex("/^\d{1,6}$/", message="validator.invalid_student_number")
      * @Assert\NotBlank()
      */
     private $student_number;
@@ -106,7 +110,7 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
         $this->address = new Address();
     }
 
-    public function getId(): ?int
+    public function getId(): ?Uuid
     {
         return $this->id;
     }
@@ -121,9 +125,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  string  $email
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setEmail(string $email): PostalVotingApplication
+    public function setEmail(string $email): PostalVotingRegistration
     {
         $this->email = $email;
         return $this;
@@ -139,9 +143,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  string  $first_name
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setFirstName(string $first_name): PostalVotingApplication
+    public function setFirstName(string $first_name): PostalVotingRegistration
     {
         $this->first_name = $first_name;
         return $this;
@@ -157,9 +161,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  string  $last_name
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setLastName(string $last_name): PostalVotingApplication
+    public function setLastName(string $last_name): PostalVotingRegistration
     {
         $this->last_name = $last_name;
         return $this;
@@ -175,9 +179,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  string  $student_number
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setStudentNumber(string $student_number): PostalVotingApplication
+    public function setStudentNumber(string $student_number): PostalVotingRegistration
     {
         $this->student_number = $student_number;
         return $this;
@@ -193,9 +197,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  Address  $address
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setAddress(Address $address): PostalVotingApplication
+    public function setAddress(Address $address): PostalVotingRegistration
     {
         $this->address = $address;
         return $this;
@@ -211,9 +215,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  bool  $voting_kit_requested
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setVotingKitRequested(bool $voting_kit_requested): PostalVotingApplication
+    public function setVotingKitRequested(bool $voting_kit_requested): PostalVotingRegistration
     {
         $this->voting_kit_requested = $voting_kit_requested;
         return $this;
@@ -229,9 +233,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  string  $secret
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setSecret(string $secret): PostalVotingApplication
+    public function setSecret(string $secret): PostalVotingRegistration
     {
         $this->secret = $secret;
         return $this;
@@ -247,9 +251,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  string  $confirmation_token
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setConfirmationToken(string $confirmation_token): PostalVotingApplication
+    public function setConfirmationToken(string $confirmation_token): PostalVotingRegistration
     {
         $this->confirmation_token = $confirmation_token;
         return $this;
@@ -265,9 +269,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  \DateTime  $confirmation_date
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setConfirmationDate(?\DateTime $confirmation_date): PostalVotingApplication
+    public function setConfirmationDate(?\DateTime $confirmation_date): PostalVotingRegistration
     {
         $this->confirmation_date = $confirmation_date;
         return $this;
@@ -288,9 +292,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  bool  $printed
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setPrinted(bool $printed): PostalVotingApplication
+    public function setPrinted(bool $printed): PostalVotingRegistration
     {
         $this->printed = $printed;
         return $this;
@@ -306,9 +310,9 @@ class PostalVotingApplication implements DBElementInterface, TimestampedElementI
 
     /**
      * @param  bool  $counted
-     * @return PostalVotingApplication
+     * @return PostalVotingRegistration
      */
-    public function setCounted(bool $counted): PostalVotingApplication
+    public function setCounted(bool $counted): PostalVotingRegistration
     {
         $this->counted = $counted;
         return $this;

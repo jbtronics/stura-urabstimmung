@@ -33,7 +33,7 @@ class Address
     /**
      * @var string
      * @ORM\Column(type="string")
-     * @ZipCode(iso="getCountry")
+     * @ZipCode(getter="getCountry")
      * @Assert\NotBlank()
      */
     private $postal_code = "";

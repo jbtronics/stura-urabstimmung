@@ -22,6 +22,7 @@ use App\Entity\BankAccount;
 use App\Entity\Contracts\DBElementInterface;
 use App\Entity\Department;
 use App\Entity\PaymentOrder;
+use App\Entity\PostalVotingRegistration;
 use App\Entity\User;
 use App\Services\GitVersionInfo;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -67,6 +68,8 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+        yield MenuItem::linkToCrud('registration.labelp', 'fas fa-vote-yea', PostalVotingRegistration::class);
+
         yield MenuItem::linkToCrud('user.labelp', 'fas fa-user', User::class)
             ->setPermission('ROLE_READ_USER');
 
