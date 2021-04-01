@@ -88,9 +88,11 @@ class ApplicationAvailabilityTest extends WebTestCase
         /** @var AdminUrlGenerator $adminURL */
         $adminURL = self::$container->get(AdminUrlGenerator::class);
 
-        /*
         yield ['/admin'];
-        yield ['/admin/audit'];
+        //User settings
+        yield [$adminURL->setRoute('user_settings')->generateUrl()];
+
+        /*yield ['/admin/audit'];
         yield ['/admin/audit/App-Entity-PaymentOrder'];
         yield ['/admin/audit/App-Entity-PaymentOrder/1'];
 
@@ -121,9 +123,6 @@ class ApplicationAvailabilityTest extends WebTestCase
         yield [$adminURL->setRoute('payment_order_manual_confirm', [
             'id' => 1,
         ])->generateUrl()];
-
-        //User settings
-        yield [$adminURL->setRoute('user_settings')->generateUrl()];
 
         //Export page
         yield [$adminURL->setRoute('payment_order_export')->set('ids', '1,2,4')->generateUrl()]; */
