@@ -17,6 +17,7 @@
         "easycorp/easyadmin-bundle": "^v3.2.7",
         "endroid/qr-code": "^4.0.0",
         "fortawesome/font-awesome": "^5.14",
+        "genphrase/genphrase": "^1.2",
         "nelmio/security-bundle": "^2.10",
         "php-translation/symfony-bundle": "^0.12.1",
         "phpdocumentor/reflection-docblock": "^5.2",

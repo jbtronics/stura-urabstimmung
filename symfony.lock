@@ -166,6 +166,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
+    "genphrase/genphrase": {
+        "version": "v1.2.1"
+    },
     "jean85/pretty-package-versions": {
         "version": "2.0.3"
     },

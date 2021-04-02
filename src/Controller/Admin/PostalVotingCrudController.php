@@ -36,7 +36,7 @@ class PostalVotingCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        $actions->disable(Crud::PAGE_NEW);
+        //$actions->disable(Crud::PAGE_NEW);
         return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
 
@@ -44,7 +44,7 @@ class PostalVotingCrudController extends AbstractCrudController
     {
         return [
             FormField::addPanel('registration.new.general'),
-            IdField::new('id', 'registration.id'),
+            IdField::new('id', 'registration.id')->hideOnForm(),
             TextField::new('first_name', 'registration.first_name'),
             TextField::new('last_name', 'registration.last_name'),
             TextField::new('email', 'registration.email'),

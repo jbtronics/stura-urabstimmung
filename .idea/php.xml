@@ -165,6 +165,7 @@
       <path value="$PROJECT_DIR$/vendor/php-cs-fixer/diff" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/barbieswimcrew/zip-code-validator" />
+      <path value="$PROJECT_DIR$/vendor/genphrase/genphrase" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

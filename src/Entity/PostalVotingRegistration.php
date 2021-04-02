@@ -18,6 +18,7 @@ use Symfony\Bridge\Doctrine\IdGenerator\UuidV4Generator;
 /**
  * @ORM\Entity()
  * @ORM\HasLifecycleCallbacks()
+ * @ORM\EntityListeners({"App\EntityListener\FillSecretEntityListener"})
  * @UniqueEntity(fields={"email"}, message="validator.email_already_used")
  */
 class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedElementInterface

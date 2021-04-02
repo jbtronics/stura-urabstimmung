@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d0df58107668936079f6572aa45b24b",
+    "content-hash": "17ae87a09761a9c1db7feb1ab4afc814",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2129,6 +2129,49 @@
                 }
             ],
             "time": "2021-01-14T21:52:44+00:00"
+        },
+        {
+            "name": "genphrase/genphrase",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timoh6/GenPhrase.git",
+                "reference": "ef3b0f2b9540f86de48e34ee6a8fc20f7d1b6d11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timoh6/GenPhrase/zipball/ef3b0f2b9540f86de48e34ee6a8fc20f7d1b6d11",
+                "reference": "ef3b0f2b9540f86de48e34ee6a8fc20f7d1b6d11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "GenPhrase": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Secure passphrase generator for PHP applications",
+            "homepage": "https://github.com/timoh6/GenPhrase",
+            "keywords": [
+                "diceware",
+                "generator",
+                "passphrase",
+                "password",
+                "random",
+                "secure"
+            ],
+            "support": {
+                "issues": "https://github.com/timoh6/GenPhrase/issues",
+                "source": "https://github.com/timoh6/GenPhrase/tree/master"
+            },
+            "time": "2017-03-06T10:46:11+00:00"
         },
         {
             "name": "laminas/laminas-code",
