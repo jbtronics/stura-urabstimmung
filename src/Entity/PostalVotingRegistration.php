@@ -23,6 +23,7 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
 {
     use TimestampTrait;
 
+
     /**
      * @ORM\Id
      * @ORM\Column(type="uuid", unique=true)
@@ -36,6 +37,7 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
      * @ORM\Column(type="string", unique=true)
      * @Assert\Regex("/^.*@uni-jena.de$/", message="validator.must_be_uni_jena_address")
      * @Assert\Email(mode="strict")
+     * @
      * @Assert\NotBlank()
      */
     private $email = "";

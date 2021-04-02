@@ -25,5 +25,11 @@
         <target>Für diese E-Mail-Addresse wurde bereits eine Briefwahl beantragt!</target>
       </segment>
     </unit>
+    <unit id="4xf55NY" name="validator.must_be_personal_address">
+      <segment>
+        <source>validator.must_be_personal_address</source>
+        <target>Es muss eine personenbezogene E-Mail-Addresse angegeben werden (meist vorname.nachname@uni-jena.de)</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
