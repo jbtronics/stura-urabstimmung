@@ -8,6 +8,7 @@ use App\Entity\Embeddable\Address;
 use App\Entity\PostalVotingRegistration;
 use App\Form\PostalVotingRegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
+use InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
