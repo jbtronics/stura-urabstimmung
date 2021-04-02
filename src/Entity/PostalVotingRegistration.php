@@ -8,6 +8,7 @@ use App\Entity\Contracts\DBElementInterface;
 use App\Entity\Contracts\TimestampedElementInterface;
 use App\Entity\Contracts\UUIDDBElementInterface;
 use App\Entity\Embeddable\Address;
+use App\Validator\PersonalEmailAddress;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Uid\Uuid;
@@ -37,7 +38,7 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
      * @ORM\Column(type="string", unique=true)
      * @Assert\Regex("/^.*@uni-jena.de$/", message="validator.must_be_uni_jena_address")
      * @Assert\Email(mode="strict")
-     * @
+     * @PersonalEmailAddress()
      * @Assert\NotBlank()
      */
     private $email = "";
