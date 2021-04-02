@@ -6,17 +6,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        {#
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {% trans %}navbar.new_request{% endtrans %}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ path("payment_order_new") }}"><i class="fas fa-file-invoice-dollar fa-fw"></i> {% trans %}payment_order.new{% endtrans %}</a>
-                </div>
-            </li>
-        </ul> #}
+
+        <div class="navbar-nav mr-auto">
+           <a class="nav-link" href="{{ path('postal_voting_register') }}">{% trans %}registration.register{% endtrans %}</a>
+        </div>
 
 
         <ul class="navbar-nav ml-auto">

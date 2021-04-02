@@ -22,8 +22,9 @@ class PostalVotingRegistrationType extends AbstractType
         $builder->add('last_name', TextType::class, [
             'label' => 'registration.last_name'
         ]);
-        $builder->add('email', EmailType::class, [
-            'label' => 'registration.email'
+        $builder->add('email', EmailWithHostnameType::class, [
+            'label' => 'registration.email',
+            'hostname' => 'uni-jena.de'
         ]);
         $builder->add('student_number', TextType::class, [
             'label' => 'registration.student_number'

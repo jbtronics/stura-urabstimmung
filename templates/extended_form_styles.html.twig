@@ -7,3 +7,12 @@
     col-sm-9
 {%- endblock form_group_class %}
 #}
+
+{% block email_with_hostname_widget %}
+<div class="input-group">
+    {{- block('form_widget_simple') -}}
+    <span class="input-group-append">
+        <span class="input-group-text">{{ hostname_part }}</span>
+    </span>
+</div>
+{% endblock %}

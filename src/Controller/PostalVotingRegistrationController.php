@@ -22,7 +22,7 @@ class PostalVotingRegistrationController extends AbstractController
 {
 
     /**
-     * @Route("/register")
+     * @Route("/register", name="postal_voting_register")
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {

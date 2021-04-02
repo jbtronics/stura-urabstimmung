@@ -1014,5 +1014,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Kennwort</target>
       </segment>
     </unit>
+    <unit id="PiYKuj6" name="registration.register">
+      <segment>
+        <source>registration.register</source>
+        <target>Briefabstimmung beantragen</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
