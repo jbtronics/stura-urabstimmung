@@ -24,7 +24,7 @@
         <aside>
             <div class="counting-info">
                 <span style="display: block; font-size: 16pt; font-weight: bold; margin-bottom: 5mm;">Ausführliche Anleitung:</span>
-                <img src="{{ help_qrCode }}" style="height: 40mm; display: block; margin-left: 15mm; padding: 1mm; border: solid 0.2mm black; border-radius: 5mm;">
+                <img class="rounded-border" src="{{ help_qrCode }}" style="height: 40mm; display: block; margin-left: 15mm;">
             </div>
         </aside>
         <main>
@@ -69,7 +69,7 @@
                     {{ registration.email }} <br>
                     {{ registration.secret }} <br>
                 </div>
-                <img src="{{ qrCode }}" style="height: 35mm; display: block; margin-left: 22.5mm;">
+                <img class="rounded-border" src="{{ qrCode }}" style="height: 35mm; display: block; margin-left: 22.5mm;">
             </div>
         </aside>
 
@@ -79,8 +79,8 @@
                     Hiermit versichere ich, dass ich den Stimmzettel persönlich und unbeobachtet ausgefüllt habe und in den Stimmbriefumschlag gelegt habe.
                 </p>
                 <div class="signature-area" style="margin-top: 25mm;">
-                    <span>{{ registration.address.city }}, den </span>
-                    <div style="margin-left: 60mm; border-top: solid 0.2mm black;">{{ registration.fullName }}</div>
+                    <span style="display: inline;">{{ registration.address.city }}, den </span>
+                    <div style="border-top: solid 0.2mm black; margin-left: 80mm;">{{ registration.fullName }}</div>
                 </div>
             </div>
         </main>
