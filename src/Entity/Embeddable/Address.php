@@ -168,13 +168,13 @@ class Address
         return $tmp;
     }
 
-    public function formatSingleLine(?string $full_name = null): string
+    public function formatSingleLine(?string $full_name = null, string $separator = ', '): string
     {
         $tmp = '';
         if ($full_name) {
-            $tmp = $full_name . ', ';
+            $tmp = $full_name . $separator;
         }
-        $tmp .= $this->street_and_number . ', ' . $this->postal_code . ' ' . $this->city;
+        $tmp .= $this->street_and_number . $separator . $this->postal_code . ' ' . $this->city;
 
         return $tmp;
     }

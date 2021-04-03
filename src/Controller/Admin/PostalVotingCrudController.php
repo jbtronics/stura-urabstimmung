@@ -37,6 +37,16 @@ class PostalVotingCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         //$actions->disable(Crud::PAGE_NEW);
+
+        $ballotPaper = Action::new('ballotPaper', 'registration.generate_ballot_paper')
+            ->linkToRoute('postal_voting_ballot_paper', function (PostalVotingRegistration $registration) : array {
+                return [
+                    'id' => $registration->getId()->toRfc4122()
+                ];
+            });
+
+        $actions->add('detail', $ballotPaper);
+
         return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
 

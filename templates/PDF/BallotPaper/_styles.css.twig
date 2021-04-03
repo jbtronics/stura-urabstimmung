@@ -1,0 +1,128 @@
+@page {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "DejaVu Sans";
+}
+
+div.page-upper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 210mm;
+    height: 148.5mm;
+
+    padding: 10mm;
+
+    /*background-color: red;*/
+}
+div.page-lower {
+    position: fixed;
+    top: 148.5mm;
+    left: 0;
+    width: 210mm;
+    height: 148.5mm;
+
+    padding: 10mm;
+
+    /*background-color: blue;*/
+}
+
+hr.half-separator {
+    position: fixed;
+    top: 148.5mm;
+    border: 0;
+    height: 0;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border-top: 0.3mm dashed black;
+}
+
+div.fold-mark {
+    position: absolute;
+    top: 87mm;
+    left: 5mm;
+    width: 5mm;
+    height: 0;
+    border: 0;
+    border-top: 0.1mm solid black;
+}
+
+header.header-line {
+    position: absolute;
+    top: 5mm;
+    left: 0;
+    font-size: 9pt;
+    color: darkgray;
+    padding-right: 25mm;
+    padding-left: 20mm;
+}
+
+footer.footer-line {
+    position: fixed;
+    bottom: 10mm;
+    left: 0;
+    font-size: 9pt;
+
+    color: darkgray;
+    padding-right: 25mm;
+    padding-left: 20mm;
+}
+
+div.counting-info {
+    position: absolute;
+    left: 115mm;
+    top: 15mm;
+    padding-right: 10mm;
+    width: 80mm;
+}
+
+div.content {
+    position: absolute;
+    top: 80mm;
+    left: 0;
+    padding-left: 25mm;
+    padding-right: 20mm;
+}
+
+div.address-field {
+    position: absolute;
+    top: 27mm;
+    left: 20mm;
+    height: 45mm;
+    width: 85mm;
+    font-size: 12pt;
+    line-height: 1.0;
+    /*padding: 0 5mm;*/
+
+}
+
+div.address-field > div.return-address-zone {
+    position: absolute;
+    top: 0;
+    left: 5mm;
+    width: 80mm;
+    height: 5mm;
+    font-size: 7pt;
+    border-bottom: 0.2mm solid black;
+
+}
+
+div.address-field > div.comment-zone {
+    position: absolute;
+    top: 5mm;
+    left: 5mm;
+    width: 80mm;
+    height: 12.7mm;
+}
+
+div.address-field > div.address-zone {
+    position: absolute;
+    top: 17.7mm;
+    left: 5mm;
+    width: 80mm;
+    height: 27.3mm;
+}
+

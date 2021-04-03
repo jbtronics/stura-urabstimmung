@@ -1020,5 +1020,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Briefabstimmung beantragen</target>
       </segment>
     </unit>
+    <unit id="TNXKKOI" name="registration.generate_ballot_paper">
+      <segment>
+        <source>registration.generate_ballot_paper</source>
+        <target>Wahlschein erzeugen</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

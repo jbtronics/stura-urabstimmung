@@ -130,6 +130,9 @@
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
+    "dompdf/dompdf": {
+        "version": "v1.0.2"
+    },
     "easycorp/easyadmin-bundle": {
         "version": "3.0",
         "recipe": {
@@ -168,6 +171,9 @@
     },
     "genphrase/genphrase": {
         "version": "v1.2.1"
+    },
+    "iio/libmergepdf": {
+        "version": "4.0.4"
     },
     "jean85/pretty-package-versions": {
         "version": "2.0.3"
@@ -222,6 +228,12 @@
     },
     "paragonie/random_compat": {
         "version": "v9.99.100"
+    },
+    "phenx/php-font-lib": {
+        "version": "0.5.2"
+    },
+    "phenx/php-svg-lib": {
+        "version": "v0.3.3"
     },
     "php-cs-fixer/diff": {
         "version": "v1.3.1"
@@ -286,6 +298,9 @@
     "roave/security-advisories": {
         "version": "dev-master"
     },
+    "sabberworm/php-css-parser": {
+        "version": "8.3.1"
+    },
     "scheb/2fa-backup-code": {
         "version": "v5.7.0"
     },
@@ -322,6 +337,9 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "setasign/fpdi": {
+        "version": "v2.3.6"
     },
     "slowprog/composer-copy-file": {
         "version": "0.3.3"
@@ -758,6 +776,9 @@
     },
     "symplify/symplify-kernel": {
         "version": "v9.2.14"
+    },
+    "tecnickcom/tcpdf": {
+        "version": "6.4.1"
     },
     "thecodingmachine/safe": {
         "version": "v1.3.3"
