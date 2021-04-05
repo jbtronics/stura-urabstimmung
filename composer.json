@@ -10,6 +10,7 @@
         "barbieswimcrew/zip-code-validator": "^1.3",
         "components/jquery": "^3.5",
         "composer/package-versions-deprecated": "1.11.99.1",
+        "damienharper/auditor-bundle": "^4.1",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^3.0",

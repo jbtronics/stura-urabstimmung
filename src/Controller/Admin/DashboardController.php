@@ -20,6 +20,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\BankAccount;
 use App\Entity\Contracts\DBElementInterface;
+use App\Entity\Contracts\UUIDDBElementInterface;
 use App\Entity\Department;
 use App\Entity\PaymentOrder;
 use App\Entity\PostalVotingRegistration;
@@ -76,6 +77,8 @@ class DashboardController extends AbstractDashboardController
 
         $version = $this->app_version.'-'.$this->gitVersionInfo->getGitCommitHash() ?? '';
         yield MenuItem::section('Version '.$version, 'fas fa-info');
+        yield MenuItem::linktoRoute('dashboard.menu.audits', 'fas fa-binoculars', 'dh_auditor_list_audits')
+            ->setPermission('ROLE_VIEW_AUDITS');
         yield MenuItem::linktoRoute('dashboard.menu.homepage', 'fas fa-home', 'homepage');
         yield MenuItem::linkToUrl('dashboard.menu.stura', 'fab fa-rebel', 'https://www.stura.uni-jena.de/');
         yield MenuItem::linkToUrl('dashboard.menu.github', 'fab fa-github', 'https://github.com/jbtronics/stura-urabstimmung');
@@ -96,10 +99,40 @@ class DashboardController extends AbstractDashboardController
             ]);
     }
 
+    public function configureActions(): Actions
+    {
+        $actions = parent::configureActions();
+
+        $showLog = Action::new('showLog', 'action.show_logs', 'fas fa-binoculars')
+            ->displayIf(function ($entity) {
+                return $this->isGranted('ROLE_VIEW_AUDITS');
+            })
+            ->setCssClass('ml-2 text-dark')
+            ->linkToRoute('dh_auditor_show_entity_history', function ($entity) {
+                if ($entity instanceof DBElementInterface) {
+                    return [
+                        'entity' => str_replace('\\', '-', get_class($entity)),
+                        'id' => $entity->getId(),
+                    ];
+                } elseif ($entity instanceof UUIDDBElementInterface) {
+                    return [
+                        'entity' => str_replace('\\', '-', get_class($entity)),
+                        'id' => $entity->getId()->toRfc4122(),
+                    ];
+                }
+
+                throw new \InvalidArgumentException('$entity must have an ID property!');
+            });
+
+        return $actions
+            ->add(Crud::PAGE_DETAIL, $showLog)
+            ->add(Crud::PAGE_EDIT, $showLog);
+    }
+
     public function configureCrud(): Crud
     {
         return parent::configureCrud()
-            ->setPaginatorPageSize(40);
+            ->setPaginatorPageSize(50);
     }
 
     public function configureAssets(): Assets

@@ -76,6 +76,7 @@ class UserCrudController extends AbstractCrudController
         return [
             'user.role.access_admin' => 'ROLE_ADMIN',
             'user.role.edit_user' => 'ROLE_EDIT_USER',
+            'user.role.view_audit_logs' => 'ROLE_VIEW_AUDITS',
             'user.role.registration_view' => 'ROLE_REGISTRATION_VIEW',
             'user.role.registration_edit' => 'ROLE_REGISTRATION_EDIT',
             'user.role.registration.delete' => 'ROLE_REGISTRATION_DELETE',
