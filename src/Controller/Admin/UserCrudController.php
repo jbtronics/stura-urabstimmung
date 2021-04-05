@@ -76,6 +76,12 @@ class UserCrudController extends AbstractCrudController
         return [
             'user.role.access_admin' => 'ROLE_ADMIN',
             'user.role.edit_user' => 'ROLE_EDIT_USER',
+            'user.role.registration_view' => 'ROLE_REGISTRATION_VIEW',
+            'user.role.registration_edit' => 'ROLE_REGISTRATION_EDIT',
+            'user.role.registration.delete' => 'ROLE_REGISTRATION_DELETE',
+            'user.role.registration_verify' => 'ROLE_REGISTRATION_VERIFY',
+            'user.role.registration_print' => 'ROLE_REGISTRATION_PRINT',
+            'user.role.registration_count' => 'ROLE_REGISTRATION_COUNT',
         ];
     }
 

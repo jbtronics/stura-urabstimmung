@@ -66,6 +66,8 @@ class PostalVotingRegistrationController extends AbstractController
      */
     public function ballotPaper(PostalVotingRegistration $registration, BallotPaperGenerator $ballotPaperGenerator): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_REGISTRATION_PRINT');
+
         $pdf = $ballotPaperGenerator->generateSingleBallotPaper($registration);
         //$pdf = $ballotPaperGenerator->generateMultipleBallotPapers([$registration, $registration, $registration]);
 
@@ -85,6 +87,8 @@ class PostalVotingRegistrationController extends AbstractController
      */
     public function scan(PostalVotingRegistration $registration): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_REGISTRATION_COUNT');
+
         $this->addFlash('error', 'Not implemented yet!');
 
         return $this->render('homepage.html.twig');

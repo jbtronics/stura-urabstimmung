@@ -1026,5 +1026,41 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Wahlschein erzeugen</target>
       </segment>
     </unit>
+    <unit id="LVpo1O3" name="user.role.registration_view">
+      <segment>
+        <source>user.role.registration_view</source>
+        <target>Briefwahlregistrierungen anzeigen</target>
+      </segment>
+    </unit>
+    <unit id="i5xsKVq" name="user.role.registration_edit">
+      <segment>
+        <source>user.role.registration_edit</source>
+        <target>Briefwahlregistrierungen bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="fMopoG9" name="user.role.registration_verify">
+      <segment>
+        <source>user.role.registration_verify</source>
+        <target>Briefwahlberechtigung überprüfen</target>
+      </segment>
+    </unit>
+    <unit id="Z2BpMWl" name="user.role.registration_print">
+      <segment>
+        <source>user.role.registration_print</source>
+        <target>Wahlschein drucken</target>
+      </segment>
+    </unit>
+    <unit id="BzzQ1Ot" name="user.role.registration_count">
+      <segment>
+        <source>user.role.registration_count</source>
+        <target>Wahlschein einchecken</target>
+      </segment>
+    </unit>
+    <unit id="BgWLcJ3" name="user.role.registration.delete">
+      <segment>
+        <source>user.role.registration.delete</source>
+        <target>Briefwahlregistrierungen löschen</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

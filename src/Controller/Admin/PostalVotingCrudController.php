@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 
 
 use App\Entity\Embeddable\Address;
+use App\Entity\PaymentOrder;
 use App\Entity\PostalVotingRegistration;
+use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -38,14 +40,24 @@ class PostalVotingCrudController extends AbstractCrudController
     {
         //$actions->disable(Crud::PAGE_NEW);
 
-        $ballotPaper = Action::new('ballotPaper', 'registration.generate_ballot_paper')
-            ->linkToRoute('postal_voting_ballot_paper', function (PostalVotingRegistration $registration) : array {
-                return [
-                    'id' => $registration->getId()->toRfc4122()
-                ];
-            });
+        $actions->setPermissions([
+            Action::EDIT => 'ROLE_REGISTRATION_EDIT',
+            Action::DELETE => 'ROLE_REGISTRATION_DELETE',
+            Action::NEW => 'ROLE_REGISTRATION_EDIT',
+            Action::INDEX => 'ROLE_REGISTRATION_VIEW',
+            Action::DETAIL => 'ROLE_REGISTRATION_VIEW',
+        ]);
 
-        $actions->add('detail', $ballotPaper);
+        if ($this->isGranted('ROLE_REGISTRATION_PRINT')) {
+            $ballotPaper = Action::new('ballotPaper', 'registration.generate_ballot_paper')
+                ->linkToRoute('postal_voting_ballot_paper', function (PostalVotingRegistration $registration): array {
+                    return [
+                        'id' => $registration->getId()->toRfc4122()
+                    ];
+                });
+
+            $actions->add('detail', $ballotPaper);
+        }
 
         return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
@@ -59,7 +71,9 @@ class PostalVotingCrudController extends AbstractCrudController
             TextField::new('last_name', 'registration.last_name'),
             TextField::new('email', 'registration.email'),
             TextField::new('student_number', 'registration.student_number'),
-            TextField::new('secret', 'registration.secret')->setFormTypeOption('disabled', true),
+            TextField::new('secret', 'registration.secret')
+                ->setFormTypeOption('disabled', true)
+                ->setPermission('ROLE_REGISTRATION_SECRET'),
             BooleanField::new('voting_kit_requested', 'registration.voting_kit_requested')->hideOnIndex(),
 
             FormField::addPanel('registration.new.shipping'),
@@ -76,5 +90,19 @@ class PostalVotingCrudController extends AbstractCrudController
             BooleanField::new('printed', 'registration.printed')->hideOnIndex(),
             BooleanField::new('counted', 'registration.counted')->hideOnIndex(),
         ];
+    }
+
+    public function deleteEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        /** @var PostalVotingRegistration $entityInstance */
+        //Forbit delete process if PaymentOrder was already exported or booked
+        if ($entityInstance->isPrinted()
+                || $entityInstance->isCounted()) {
+            $this->addFlash('warning', 'payment_order.flash.can_not_delete_checked_payment_order');
+
+            return;
+        }
+
+        parent::deleteEntity($entityManager, $entityInstance);
     }
 }

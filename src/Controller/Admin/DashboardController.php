@@ -68,7 +68,8 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToCrud('registration.labelp', 'fas fa-vote-yea', PostalVotingRegistration::class);
+        yield MenuItem::linkToCrud('registration.labelp', 'fas fa-vote-yea', PostalVotingRegistration::class)
+            ->setPermission('ROLE_REGISTRATION_VIEW');
 
         yield MenuItem::linkToCrud('user.labelp', 'fas fa-user', User::class)
             ->setPermission('ROLE_READ_USER');
@@ -77,7 +78,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Version '.$version, 'fas fa-info');
         yield MenuItem::linktoRoute('dashboard.menu.homepage', 'fas fa-home', 'homepage');
         yield MenuItem::linkToUrl('dashboard.menu.stura', 'fab fa-rebel', 'https://www.stura.uni-jena.de/');
-        yield MenuItem::linkToUrl('dashboard.menu.github', 'fab fa-github', 'https://github.com/jbtronics/StuRa-Finanzsoftware');
+        yield MenuItem::linkToUrl('dashboard.menu.github', 'fab fa-github', 'https://github.com/jbtronics/stura-urabstimmung');
     }
 
     public function configureUserMenu(UserInterface $user): UserMenu
