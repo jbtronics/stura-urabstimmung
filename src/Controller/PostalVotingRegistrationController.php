@@ -15,6 +15,7 @@ use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\RateLimiter\RateLimiterFactory;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -26,8 +27,10 @@ class PostalVotingRegistrationController extends AbstractController
     /**
      * @Route("/register", name="postal_voting_register")
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, RateLimiterFactory $registrationSubmitLimiter): Response
     {
+        $limiter = $registrationSubmitLimiter->create($request->getClientIp());
+
         $new_registration = new PostalVotingRegistration();
 
         $form = $this->createForm(PostalVotingRegistrationType::class, $new_registration);
@@ -40,6 +43,11 @@ class PostalVotingRegistrationController extends AbstractController
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
+                /* Limit the amount of how many payment orders can be submitted by one user in an hour
+                   This prevents automatic mass creation of payment orders and also prevents that skip token can
+                   guessed by brute force */
+                $limiter->consume(1)
+                    ->ensureAccepted();
 
                 $entityManager->persist($new_registration);
 
@@ -53,10 +61,23 @@ class PostalVotingRegistrationController extends AbstractController
             }
         }
 
-        return $this->render('PostalVotingRegistration/registration.html.twig', [
+        $limit = $limiter->consume(0);
+
+        $response = $this->render('PostalVotingRegistration/registration.html.twig', [
             'form' => $form->createView(),
             'entity' => $new_registration,
         ]);
+
+        $response->headers->add(
+            [
+                'X-RateLimit-Remaining' => $limit->getRemainingTokens(),
+                'X-RateLimit-Retry-After' => $limit->getRetryAfter()
+                    ->getTimestamp(),
+                'X-RateLimit-Limit' => $limit->getLimit(),
+            ]
+        );
+
+        return $response;
 
     }
 

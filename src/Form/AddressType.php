@@ -21,6 +21,7 @@ class AddressType extends AbstractType
         $builder->add('address_addition', TextType::class, [
             'label' => 'address.address_addition',
             'required' => false,
+            'empty_data' => '',
         ]);
         $builder->add('postal_code', TextType::class, [
             'label' => 'address.postal_code'
