@@ -825,7 +825,7 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
     <unit id="DRl6loh" name="homepage.welcome">
       <segment>
         <source>homepage.welcome</source>
-        <target>Finanzsystem des Studierendenrates der Friedrich-Schiller-Universität</target>
+        <target>Urabstimmungportal des Studierendenrates der Friedrich-Schiller-Universität Jena</target>
       </segment>
     </unit>
     <unit id="0AmiUaU" name="dashboard.menu.github">
@@ -1168,6 +1168,24 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
       <segment>
         <source>registration.confirmation.success</source>
         <target>Der Antrag wurde erfolgreich bestätigt.</target>
+      </segment>
+    </unit>
+    <unit id="L7sLdsQ" name="navbar.title">
+      <segment>
+        <source>navbar.title</source>
+        <target>Urabstimmung</target>
+      </segment>
+    </unit>
+    <unit id="6T_xFxC" name="homepage.support">
+      <segment>
+        <source>homepage.support</source>
+        <target><![CDATA[Bei Fragen oder Problemen zu der Urabstimmung oder dieser Website kontaktiere die Abstimmungskommission unter <a href="mailto:%support_email%">%support_email%</a>.]]></target>
+      </segment>
+    </unit>
+    <unit id="BX2cMD5" name="homepage.explaination">
+      <segment>
+        <source>homepage.explaination</source>
+        <target>Auf dieser Seite kannst du einen Antrag auf Abstimmung per Brief für die Urabstimmung über das DB- und VMT-Semesterticket stellen.</target>
       </segment>
     </unit>
   </file>
