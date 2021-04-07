@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
+  <file id="validators.en">
+    <unit id="JIDxMVG" name="validator.must_be_uni_jena_address">
+      <segment>
+        <source>validator.must_be_uni_jena_address</source>
+        <target>The e-mail address must be from the University of Jena (ending with @uni-jena.de).</target>
+      </segment>
+    </unit>
+    <unit id="1M.gEBs" name="validator.invalid_student_number">
+      <segment>
+        <source>validator.invalid_student_number</source>
+        <target>Invalid student number</target>
+      </segment>
+    </unit>
+    <unit id="2IA349g" name="validator.email_already_used">
+      <segment>
+        <source>validator.email_already_used</source>
+        <target>An absentee ballot has already been requested for this e-mail address!</target>
+      </segment>
+    </unit>
+    <unit id="4xf55NY" name="validator.must_be_personal_address">
+      <segment>
+        <source>validator.must_be_personal_address</source>
+        <target>A personal e-mail address must be provided (usually firstname.lastname@uni-jena.de)</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
