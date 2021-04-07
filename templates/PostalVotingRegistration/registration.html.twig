@@ -3,8 +3,8 @@
 {% block card_title %}<i class="fas fa-vote-yea fa-fw"></i> {% trans %}registration.new{% endtrans %}{% endblock %}
 
 {% block card_content %}
-    <p class="text-muted">
-    </p>
+    <p class="text-muted">{% trans %}registration.info{% endtrans %}</p>
+    <p class="text-muted">{% trans %}registration.privacy_info{% endtrans %}</p>
 
     {{ form_start(form) }}
 

@@ -1200,5 +1200,17 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Die Bestätigungsemail wurde erfolgreich versandt.</target>
       </segment>
     </unit>
+    <unit id="JTVqV61" name="registration.privacy_info">
+      <segment>
+        <source>registration.privacy_info</source>
+        <target>Alle Daten werden nur zur Durchführung der Urabstimmung erhoben, und werden nach der Urabstimmung gelöscht.</target>
+      </segment>
+    </unit>
+    <unit id="odKxO3a" name="registration.info">
+      <segment>
+        <source>registration.info</source>
+        <target>Hier kannst du die Abstimmung per Brief beantragen. Gib dazu unten die geforderten Daten ein und klicke auf Absenden. Du erhälst dann eine Bestätigungs-E-Mail, in der du deinen Antrag bestätigen musst, und noch mal die Gelegenheit hast deine Daten auf Korrektheit zu überprüfen. Wenn dein Antrag bestätigt wurde, wird dieser von der Urabstimmungskommission geprüft, und du erhälst einige Tage später deine Wahlunterlagen.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
