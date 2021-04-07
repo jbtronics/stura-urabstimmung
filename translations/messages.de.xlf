@@ -148,7 +148,7 @@
     <unit id="ry4m8Eq" name="flash.saved_successfully">
       <segment>
         <source>flash.saved_successfully</source>
-        <target>Zahlungsauftrag wurde erfolgreich übermittelt.</target>
+        <target>Briefwahlantrag wurde erfolgreich eingereicht. Du erhälst in Kürze eine E-Mail, in der du deinen Antrag bestätigen must.</target>
       </segment>
     </unit>
     <unit id="_eaBSeV" name="footer.impress">
@@ -1120,6 +1120,54 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
       <segment>
         <source>registration.confirmation_email.manual_link</source>
         <target><![CDATA[Sollte der Button nicht funktionieren, benutze folgenden Link: <a href="%url%">%url%</a>.]]></target>
+      </segment>
+    </unit>
+    <unit id="h8vhq_r" name="flash.warning">
+      <segment>
+        <source>flash.warning</source>
+        <target>Warnung</target>
+      </segment>
+    </unit>
+    <unit id="UZaCbig" name="registration.confirmation.already_confirmed">
+      <segment>
+        <source>registration.confirmation.already_confirmed</source>
+        <target>Der Antrag auf Abstimmung per Brief wurde bereits bestätigt.</target>
+      </segment>
+    </unit>
+    <unit id="sLIZ0t4" name="registration.jumbotron.success">
+      <segment>
+        <source>registration.jumbotron.success</source>
+        <target>Erfolgreich bestätigt</target>
+      </segment>
+    </unit>
+    <unit id="iWE.FSg" name="registration.jumbotron.hint">
+      <segment>
+        <source>registration.jumbotron.hint</source>
+        <target>Dein Antrag wird jetzt überprüft und du erhälst die Briefwahl-Unterlagen in den nächsten Tagen.</target>
+      </segment>
+    </unit>
+    <unit id="EehoTZ3" name="registration.jumbotron.close_window.hint">
+      <segment>
+        <source>registration.jumbotron.close_window.hint</source>
+        <target>Du kannst dieses Fenster jetzt schließen.</target>
+      </segment>
+    </unit>
+    <unit id="8EnvtLD" name="registration.close_window">
+      <segment>
+        <source>registration.close_window</source>
+        <target>Fenster schließen</target>
+      </segment>
+    </unit>
+    <unit id="Xgeh0Rh" name="registration.confirmation.invalid_token">
+      <segment>
+        <source>registration.confirmation.invalid_token</source>
+        <target>Ungültiges Token. Bitte überprüfe den Link. Sollte dieses Problem bestehen bleiben, kontaktiere urabstimmung@stura.uni-jena.de</target>
+      </segment>
+    </unit>
+    <unit id="WEd3iTG" name="registration.confirmation.success">
+      <segment>
+        <source>registration.confirmation.success</source>
+        <target>Der Antrag wurde erfolgreich bestätigt.</target>
       </segment>
     </unit>
   </file>

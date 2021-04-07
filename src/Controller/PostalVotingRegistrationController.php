@@ -123,11 +123,24 @@ class PostalVotingRegistrationController extends AbstractController
      * @param  PostalVotingRegistration  $registration
      * @return Response
      */
-    public function confirm(PostalVotingRegistration $registration): Response
+    public function confirm(PostalVotingRegistration $registration, Request $request, EntityManagerInterface $entityManager): Response
     {
-        $this->addFlash('error', 'Not implemented yet!');
+        $given_token = (string) $request->query->get('token');
+        if (!password_verify($given_token, $registration->getConfirmationToken())) {
+            $this->addFlash('error', 'registration.confirmation.invalid_token');
+            return $this->redirectToRoute('homepage');
+        }
 
-        return $this->render('homepage.html.twig');
+        if ($registration->getConfirmationDate() === null) {
+            $registration->setConfirmationDate(new \DateTime('now'));
+            $this->addFlash('success', 'registration.confirmation.success');
+        } else {
+            $this->addFlash('warning', 'registration.confirmation.already_confirmed');
+        }
+
+        $entityManager->flush();
+
+        return $this->render('PostalVotingRegistration/confirmation_success.html.twig');
     }
 
 }

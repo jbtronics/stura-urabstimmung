@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">{% trans %}registration.jumbotron.success{% endtrans %}</h1>
+        <p class="lead">{% trans %}registration.jumbotron.hint{% endtrans %}</p>
+        <hr class="my-4">
+        <p>{% trans %}registration.jumbotron.close_window.hint{% endtrans %}</p>
+        <a class="btn btn-primary btn-lg" href="javascript:window.open('','_self').close();" role="button">{% trans %}registration.close_window{% endtrans %}</a>
+    </div>
+{% endblock %}
