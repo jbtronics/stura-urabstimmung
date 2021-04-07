@@ -813,7 +813,7 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
     <unit id="Rc1M3PN" name="mail.footer.email_sent_by">
       <segment>
         <source>mail.footer.email_sent_by</source>
-        <target>Diese Email wurde automatisch erstellt vom </target>
+        <target>Diese Email wurde automatisch erstellt von </target>
       </segment>
     </unit>
     <unit id="AchaWxK" name="mail.footer.dont_reply">
@@ -1060,6 +1060,66 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
       <segment>
         <source>user.role.registration.delete</source>
         <target>Briefwahlregistrierungen löschen</target>
+      </segment>
+    </unit>
+    <unit id="FTJO_KD" name="registration.confirmation_mail.title">
+      <segment>
+        <source>registration.confirmation_mail.title</source>
+        <target>Bitte bestätige deinen Antrag auf Abstimmung per Brief um fortzufahren</target>
+      </segment>
+    </unit>
+    <unit id="vv2nPNv" name="registration.confirmation_email.subject">
+      <segment>
+        <source>registration.confirmation_email.subject</source>
+        <target>Bestätige deinen Antrag auf Abstimmung per Brief</target>
+      </segment>
+    </unit>
+    <unit id="37hC3df" name="registration.confirmation_mail.info">
+      <segment>
+        <source>registration.confirmation_mail.info</source>
+        <target>Du hast eben einen Antrag auf Abstimmung per Brief bei der Urabstimmung gestellt. Bitte überprüfe die untenstehenden Daten und klicke dann auf den Button zur Bestätigung. Bitte beachte, dass du ohne Bestätigung nicht per Brief abstimmen können wirst! </target>
+      </segment>
+    </unit>
+    <unit id="JcDioNr" name="registration.full_name">
+      <segment>
+        <source>registration.full_name</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="gj9xb1P" name="registration.address">
+      <segment>
+        <source>registration.address</source>
+        <target>Anschrift zu der die Briefwahlunterlagen geschickt werden</target>
+      </segment>
+    </unit>
+    <unit id="n50Osuv" name="registration.confirmation_email.confirm_hint">
+      <segment>
+        <source>registration.confirmation_email.confirm_hint</source>
+        <target><![CDATA[Solltest du keinen Antrag auf Abstimmung per Brief gestellt haben, oder die untenstehenden Angaben fehlerhaft sein, kontaktiere bitte <a href="mailto:%support_email%">%support_email%</a>. Wenn die Angaben korrekt sind, klicke auf untenstehenden Button.]]></target>
+      </segment>
+    </unit>
+    <unit id="gSgYOMs" name="registration.confirmation_email.button">
+      <segment>
+        <source>registration.confirmation_email.button</source>
+        <target>Die Angaben sind korrekt. Ich bestätige den Antrag auf Abstimmung per Brief.</target>
+      </segment>
+    </unit>
+    <unit id="5aTsqI_" name="registration.confirmation_mail.why">
+      <segment>
+        <source>registration.confirmation_mail.why</source>
+        <target>Du erhälst diese E-Mail, da du eine Abstimmung per Brief für die Urabstimmung beantragt hast. Wenn dies nicht der Fall war, kontaktiere bitte %support_email% .</target>
+      </segment>
+    </unit>
+    <unit id="NI3tmnc" name="registration.mail.id_hint">
+      <segment>
+        <source>registration.mail.id_hint</source>
+        <target>Gib bei Rückfragen bitte folgenden Code an:</target>
+      </segment>
+    </unit>
+    <unit id=".KgGvtL" name="registration.confirmation_email.manual_link">
+      <segment>
+        <source>registration.confirmation_email.manual_link</source>
+        <target><![CDATA[Sollte der Button nicht funktionieren, benutze folgenden Link: <a href="%url%">%url%</a>.]]></target>
       </segment>
     </unit>
   </file>

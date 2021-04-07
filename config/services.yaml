@@ -35,6 +35,12 @@ services:
             $code_length: 8
             $code_count: 15
 
+    App\EventSubscriber\SetEmailFromSubscriber:
+        arguments:
+            $email: '%app.mail.from_email%'
+            $name: '%app.mail.from_name%'
+            $envelope_sender: '%app.mail.envelope_sender%'
+
     # Workaround for a issue with auditor bundle (see https://github.com/DamienHarper/auditor-bundle/issues/228)
     DH\Auditor\Provider\Doctrine\Auditing\Transaction\TransactionManager:
         arguments: [ '@DH\Auditor\Provider\Doctrine\DoctrineProvider' ]
@@ -62,6 +68,7 @@ services:
     App\EventSubscriber\SetTimezoneSubscriber:
         arguments:
             $timezone: '%app.timezone%'
+
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class

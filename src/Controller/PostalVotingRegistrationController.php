@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Embeddable\Address;
 use App\Entity\PostalVotingRegistration;
 use App\Form\PostalVotingRegistrationType;
+use App\Message\SendEmailConfirmation;
 use App\Services\PDFGenerator\BallotPaperGenerator;
 use Doctrine\ORM\EntityManagerInterface;
 use InvalidArgumentException;
@@ -52,6 +53,8 @@ class PostalVotingRegistrationController extends AbstractController
                 $entityManager->persist($new_registration);
 
                 $entityManager->flush();
+                $this->dispatchMessage(new SendEmailConfirmation($new_registration));
+
                 $this->addFlash('success', 'flash.saved_successfully');
 
                 return $this->redirectToRoute('homepage');
@@ -110,6 +113,18 @@ class PostalVotingRegistrationController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_REGISTRATION_COUNT');
 
+        $this->addFlash('error', 'Not implemented yet!');
+
+        return $this->render('homepage.html.twig');
+    }
+
+    /**
+     * @Route("/{id}/confirm", name="postal_voting_confirm")
+     * @param  PostalVotingRegistration  $registration
+     * @return Response
+     */
+    public function confirm(PostalVotingRegistration $registration): Response
+    {
         $this->addFlash('error', 'Not implemented yet!');
 
         return $this->render('homepage.html.twig');

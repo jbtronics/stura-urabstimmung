@@ -209,6 +209,12 @@
     "lcobucci/jwt": {
         "version": "3.4.5"
     },
+    "league/html-to-markdown": {
+        "version": "5.0.0"
+    },
+    "lorenzo/pinky": {
+        "version": "1.0.5"
+    },
     "monolog/monolog": {
         "version": "2.2.0"
     },
@@ -378,6 +384,9 @@
             "./phpcs.xml.dist"
         ]
     },
+    "symfony/amqp-messenger": {
+        "version": "v5.2.4"
+    },
     "symfony/asset": {
         "version": "v5.2.4"
     },
@@ -431,6 +440,9 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v5.2.6"
+    },
+    "symfony/doctrine-messenger": {
+        "version": "v5.2.5"
     },
     "symfony/dom-crawler": {
         "version": "v5.2.4"
@@ -539,6 +551,18 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/messenger": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "e9a414b113ceadbf4e52abe37bf8f1b443f06ccb"
+        },
+        "files": [
+            "./config/packages/messenger.yaml"
+        ]
+    },
     "symfony/mime": {
         "version": "v5.2.6"
     },
@@ -637,6 +661,9 @@
     },
     "symfony/rate-limiter": {
         "version": "v5.2.6"
+    },
+    "symfony/redis-messenger": {
+        "version": "v5.2.4"
     },
     "symfony/routing": {
         "version": "5.1",
@@ -827,6 +854,9 @@
         "version": "v3.3.0"
     },
     "twig/extra-bundle": {
+        "version": "v3.3.0"
+    },
+    "twig/inky-extra": {
         "version": "v3.3.0"
     },
     "twig/intl-extra": {
