@@ -1212,5 +1212,23 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Hier kannst du die Abstimmung per Brief beantragen. Gib dazu unten die geforderten Daten ein und klicke auf Absenden. Du erhälst dann eine Bestätigungs-E-Mail, in der du deinen Antrag bestätigen musst, und noch mal die Gelegenheit hast deine Daten auf Korrektheit zu überprüfen. Wenn dein Antrag bestätigt wurde, wird dieser von der Urabstimmungskommission geprüft, und du erhälst einige Tage später deine Wahlunterlagen.</target>
       </segment>
     </unit>
+    <unit id="wLjXTAD" name="registration.verified">
+      <segment>
+        <source>registration.verified</source>
+        <target>Angaben und Wahlberechtigung überprüft</target>
+      </segment>
+    </unit>
+    <unit id="G6NF4YO" name="registration.language">
+      <segment>
+        <source>registration.language</source>
+        <target>Sprache für Abstimmungsunterlagen</target>
+      </segment>
+    </unit>
+    <unit id="6Qtsdlq" name="registration.language.help">
+      <segment>
+        <source>registration.language.help</source>
+        <target>Bitte beachte, dass der Abstimmungstext auf dem Abstimmungstext immer auf Deutsch ist. Eine übersetzt Version findet sich in den Informationen.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

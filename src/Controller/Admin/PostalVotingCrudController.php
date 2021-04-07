@@ -13,11 +13,14 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CountryField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\LanguageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Intl\Languages;
 
 
 class PostalVotingCrudController extends AbstractCrudController
@@ -96,6 +99,11 @@ class PostalVotingCrudController extends AbstractCrudController
             TextField::new('secret', 'registration.secret')
                 ->setFormTypeOption('disabled', true)
                 ->setPermission('ROLE_REGISTRATION_SECRET'),
+            ChoiceField::new('language', 'registration.language')
+                ->setChoices([
+                    Languages::getName('de') => 'de',
+                    Languages::getName('en') => 'en'
+                ])->hideOnIndex(),
             BooleanField::new('voting_kit_requested', 'registration.voting_kit_requested')->hideOnIndex(),
 
             FormField::addPanel('registration.new.shipping'),
@@ -109,6 +117,7 @@ class PostalVotingCrudController extends AbstractCrudController
             DateTimeField::new('creation_date', 'creation_date')->hideOnForm(),
             DateTimeField::new('last_modified', 'last_modified')->onlyOnDetail(),
             DateTimeField::new('confirmation_date', 'registration.confirmation_date')->onlyOnDetail(),
+            BooleanField::new('verified', 'registration.verified')->hideOnDetail(),
             BooleanField::new('printed', 'registration.printed')->hideOnIndex(),
             BooleanField::new('counted', 'registration.counted')->hideOnIndex(),
         ];

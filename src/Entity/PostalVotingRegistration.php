@@ -80,6 +80,13 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
     private $voting_kit_requested = true;
 
     /**
+     * @var string The language all voting documents should be in
+     * @ORM\Column(type="string")
+     * @Assert\Choice({"de", "en"})
+     */
+    private $language = 'de';
+
+    /**
      * @var string The secret string used to verify the identity of the voter later
      * @ORM\Column(type="string")
      */
@@ -96,6 +103,12 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $confirmation_date = null;
+
+    /**
+     * @var bool If the data in this postal voting registration were already verified
+     * @ORM\Column(type="boolean")
+     */
+    private $verified = false;
 
     /**
      * @var bool True if the ballot paper was printed yet.
@@ -235,6 +248,29 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
     /**
      * @return string
      */
+    public function getLanguage(): string
+    {
+        if (empty($this->language)) {
+            return 'de';
+        }
+        return $this->language;
+    }
+
+    /**
+     * @param  string  $language
+     * @return PostalVotingRegistration
+     */
+    public function setLanguage(string $language): PostalVotingRegistration
+    {
+        $this->language = $language;
+        return $this;
+    }
+
+
+
+    /**
+     * @return string
+     */
     public function getSecret(): string
     {
         return $this->secret;
@@ -326,6 +362,25 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
         $this->counted = $counted;
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function isVerified(): bool
+    {
+        return $this->verified;
+    }
+
+    /**
+     * @param  bool  $verified
+     * @return PostalVotingRegistration
+     */
+    public function setVerified(bool $verified): PostalVotingRegistration
+    {
+        $this->verified = $verified;
+        return $this;
+    }
+
 
 
 }

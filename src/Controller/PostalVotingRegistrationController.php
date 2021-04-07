@@ -33,6 +33,7 @@ class PostalVotingRegistrationController extends AbstractController
         $limiter = $registrationSubmitLimiter->create($request->getClientIp());
 
         $new_registration = new PostalVotingRegistration();
+        $new_registration->setLanguage($request->getLocale());
 
         $form = $this->createForm(PostalVotingRegistrationType::class, $new_registration);
 

@@ -6,10 +6,12 @@ namespace App\Form;
 use App\Entity\PostalVotingRegistration;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Intl\Languages;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class PostalVotingRegistrationType extends AbstractType
@@ -32,6 +34,16 @@ class PostalVotingRegistrationType extends AbstractType
         $builder->add('address', AddressType::class, [
             'label' => false
         ]);
+
+        $builder->add('language', ChoiceType::class, [
+            'label' => 'registration.language',
+            'help' => 'registration.language.help',
+            'choices' => [
+                Languages::getName('de') => 'de',
+                Languages::getName('en') => 'en'
+            ],
+        ]);
+
         $builder->add('voting_kit_requested', CheckboxType::class, [
             'label' => 'registration.voting_kit_requested',
             'required' => false,
