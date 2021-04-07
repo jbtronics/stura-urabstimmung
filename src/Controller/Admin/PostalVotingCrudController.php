@@ -4,13 +4,13 @@
 namespace App\Controller\Admin;
 
 
-use App\Entity\Embeddable\Address;
-use App\Entity\PaymentOrder;
 use App\Entity\PostalVotingRegistration;
+use App\Message\SendEmailConfirmation;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CountryField;
@@ -50,6 +50,9 @@ class PostalVotingCrudController extends AbstractCrudController
 
         if ($this->isGranted('ROLE_REGISTRATION_PRINT')) {
             $ballotPaper = Action::new('ballotPaper', 'registration.generate_ballot_paper')
+                ->displayIf(function (PostalVotingRegistration $registration) {
+                    return $registration->isConfirmed();
+                })
                 ->linkToRoute('postal_voting_ballot_paper', function (PostalVotingRegistration $registration): array {
                     return [
                         'id' => $registration->getId()->toRfc4122()
@@ -59,7 +62,26 @@ class PostalVotingCrudController extends AbstractCrudController
             $actions->add('detail', $ballotPaper);
         }
 
+        if ($this->isGranted('ROLE_REGISTRATION_EDIT')) {
+            $sendConfirmationEmail = Action::new('sendConfirmationEmail', 'registration.send_confirmation_email')
+                ->displayIf(function (PostalVotingRegistration $registration) {
+                    return !$registration->isConfirmed();
+                })
+                ->linkToCrudAction('sendConfirmationEmail');
+
+            $actions->add('detail', $sendConfirmationEmail);
+        }
+
         return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
+    }
+
+    public function sendConfirmationEmail(AdminContext $context)
+    {
+        $registration = $context->getEntity()->getInstance();
+        $this->dispatchMessage(new SendEmailConfirmation($registration));
+        $this->addFlash('success', 'registration.send_confirmation_email.success');
+
+        return $this->redirect($context->getReferrer());
     }
 
     public function configureFields(string $pageName): iterable

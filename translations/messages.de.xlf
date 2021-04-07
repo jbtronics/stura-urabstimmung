@@ -1188,5 +1188,17 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Auf dieser Seite kannst du einen Antrag auf Abstimmung per Brief für die Urabstimmung über das DB- und VMT-Semesterticket stellen.</target>
       </segment>
     </unit>
+    <unit id="Dojvh9L" name="registration.send_confirmation_email">
+      <segment>
+        <source>registration.send_confirmation_email</source>
+        <target>Bestätigungsemail erneut senden</target>
+      </segment>
+    </unit>
+    <unit id="0d.tDvB" name="registration.send_confirmation_email.success">
+      <segment>
+        <source>registration.send_confirmation_email.success</source>
+        <target>Die Bestätigungsemail wurde erfolgreich versandt.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
