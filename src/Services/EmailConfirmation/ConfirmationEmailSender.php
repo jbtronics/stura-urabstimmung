@@ -24,6 +24,7 @@ use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use InvalidArgumentException;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
@@ -89,7 +90,10 @@ class ConfirmationEmailSender
 
         $email->subject(
             $this->translator->trans(
-                'registration.confirmation_email.subject'
+                'registration.confirmation_email.subject',
+                [],
+                null,
+                $registration->getLanguage(),
             )
         );
 

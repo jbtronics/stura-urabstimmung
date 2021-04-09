@@ -2,30 +2,32 @@
 
 {# @var registration \App\Entity\PostalVotingRegistration #}
 
+{% set locale = registration.language %}
+
 {% block content %}
     <row>
         <columns>
-            <h4>{% trans %}registration.confirmation_mail.title{% endtrans %}</h4>
+            <h4>{% trans into locale %}registration.confirmation_mail.title{% endtrans %}</h4>
             <br>
-            <p>{% trans with {'%support_email%': 'urabstimmung@stura.uni-jena.de'} %}registration.confirmation_mail.info{% endtrans %}</p>
+            <p>{% trans with {'%support_email%': 'urabstimmung@stura.uni-jena.de'} into locale %}registration.confirmation_mail.info{% endtrans %}</p>
 
             <callout class="secondary">
                 <row>
                     <columns>
                         <p>
-                            <b>{% trans %}registration.full_name{% endtrans %}: </b> {{ registration.fullName }}
+                            <b>{% trans into locale %}registration.full_name{% endtrans %}: </b> {{ registration.fullName }}
                         </p>
                         <p>
-                            <b>{% trans %}registration.email{% endtrans %}: </b> {{ registration.email }}
+                            <b>{% trans into locale %}registration.email{% endtrans %}: </b> {{ registration.email }}
                         </p>
                         <p>
-                            <b>{% trans %}registration.student_number{% endtrans %}: </b> {{ registration.studentNumber }}
+                            <b>{% trans into locale %}registration.student_number{% endtrans %}: </b> {{ registration.studentNumber }}
                         </p>
                         <p>
-                            <b>{% trans %}registration.voting_kit_requested{% endtrans %}: </b> {{ (registration.votingKitRequested ? 'Yes' : 'No') | trans }}
+                            <b>{% trans into locale %}registration.voting_kit_requested{% endtrans %}: </b> {{ (registration.votingKitRequested ? 'Yes' : 'No') | trans }}
                         </p>
                         <p>
-                            <b>{% trans %}registration.address{% endtrans %}: </b> <br> {{ registration.address.formatMultiline(registration.fullName) | nl2br }}
+                            <b>{% trans into locale %}registration.address{% endtrans %}: </b> <br> {{ registration.address.formatMultiline(registration.fullName) | nl2br }}
                         </p>
                     </columns>
                 </row>
@@ -33,24 +35,25 @@
 
             {% set url =  url('postal_voting_confirm', {
                 'id': registration.id.toRfc4122,
-                'token': token
+                'token': token,
+                '_locale': locale
             }) %}
 
-            <p>{% trans with {'%support_email%': 'urabstimmung@stura.uni-jena.de', '%url%': url } %}registration.confirmation_email.confirm_hint{% endtrans %}</p>
+            <p>{% trans with {'%support_email%': 'urabstimmung@stura.uni-jena.de', '%url%': url } into locale %}registration.confirmation_email.confirm_hint{% endtrans %}</p>
 
 
-            <button class="large expand" href="{{ url }}">{% trans %}registration.confirmation_email.button{% endtrans %}</button>
-            <small>{% trans with {'%url%': url} %}registration.confirmation_email.manual_link{% endtrans %}</small>
+            <button class="large expand" href="{{ url }}">{% trans into locale %}registration.confirmation_email.button{% endtrans %}</button>
+            <small>{% trans with {'%url%': url} into locale %}registration.confirmation_email.manual_link{% endtrans %}</small>
 
             <br><br>
 
-            <p>{% trans with {'%support_email%': 'urabstimmung@stura.uni-jena.de' } %}registration.confirmation_mail.why{% endtrans %}</p>
+            <p>{% trans with {'%support_email%': 'urabstimmung@stura.uni-jena.de' } into locale %}registration.confirmation_mail.why{% endtrans %}</p>
         </columns>
     </row>
 
     <row>
         <columns>
-            <p><small>{% trans %}registration.mail.id_hint{% endtrans %} {{ registration.id.toRfc4122 }}</small></p>
+            <p><small>{% trans into locale %}registration.mail.id_hint{% endtrans %} {{ registration.id.toRfc4122 }}</small></p>
         </columns>
     </row>
 

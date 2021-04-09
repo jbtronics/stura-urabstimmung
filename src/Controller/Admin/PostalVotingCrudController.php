@@ -117,7 +117,7 @@ class PostalVotingCrudController extends AbstractCrudController
             DateTimeField::new('creation_date', 'creation_date')->hideOnForm(),
             DateTimeField::new('last_modified', 'last_modified')->onlyOnDetail(),
             DateTimeField::new('confirmation_date', 'registration.confirmation_date')->onlyOnDetail(),
-            BooleanField::new('verified', 'registration.verified')->hideOnDetail(),
+            BooleanField::new('verified', 'registration.verified')->hideOnIndex(),
             BooleanField::new('printed', 'registration.printed')->hideOnIndex(),
             BooleanField::new('counted', 'registration.counted')->hideOnIndex(),
         ];
