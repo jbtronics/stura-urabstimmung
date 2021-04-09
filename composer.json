@@ -5,9 +5,10 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.3",
+        "ext-bcmath": "*",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "ext-bcmath": "*",
+        "amphp/http-client": "^4.5",
         "barbieswimcrew/zip-code-validator": "^1.3",
         "components/jquery": "^3.5",
         "composer/package-versions-deprecated": "1.11.99.1",
