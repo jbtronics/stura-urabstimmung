@@ -7,5 +7,6 @@
         <hr class="my-4">
         <p>{% trans with { '%support_email%': support_email} %}homepage.support{% endtrans %}</p>
         <a class="btn btn-primary btn-lg" href="{{ path("postal_voting_register") }}" role="button">{% trans %}registration.register{% endtrans %}</a>
+        <a class="btn btn-secondary btn-lg" href="{{ path("info") }}" role="button">{% trans %}info.long{% endtrans %}</a>
     </div>
 {% endblock %}

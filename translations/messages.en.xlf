@@ -199,296 +199,305 @@
         <target>Admin area</target>
       </segment>
     </unit>
-
-
-       <unit id="Rc1M3PN" name="mail.footer.email_sent_by">
-          <segment>
-            <source>mail.footer.email_sent_by</source>
-            <target>This email was automatically created by </target>
-          </segment>
-        </unit>
-        <unit id="DRl6loh" name="homepage.welcome">
-          <segment>
-            <source>homepage.welcome</source>
-            <target>Voting portal of the student council of the Friedrich Schiller University Jena</target>
-          </segment>
-        </unit>
-        <unit id="0AmiUaU" name="dashboard.menu.github">
-          <segment>
-            <source>dashboard.menu.github</source>
-            <target>Sourcecode</target>
-          </segment>
-        </unit>
-        <unit id="YA5xZMy" name="flash.info">
-          <segment>
-            <source>flash.info</source>
-            <target>Info</target>
-          </segment>
-        </unit>
-        <unit id="haOas0X" name="Yes">
-          <segment>
-            <source>Yes</source>
-            <target>Yes</target>
-          </segment>
-        </unit>
-        <unit id="HqRCoTS" name="No">
-          <segment>
-            <source>No</source>
-            <target>No</target>
-          </segment>
-        </unit>
-        <unit id="344zp4s" name="registration.new">
-          <segment>
-            <source>registration.new</source>
-            <target>Request for voting by letter</target>
-          </segment>
-        </unit>
-        <unit id="SkqZZZ8" name="registration.new.general">
-          <segment>
-            <source>registration.new.general</source>
-            <target>General</target>
-          </segment>
-        </unit>
-        <unit id="1QRa7Rq" name="registration.first_name">
-          <segment>
-            <source>registration.first_name</source>
-            <target>First name</target>
-          </segment>
-        </unit>
-        <unit id="9Sliakr" name="registration.last_name">
-          <segment>
-            <source>registration.last_name</source>
-            <target>Last name</target>
-          </segment>
-        </unit>
-        <unit id="8xu4JEZ" name="registration.email">
-          <segment>
-            <source>registration.email</source>
-            <target>E-Mail</target>
-          </segment>
-        </unit>
-        <unit id="4VM9LSA" name="registration.student_number">
-          <segment>
-            <source>registration.student_number</source>
-            <target>Student number</target>
-          </segment>
-        </unit>
-        <unit id="oq6vVPQ" name="registration.voting_kit_requested">
-          <segment>
-            <source>registration.voting_kit_requested</source>
-            <target>Ballot paper and envelopes must be sent</target>
-          </segment>
-        </unit>
-        <unit id="ndO0rUK" name="registration.new.shipping">
-          <segment>
-            <source>registration.new.shipping</source>
-            <target>Address</target>
-          </segment>
-        </unit>
-        <unit id="UBhYsS3" name="address.street_and_number">
-          <segment>
-            <source>address.street_and_number</source>
-            <target>Street and number</target>
-          </segment>
-        </unit>
-        <unit id="LK708fD" name="address.address_addition">
-          <segment>
-            <source>address.address_addition</source>
-            <target>Address addition</target>
-          </segment>
-        </unit>
-        <unit id="qb3hRYV" name="address.postal_code">
-          <segment>
-            <source>address.postal_code</source>
-            <target>Postal Code</target>
-          </segment>
-        </unit>
-        <unit id="dTJ7GaX" name="address.city">
-          <segment>
-            <source>address.city</source>
-            <target>City</target>
-          </segment>
-        </unit>
-        <unit id="7xUAK.3" name="address.country">
-          <segment>
-            <source>address.country</source>
-            <target>Country</target>
-          </segment>
-        </unit>
-        <unit id=".BesFJ." name="registration.id">
-          <segment>
-            <source>registration.id</source>
-            <target>ID</target>
-          </segment>
-        </unit>
-
-        <unit id="WTh5IYp" name="Last Modified">
-          <segment>
-            <source>Last Modified</source>
-            <target>Last modified</target>
-          </segment>
-        </unit>
-        <unit id="v6355hE" name="registration.secret">
-          <segment>
-            <source>registration.secret</source>
-            <target>Secret</target>
-          </segment>
-        </unit>
-        <unit id="PiYKuj6" name="registration.register">
-          <segment>
-            <source>registration.register</source>
-            <target>Request postal vote</target>
-          </segment>
-        </unit>
-        <unit id="FTJO_KD" name="registration.confirmation_mail.title">
-          <segment>
-            <source>registration.confirmation_mail.title</source>
-            <target>Please confirm your request to vote by letter to proceed</target>
-          </segment>
-        </unit>
-        <unit id="vv2nPNv" name="registration.confirmation_email.subject">
-          <segment>
-            <source>registration.confirmation_email.subject</source>
-            <target>Confirm your request to vote by letter</target>
-          </segment>
-        </unit>
-        <unit id="37hC3df" name="registration.confirmation_mail.info">
-          <segment>
-            <source>registration.confirmation_mail.info</source>
-            <target>You have just submitted a request to vote by letter on the ballot. Please check the data below and then click the button to confirm. Please note that you will not be able to vote by letter without confirmation!</target>
-          </segment>
-        </unit>
-        <unit id="JcDioNr" name="registration.full_name">
-          <segment>
-            <source>registration.full_name</source>
-            <target>Name</target>
-          </segment>
-        </unit>
-        <unit id="gj9xb1P" name="registration.address">
-          <segment>
-            <source>registration.address</source>
-            <target>Address to which the absentee ballot documents will be sent</target>
-          </segment>
-        </unit>
-        <unit id="n50Osuv" name="registration.confirmation_email.confirm_hint">
-          <segment>
-            <source>registration.confirmation_email.confirm_hint</source>
-            <target><![CDATA[If you did not submit a request to vote by letter, or if the information below is incorrect, please contact <a href="mailto:%support_email%">%support_email%</a>. If the information is correct, click button below.]]></target>
-          </segment>
-        </unit>
-        <unit id="gSgYOMs" name="registration.confirmation_email.button">
-          <segment>
-            <source>registration.confirmation_email.button</source>
-            <target>The information is correct. I confirm the request for voting by letter.</target>
-          </segment>
-        </unit>
-        <unit id="5aTsqI_" name="registration.confirmation_mail.why">
-          <segment>
-            <source>registration.confirmation_mail.why</source>
-            <target>You are receiving this email because you requested a vote by mail for the ballot. If this was not the case, please contact %support_email% .</target>
-          </segment>
-        </unit>
-        <unit id="NI3tmnc" name="registration.mail.id_hint">
-          <segment>
-            <source>registration.mail.id_hint</source>
-            <target>Please provide the following code in case of any queries:</target>
-          </segment>
-        </unit>
-        <unit id=".KgGvtL" name="registration.confirmation_email.manual_link">
-          <segment>
-            <source>registration.confirmation_email.manual_link</source>
-            <target><![CDATA[If the button does not work, use the following link: <a href="%url%">%url%</a>.]]></target>
-          </segment>
-        </unit>
-        <unit id="h8vhq_r" name="flash.warning">
-          <segment>
-            <source>flash.warning</source>
-            <target>Warning</target>
-          </segment>
-        </unit>
-        <unit id="UZaCbig" name="registration.confirmation.already_confirmed">
-          <segment>
-            <source>registration.confirmation.already_confirmed</source>
-            <target>The request for voting by letter has already been confirmed.</target>
-          </segment>
-        </unit>
-        <unit id="sLIZ0t4" name="registration.jumbotron.success">
-          <segment>
-            <source>registration.jumbotron.success</source>
-            <target>Successfully confirmed</target>
-          </segment>
-        </unit>
-        <unit id="iWE.FSg" name="registration.jumbotron.hint">
-          <segment>
-            <source>registration.jumbotron.hint</source>
-            <target>Your application is now being reviewed and you will receive your absentee ballot documents in the next few days.</target>
-          </segment>
-        </unit>
-        <unit id="EehoTZ3" name="registration.jumbotron.close_window.hint">
-          <segment>
-            <source>registration.jumbotron.close_window.hint</source>
-            <target>You can close this window now.</target>
-          </segment>
-        </unit>
-        <unit id="8EnvtLD" name="registration.close_window">
-          <segment>
-            <source>registration.close_window</source>
-            <target>Close window</target>
-          </segment>
-        </unit>
-        <unit id="Xgeh0Rh" name="registration.confirmation.invalid_token">
-          <segment>
-            <source>registration.confirmation.invalid_token</source>
-            <target>Invalid token. Please check the link. If this problem persists, contact urabstimmung@stura.uni-jena.de.</target>
-          </segment>
-        </unit>
-        <unit id="WEd3iTG" name="registration.confirmation.success">
-          <segment>
-            <source>registration.confirmation.success</source>
-            <target>The application was successfully confirmed.</target>
-          </segment>
-        </unit>
-        <unit id="L7sLdsQ" name="navbar.title">
-          <segment>
-            <source>navbar.title</source>
-            <target>Ballot</target>
-          </segment>
-        </unit>
-        <unit id="6T_xFxC" name="homepage.support">
-          <segment>
-            <source>homepage.support</source>
-            <target><![CDATA[For questions or problems about the ballot or this website, contact the ballot committee at <a href="mailto:%support_email%">%support_email%</a>.]]></target>
-          </segment>
-        </unit>
-        <unit id="BX2cMD5" name="homepage.explaination">
-          <segment>
-            <source>homepage.explaination</source>
-            <target>On this page you can submit an application to vote by letter for the ballot on the DB and VMT semester ticket.</target>
-          </segment>
-        </unit>
-        <unit id="JTVqV61" name="registration.privacy_info">
-          <segment>
-            <source>registration.privacy_info</source>
-            <target>All data will only be collected for the purpose of conducting the ballot, and will be deleted after the ballot.</target>
-          </segment>
-        </unit>
-        <unit id="odKxO3a" name="registration.info">
-          <segment>
-            <source>registration.info</source>
-            <target>Here you can request the vote by letter. To do so, enter the required data below and click Submit. You will receive a confirmation e-mail in which you have to confirm your request and have the opportunity to double Once your application has been confirmed, it will be reviewed by the ballot committee and you will receive your election documents a few days later.</target>
-          </segment>
-        </unit>
-        <unit id="G6NF4YO" name="registration.language">
-          <segment>
-            <source>registration.language</source>
-            <target>Language for voting documents</target>
-          </segment>
-        </unit>
-        <unit id="6Qtsdlq" name="registration.language.help">
-          <segment>
-            <source>registration.language.help</source>
-            <target>Please note that the voting text on the voting text is always in German. A translated version can be found in the information.</target>
-          </segment>
-        </unit>
+    <unit id="Rc1M3PN" name="mail.footer.email_sent_by">
+      <segment>
+        <source>mail.footer.email_sent_by</source>
+        <target>This email was automatically created by </target>
+      </segment>
+    </unit>
+    <unit id="DRl6loh" name="homepage.welcome">
+      <segment>
+        <source>homepage.welcome</source>
+        <target>Voting portal of the student council of the Friedrich Schiller University Jena</target>
+      </segment>
+    </unit>
+    <unit id="0AmiUaU" name="dashboard.menu.github">
+      <segment>
+        <source>dashboard.menu.github</source>
+        <target>Sourcecode</target>
+      </segment>
+    </unit>
+    <unit id="YA5xZMy" name="flash.info">
+      <segment>
+        <source>flash.info</source>
+        <target>Info</target>
+      </segment>
+    </unit>
+    <unit id="haOas0X" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+    <unit id="HqRCoTS" name="No">
+      <segment>
+        <source>No</source>
+        <target>No</target>
+      </segment>
+    </unit>
+    <unit id="344zp4s" name="registration.new">
+      <segment>
+        <source>registration.new</source>
+        <target>Request for voting by letter</target>
+      </segment>
+    </unit>
+    <unit id="SkqZZZ8" name="registration.new.general">
+      <segment>
+        <source>registration.new.general</source>
+        <target>General</target>
+      </segment>
+    </unit>
+    <unit id="1QRa7Rq" name="registration.first_name">
+      <segment>
+        <source>registration.first_name</source>
+        <target>First name</target>
+      </segment>
+    </unit>
+    <unit id="9Sliakr" name="registration.last_name">
+      <segment>
+        <source>registration.last_name</source>
+        <target>Last name</target>
+      </segment>
+    </unit>
+    <unit id="8xu4JEZ" name="registration.email">
+      <segment>
+        <source>registration.email</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="4VM9LSA" name="registration.student_number">
+      <segment>
+        <source>registration.student_number</source>
+        <target>Student number</target>
+      </segment>
+    </unit>
+    <unit id="oq6vVPQ" name="registration.voting_kit_requested">
+      <segment>
+        <source>registration.voting_kit_requested</source>
+        <target>Ballot paper and envelopes must be sent</target>
+      </segment>
+    </unit>
+    <unit id="ndO0rUK" name="registration.new.shipping">
+      <segment>
+        <source>registration.new.shipping</source>
+        <target>Address</target>
+      </segment>
+    </unit>
+    <unit id="UBhYsS3" name="address.street_and_number">
+      <segment>
+        <source>address.street_and_number</source>
+        <target>Street and number</target>
+      </segment>
+    </unit>
+    <unit id="LK708fD" name="address.address_addition">
+      <segment>
+        <source>address.address_addition</source>
+        <target>Address addition</target>
+      </segment>
+    </unit>
+    <unit id="qb3hRYV" name="address.postal_code">
+      <segment>
+        <source>address.postal_code</source>
+        <target>Postal Code</target>
+      </segment>
+    </unit>
+    <unit id="dTJ7GaX" name="address.city">
+      <segment>
+        <source>address.city</source>
+        <target>City</target>
+      </segment>
+    </unit>
+    <unit id="7xUAK.3" name="address.country">
+      <segment>
+        <source>address.country</source>
+        <target>Country</target>
+      </segment>
+    </unit>
+    <unit id=".BesFJ." name="registration.id">
+      <segment>
+        <source>registration.id</source>
+        <target>ID</target>
+      </segment>
+    </unit>
+    <unit id="WTh5IYp" name="Last Modified">
+      <segment>
+        <source>Last Modified</source>
+        <target>Last modified</target>
+      </segment>
+    </unit>
+    <unit id="v6355hE" name="registration.secret">
+      <segment>
+        <source>registration.secret</source>
+        <target>Secret</target>
+      </segment>
+    </unit>
+    <unit id="PiYKuj6" name="registration.register">
+      <segment>
+        <source>registration.register</source>
+        <target>Request postal vote</target>
+      </segment>
+    </unit>
+    <unit id="FTJO_KD" name="registration.confirmation_mail.title">
+      <segment>
+        <source>registration.confirmation_mail.title</source>
+        <target>Please confirm your request to vote by letter to proceed</target>
+      </segment>
+    </unit>
+    <unit id="vv2nPNv" name="registration.confirmation_email.subject">
+      <segment>
+        <source>registration.confirmation_email.subject</source>
+        <target>Confirm your request to vote by letter</target>
+      </segment>
+    </unit>
+    <unit id="37hC3df" name="registration.confirmation_mail.info">
+      <segment>
+        <source>registration.confirmation_mail.info</source>
+        <target>You have just submitted a request to vote by letter on the ballot. Please check the data below and then click the button to confirm. Please note that you will not be able to vote by letter without confirmation!</target>
+      </segment>
+    </unit>
+    <unit id="JcDioNr" name="registration.full_name">
+      <segment>
+        <source>registration.full_name</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="gj9xb1P" name="registration.address">
+      <segment>
+        <source>registration.address</source>
+        <target>Address to which the absentee ballot documents will be sent</target>
+      </segment>
+    </unit>
+    <unit id="n50Osuv" name="registration.confirmation_email.confirm_hint">
+      <segment>
+        <source>registration.confirmation_email.confirm_hint</source>
+        <target><![CDATA[If you did not submit a request to vote by letter, or if the information below is incorrect, please contact <a href="mailto:%support_email%">%support_email%</a>. If the information is correct, click button below.]]></target>
+      </segment>
+    </unit>
+    <unit id="gSgYOMs" name="registration.confirmation_email.button">
+      <segment>
+        <source>registration.confirmation_email.button</source>
+        <target>The information is correct. I confirm the request for voting by letter.</target>
+      </segment>
+    </unit>
+    <unit id="5aTsqI_" name="registration.confirmation_mail.why">
+      <segment>
+        <source>registration.confirmation_mail.why</source>
+        <target>You are receiving this email because you requested a vote by mail for the ballot. If this was not the case, please contact %support_email% .</target>
+      </segment>
+    </unit>
+    <unit id="NI3tmnc" name="registration.mail.id_hint">
+      <segment>
+        <source>registration.mail.id_hint</source>
+        <target>Please provide the following code in case of any queries:</target>
+      </segment>
+    </unit>
+    <unit id=".KgGvtL" name="registration.confirmation_email.manual_link">
+      <segment>
+        <source>registration.confirmation_email.manual_link</source>
+        <target><![CDATA[If the button does not work, use the following link: <a href="%url%">%url%</a>.]]></target>
+      </segment>
+    </unit>
+    <unit id="h8vhq_r" name="flash.warning">
+      <segment>
+        <source>flash.warning</source>
+        <target>Warning</target>
+      </segment>
+    </unit>
+    <unit id="UZaCbig" name="registration.confirmation.already_confirmed">
+      <segment>
+        <source>registration.confirmation.already_confirmed</source>
+        <target>The request for voting by letter has already been confirmed.</target>
+      </segment>
+    </unit>
+    <unit id="sLIZ0t4" name="registration.jumbotron.success">
+      <segment>
+        <source>registration.jumbotron.success</source>
+        <target>Successfully confirmed</target>
+      </segment>
+    </unit>
+    <unit id="iWE.FSg" name="registration.jumbotron.hint">
+      <segment>
+        <source>registration.jumbotron.hint</source>
+        <target>Your application is now being reviewed and you will receive your absentee ballot documents in the next few days.</target>
+      </segment>
+    </unit>
+    <unit id="EehoTZ3" name="registration.jumbotron.close_window.hint">
+      <segment>
+        <source>registration.jumbotron.close_window.hint</source>
+        <target>You can close this window now.</target>
+      </segment>
+    </unit>
+    <unit id="8EnvtLD" name="registration.close_window">
+      <segment>
+        <source>registration.close_window</source>
+        <target>Close window</target>
+      </segment>
+    </unit>
+    <unit id="Xgeh0Rh" name="registration.confirmation.invalid_token">
+      <segment>
+        <source>registration.confirmation.invalid_token</source>
+        <target>Invalid token. Please check the link. If this problem persists, contact urabstimmung@stura.uni-jena.de.</target>
+      </segment>
+    </unit>
+    <unit id="WEd3iTG" name="registration.confirmation.success">
+      <segment>
+        <source>registration.confirmation.success</source>
+        <target>The application was successfully confirmed.</target>
+      </segment>
+    </unit>
+    <unit id="L7sLdsQ" name="navbar.title">
+      <segment>
+        <source>navbar.title</source>
+        <target>Ballot</target>
+      </segment>
+    </unit>
+    <unit id="6T_xFxC" name="homepage.support">
+      <segment>
+        <source>homepage.support</source>
+        <target><![CDATA[For questions or problems about the ballot or this website, contact the ballot committee at <a href="mailto:%support_email%">%support_email%</a>.]]></target>
+      </segment>
+    </unit>
+    <unit id="BX2cMD5" name="homepage.explaination">
+      <segment>
+        <source>homepage.explaination</source>
+        <target>On this page you can submit an application to vote by letter for the ballot on the DB and VMT semester ticket.</target>
+      </segment>
+    </unit>
+    <unit id="JTVqV61" name="registration.privacy_info">
+      <segment>
+        <source>registration.privacy_info</source>
+        <target>All data will only be collected for the purpose of conducting the ballot, and will be deleted after the ballot.</target>
+      </segment>
+    </unit>
+    <unit id="odKxO3a" name="registration.info">
+      <segment>
+        <source>registration.info</source>
+        <target>Here you can request the vote by letter. To do so, enter the required data below and click Submit. You will receive a confirmation e-mail in which you have to confirm your request and have the opportunity to double Once your application has been confirmed, it will be reviewed by the ballot committee and you will receive your election documents a few days later.</target>
+      </segment>
+    </unit>
+    <unit id="G6NF4YO" name="registration.language">
+      <segment>
+        <source>registration.language</source>
+        <target>Language for voting documents</target>
+      </segment>
+    </unit>
+    <unit id="6Qtsdlq" name="registration.language.help">
+      <segment>
+        <source>registration.language.help</source>
+        <target>Please note that the voting text on the voting text is always in German. A translated version can be found in the information.</target>
+      </segment>
+    </unit>
+    <unit id="nRxLMfR" name="info.navbar">
+      <segment>
+        <source>info.navbar</source>
+        <target>Informations</target>
+      </segment>
+    </unit>
+    <unit id="r8XulNL" name="info.long">
+      <segment>
+        <source>info.long</source>
+        <target>Informations about ballot</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

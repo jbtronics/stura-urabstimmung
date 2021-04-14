@@ -1230,5 +1230,17 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Bitte beachte, dass der Abstimmungstext auf dem Abstimmungstext immer auf Deutsch ist. Eine übersetzt Version findet sich in den Informationen.</target>
       </segment>
     </unit>
+    <unit id="nRxLMfR" name="info.navbar">
+      <segment>
+        <source>info.navbar</source>
+        <target>Informationen</target>
+      </segment>
+    </unit>
+    <unit id="r8XulNL" name="info.long">
+      <segment>
+        <source>info.long</source>
+        <target>Informationen zur Urabstimmung</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
