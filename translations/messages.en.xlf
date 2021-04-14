@@ -499,5 +499,17 @@
         <target>Informations about ballot</target>
       </segment>
     </unit>
+    <unit id="2Y7h5r0" name="registration.verification_checkbox">
+      <segment>
+        <source>registration.verification_checkbox</source>
+        <target>I confirm that I am an enrolled student and I wish to vote by mail.</target>
+      </segment>
+    </unit>
+    <unit id="dUkL17k" name="submit">
+      <segment>
+        <source>submit</source>
+        <target>Submit</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

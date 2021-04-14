@@ -44,9 +44,10 @@ class PostalVotingRegistrationType extends AbstractType
             ],
         ]);
 
-        $builder->add('voting_kit_requested', CheckboxType::class, [
-            'label' => 'registration.voting_kit_requested',
-            'required' => false,
+        $builder->add('verification_checkbox', CheckboxType::class, [
+            'label' => 'registration.verification_checkbox',
+            'required' => true,
+            'mapped' => false,
         ]);
 
         $builder->add('submit', SubmitType::class, [

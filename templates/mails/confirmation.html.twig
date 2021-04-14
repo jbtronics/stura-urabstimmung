@@ -24,9 +24,6 @@
                             <b>{% trans into locale %}registration.student_number{% endtrans %}: </b> {{ registration.studentNumber }}
                         </p>
                         <p>
-                            <b>{% trans into locale %}registration.voting_kit_requested{% endtrans %}: </b> {{ (registration.votingKitRequested ? 'Yes' : 'No') | trans }}
-                        </p>
-                        <p>
                             <b>{% trans into locale %}registration.address{% endtrans %}: </b> <br> {{ registration.address.formatMultiline(registration.fullName) | nl2br }}
                         </p>
                     </columns>

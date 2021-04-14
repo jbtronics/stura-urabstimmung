@@ -1242,5 +1242,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Informationen zur Urabstimmung</target>
       </segment>
     </unit>
+    <unit id="2Y7h5r0" name="registration.verification_checkbox">
+      <segment>
+        <source>registration.verification_checkbox</source>
+        <target>Ich bestätige dass ich eingeschriebener Studierender bin und ich per Brief abstimmen möchte.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
