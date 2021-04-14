@@ -32,4 +32,12 @@ class HomepageController extends AbstractController
     {
         return $this->render('homepage.html.twig');
     }
+
+    /**
+     * @Route("/info", name="info")
+     */
+    public function infoPage(): Response
+    {
+        return $this->render('info.de.html.twig');
+    }
 }

@@ -12,13 +12,15 @@
         <link rel="stylesheet" href="{{ asset('styles.css') }}">
 
         <link rel="stylesheet" href="{{ asset("assets/css/fa-all.css") }}">
+
+        <link rel="stylesheet" href="{{ asset('bootstrap-toc.min.css') }}" />
     {% endblock %}
 
     {% block head_javascripts %}
 
     {% endblock %}
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
 {% block body %}
 
     <header>
@@ -27,11 +29,13 @@
     </header>
 
     <main>
+        {% block main %}
         <div class="container" style="margin-top: 80px;">
             {% block content %}
 
             {% endblock %}
         </div>
+        {% endblock %}
     </main>
 
     {% include "_footer.html.twig" %}
@@ -41,17 +45,10 @@
     <script src="{{ asset("assets/js/jquery.slim.js") }}"></script>
     <script src="{{ asset("assets/js/bootstrap.js") }}"></script>
 
-    {# <script src="{{ asset("bs-custom-file-input.min.js") }}"></script>
-    <script src="{{ asset("configurable-date-input-polyfill.dist.js") }}"></script> #}
+    <script src="{{ asset('bootstrap-toc.min.js') }}"></script>
 
     <script>
         $('.toast').toast('show');
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            bsCustomFileInput.init()
-        });
     </script>
 {% endblock %}
 </body>
