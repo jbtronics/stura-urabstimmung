@@ -36,8 +36,12 @@ class HomepageController extends AbstractController
     /**
      * @Route("/info", name="info")
      */
-    public function infoPage(): Response
+    public function infoPage(Request $request): Response
     {
+        if($request->getLocale() === 'en') {
+            return $this->render('info.en.html.twig');
+        }
+
         return $this->render('info.de.html.twig');
     }
 }

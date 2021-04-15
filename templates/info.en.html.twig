@@ -1,0 +1,150 @@
+{% extends "info_content_page.html.twig" %}
+
+{% block inner_content %}
+   <h1>Information about the ballot</h1>
+   The student council has decided on 06.04.2021 to conduct a ballot.
+   In the ballot, all students are called to vote on whether the DB and VMT semester ticket should be continued with a price change, a modified price update, and an introduction as an e-ticket.
+
+
+   <h2 data-toc-skip>Announcement of the ballot</h2>
+   The official announcement of the ballot is posted at the StuRa premises. A digital version of the ballot announcement can be found <a target="_blank" href="{{ asset('files/Bekanntmachung.pdf') }}">here</a> (in German).
+
+   <h2>What will be voted on</h2>
+   Two different semester tickets will be voted on, each of which can be voted <i>yes</i> or <i>no</i>.
+   Please note that the VMT-Ticket requires the DB-Semesterticket, if the DB-Semesterticket is rejected, the VMT-Semesterticket is also cancelled.
+
+   <h3>DB (Deutsche Bahn) Semester Ticket</h3>
+   <div class="border-dark border p-2 bg-light">
+      <p class="text-center"><b>1. DB-Semesterticket</b></p>
+      <p class="text-center"><i>Please not that this is an translation and not the offical ballot text. The official text on the  ballot is in german.</i></p>
+      I agree to keep the "Semesterticket Thüringen" (DB regio-Ticket) under the following conditions:
+      <ul>
+         <li>The price of the "Semesterticket Thüringen "develops according to the published price table over the contract period of three years and</li>
+         <li>the e-ticket will be introduced as a travel authorization card and integrated into the Thoska and</li>
+         <li>the contract is extended beyond the tabulated three-year contract period for one year at a time with an annual price increase corresponding to the percentage development of the student monthly ticket + 0.5%.</li>
+      </ul>
+   </div><br>
+   <p>The price development to be voted on is as follows (an increase in the price of 2.50€ per year):</p>
+   <table class="table table-striped table-hover table-sm">
+      <thead>
+      <tr>
+         <th>Semester</th>
+         <th>Price per Semester</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+         <td>WiSe 21/22</td>
+         <td>66,00 €</td>
+      </tr>
+      <tr>
+         <td>SoSe 22 and WiSe 22/23</td>
+         <td>68,50 €</td>
+      </tr>
+      <tr>
+         <td>SoSe 23 and WiSe 23/24</td>
+         <td>71,00 €</td>
+      </tr>
+      <tr>
+         <td>SoSe 24</td>
+         <td>73,50 €</td>
+      </tr>
+      </tbody>
+   </table>
+   <br>
+
+   <h3>VMT semester ticket</h3>
+   <div class="border-dark border p-2 bg-light">
+      <p class="text-center"><b>2. Transport Association of Central Thuringia (VMT-Ticket)</b></p>
+      <p class="text-center"><i>Please not that this is an translation and not the offical ballot text. The official text on the  ballot is in german.</i></p>
+
+      I agree to the retention of the VMT-Semester Ticket module under the following conditions:
+      <ul>
+         <li>The price of the VMT-Semester Ticket will develop according to the published price table over the contract period of three years and this includes the one-time increase of the price base by 1,00€ due to the extension of the scope of application and</li>
+         <li>the e-ticket will be introduced as a travel authorization card and integrated into the Thoska and</li>
+         <li>the contract is extended beyond the tabulated three-year contract period for one year at a time with an annual price increase of 2.28%.</li>
+      </ul>
+   </div><br>
+
+   <p>The price development to be voted on is as follows:</p>
+   <table class="table table-striped table-hover table-sm">
+      <thead>
+      <tr>
+         <th>Semester</th>
+         <th>Price per Semester</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+         <td>Current price SuSe 2021</td>
+         <td>10,60 €</td>
+      </tr>
+      <tr>
+         <td>WiSe 21/22 and SuSe 2022</td>
+         <td>11,90 €</td>
+      </tr>
+      <tr>
+         <td>WiSe 22/23 and SuSe 2023</td>
+         <td>12,10 €</td>
+      </tr>
+      <tr>
+         <td>WiSe 23/24 and SuSe 2024</td>
+         <td>12,40 €</td>
+      </tr>
+      </tbody>
+   </table>
+
+   <h2>Procedure of the ballot</h2>
+   In the past, ballots have usually been conducted as a straight ballot.
+   Due to this year's Corona situation, the Student Council has decided to allow the option of voting by mail.
+   <br>
+   If at least 10% of the students participate in the vote, it is binding on the student body. If not enough students participate in the vote, there is no binding student recommendation. At worst, this means that there will no longer be a semester ticket (for the train), even if most students want it.
+   <h3>Voting by letter</h3>
+   Until April 25, 2021, you can <a href="{{ path("postal_voting_register") }}">apply for a postal vote here</a>. To do so, enter your name, email address, and the address to which you want to receive voting materials in the form and submit it.
+   You will then receive an e-mail in which you can check your data again and confirm your registration. You will then receive all the necessary documents for the election by mail a few days later. With this, you can vote and return the ballot free of charge.
+   <h3>Ballot box voting</h3>
+   Voting booths will be available at the dates and locations listed. All students can vote there with their thoska. If you have lost your thoska, a photo ID and mention of your matriculation number will also entitle you to vote.
+   <br>
+   Due to the Corona situation, there will be a hygiene concept that is being worked out at the moment. More detailed information will be announced here before the ballot.
+
+   <h2>Dates of the ballot</h2>
+   Please submit a request to vote by mail by <b>April 25, 2021</b> <a href="{{ url('postal_voting_register') }}">here</a>.<br>
+   From <b>April 26, 2021</b> to <b>May 7</b>, inclusive (postmark counts here), the postal voting period will run, during which the ballot can be returned by mail.<br><br>
+
+   The ballot will be held at Carl-Zeiss-Strasse 3 at the following times:
+   <table>
+      <tr>
+         <td><b>Monday 10.05.21</b></td>
+         <td>13 - 17 h</td>
+      </tr>
+      <tr>
+         <td><b>Monday 12.05.21</b></td>
+         <td>10 - 14 h</td>
+      </tr>
+      <tr>
+         <td><b>Wednesday 12.05.21</b></td>
+         <td>09 - 14 h</td>
+      </tr>
+   </table>
+
+   <br>
+   The public vote count will be held on May 12, 2021 at 6:00 p.m. in Room 275 (WiWi Faculty Meeting Room) at Carl-Zeiss-Strasse 3.
+
+   <h2>Which semester tickets are available so far?</h2>
+   <h4>VMT ticket:</h4>
+   The VMT ticket allows you to use all means of transport (buses and streetcars) in the VMT area between Gotha and Gera, except those of the Jena local transport and railroad companies.
+
+   <h4>JNV-Ticket:</h4>
+   With the JNV ticket, all buses and streetcars of the Jena local transport can be used. In addition, the Anruf-Sammel-Taxen (AST) are already included in the price.
+
+   <h4>Deutsche Bahn ticket (DB-Ticket):</h4>
+   With the DB-Ticket, all students in Thuringia can travel on local trains to the last stop in Thuringia. It is also possible to combine the ticket with other state tickets. The ticket is not valid on the routes Eisenach - Gerstungen (Cantus), Obstfelderschmiede - Cursdorf (Oberweißbacher Berg- und Schwarzatalbahn) and Nordhausen - Eisfelder Talmühle (Harzer Schmalspurbahnen).
+
+   <h2>Further information</h2>
+   For more information about the semester ticket and the related negotiations with the railroad companies, please see the following <a target="_blank" href="{{ asset('files/Info_en.pdf') }}">flyer from the Conference of Thuringian Student Bodies (KTS)</a>.
+
+   <h2>Contact</h2>
+   If you have any questions about the ballot process, the semester ticket, or other topics related to the ballot, please feel free to contact the
+   Ballot Committee at <a href="mailto:urabstimmung@stura.uni-jena.de">urabstimmung@stura.uni-jena.de</a>.
+
+{% endblock %}
