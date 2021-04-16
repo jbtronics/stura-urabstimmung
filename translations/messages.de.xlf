@@ -1248,5 +1248,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Ich bestätige dass ich eingeschriebener Studierender bin und ich per Brief abstimmen möchte.</target>
       </segment>
     </unit>
+    <unit id="B.ZozIs" name="registration.confirmed">
+      <segment>
+        <source>registration.confirmed</source>
+        <target>Registrierung per Mail bestätigt</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

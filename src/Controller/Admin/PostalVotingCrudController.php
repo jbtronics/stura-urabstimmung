@@ -4,12 +4,14 @@
 namespace App\Controller\Admin;
 
 
+use App\Admin\Filter\ConfirmedFilter;
 use App\Entity\PostalVotingRegistration;
 use App\Message\SendEmailConfirmation;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -20,6 +22,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\LanguageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Filter\BooleanFilter;
+use EasyCorp\Bundle\EasyAdminBundle\Filter\ChoiceFilter;
+use EasyCorp\Bundle\EasyAdminBundle\Filter\DateTimeFilter;
+use EasyCorp\Bundle\EasyAdminBundle\Filter\TextFilter;
 use Symfony\Component\Intl\Languages;
 
 
@@ -36,7 +42,7 @@ class PostalVotingCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('registration.label')
             ->setEntityLabelInPlural('registration.labelp')
-            ->setSearchFields(['id','email', 'student_number', 'first_name', 'last_name']);
+            ->setSearchFields(['id','email', 'student_number', 'first_name', 'last_name', 'address.city', 'address.postal_code']);
     }
 
     public function configureActions(Actions $actions): Actions
@@ -123,6 +129,20 @@ class PostalVotingCrudController extends AbstractCrudController
             BooleanField::new('printed', 'registration.printed')->hideOnIndex(),
             BooleanField::new('counted', 'registration.counted')->hideOnIndex(),
         ];
+    }
+
+    public function configureFilters(Filters $filters): Filters
+    {
+        return $filters
+            ->add(TextFilter::new('id', 'registration.id'))
+            ->add(ConfirmedFilter::new('confirmed', 'registration.confirmed'))
+            ->add(BooleanFilter::new('verified', 'registration.verified'))
+            ->add(BooleanFilter::new('printed', 'registration.printed'))
+            ->add(BooleanFilter::new('counted', 'registration.counted'))
+            ->add(ChoiceFilter::new('language', 'registration.language')->setChoices(['de', 'en']))
+            ->add(DateTimeFilter::new('creation_date', 'creation_date'))
+            ->add(DateTimeFilter::new('last_modified', 'last_modified'))
+            ;
     }
 
     public function deleteEntity(EntityManagerInterface $entityManager, $entityInstance): void
