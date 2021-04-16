@@ -79,6 +79,7 @@ class PostalVotingCrudController extends AbstractCrudController
                 ->linkToCrudAction('sendConfirmationEmail');
 
             $actions->add('detail', $sendConfirmationEmail);
+            $actions->add('edit', $sendConfirmationEmail);
         }
 
         return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
