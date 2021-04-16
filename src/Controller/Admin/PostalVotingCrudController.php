@@ -108,7 +108,9 @@ class PostalVotingCrudController extends AbstractCrudController
 
             FormField::addPanel('registration.new.shipping'),
             TextField::new('address.street_and_number', 'address.street_and_number')->hideOnIndex(),
-            TextField::new('address.address_addition', 'address.address_addition')->hideOnIndex(),
+            TextField::new('address.address_addition', 'address.address_addition')
+                ->setRequired(false)
+                ->hideOnIndex(),
             TextField::new('address.postal_code', 'address.postal_code')->hideOnIndex(),
             TextField::new('address.city', 'address.city')->hideOnIndex(),
             CountryField::new('address.country', 'address.country')->hideOnIndex(),
