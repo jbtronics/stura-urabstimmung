@@ -7,7 +7,7 @@ parameters:
     router.request_context.host: 'urabstimmung.stura.uni-jena.de'
     router.request_context.scheme: 'https'
 
-    app.version: '1.0.0'
+    app.version: '1.1.0'
     app.timezone: 'Europe/Berlin'
     app.support_email: '%env(SUPPORT_EMAIL)%'
     app.mail.from_email: '%env(FROM_EMAIL)%'
