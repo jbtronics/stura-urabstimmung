@@ -1254,5 +1254,41 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Registrierung per Mail bestätigt</target>
       </segment>
     </unit>
+    <unit id="UH20cVa" name="registration.menu.all">
+      <segment>
+        <source>registration.menu.all</source>
+        <target>Alle</target>
+      </segment>
+    </unit>
+    <unit id="KGFXiAH" name="registration.menu.verification_required">
+      <segment>
+        <source>registration.menu.verification_required</source>
+        <target>Wahlberechtigung überprüfen</target>
+      </segment>
+    </unit>
+    <unit id="E6vK419" name="registration.menu.printing_required">
+      <segment>
+        <source>registration.menu.printing_required</source>
+        <target>Wahlschein drucken</target>
+      </segment>
+    </unit>
+    <unit id="XqxFmKS" name="registration.menu.unconfirmed">
+      <segment>
+        <source>registration.menu.unconfirmed</source>
+        <target>Unbestätigt</target>
+      </segment>
+    </unit>
+    <unit id="BkNRXLc" name="registration.menu.count_required">
+      <segment>
+        <source>registration.menu.count_required</source>
+        <target>Verschickt</target>
+      </segment>
+    </unit>
+    <unit id="GljVSDp" name="registration.menu.counted">
+      <segment>
+        <source>registration.menu.counted</source>
+        <target>Gezählt</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

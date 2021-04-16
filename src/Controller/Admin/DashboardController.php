@@ -67,10 +67,75 @@ class DashboardController extends AbstractDashboardController
         return $this->render('admin/dashboard.html.twig');
     }
 
+    private function addFiltersToMenuItem(CrudMenuItem $menuItem, array $filters): CrudMenuItem
+    {
+        //Set referrer or we encounter errrors... (not needed in JB custom version))
+
+        //$referrer = $this->crud_url_generator->build()->currentPageReferrer;
+        //$menuItem->setQueryParameter('referrer', $referrer);
+
+        foreach ($filters as $filter => $value) {
+            if (is_array($value)) {
+                foreach ($value as $subfilter => $subvalue) {
+                    $menuItem->setQueryParameter('filters['.$filter.']['.$subfilter.']', $subvalue);
+                }
+            } else {
+                $menuItem->setQueryParameter('filters['.$filter.']', $value);
+            }
+        }
+
+        $menuItem->setQueryParameter('crudAction', 'index');
+
+        return $menuItem;
+    }
+
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToCrud('registration.labelp', 'fas fa-vote-yea', PostalVotingRegistration::class)
-            ->setPermission('ROLE_REGISTRATION_VIEW');
+
+        yield MenuItem::subMenu('registration.labelp', 'fas fa-vote-yea')
+            ->setPermission('ROLE_REGISTRATION_VIEW')
+            ->setSubItems([
+                $this->addFiltersToMenuItem(
+                    MenuItem::linkToCrud('registration.menu.verification_required', '', PostalVotingRegistration::class),
+                    [
+                        'confirmed' => 1,
+                        'verified' => 0,
+                    ]
+                ),
+                $this->addFiltersToMenuItem(
+                    MenuItem::linkToCrud('registration.menu.printing_required', '', PostalVotingRegistration::class),
+                    [
+                        'confirmed' => 1,
+                        'verified' => 1,
+                        'printed' => 0,
+                    ]
+                ),
+                $this->addFiltersToMenuItem(
+                    MenuItem::linkToCrud('registration.menu.count_required', '', PostalVotingRegistration::class),
+                    [
+                        'confirmed' => 1,
+                        'verified' => 1,
+                        'printed' => 1,
+                    ]
+                ),
+                $this->addFiltersToMenuItem(
+                    MenuItem::linkToCrud('registration.menu.counted', '', PostalVotingRegistration::class),
+                    [
+                        'confirmed' => 1,
+                        'verified' => 1,
+                        'counted' => 1,
+                    ]
+                ),
+                $this->addFiltersToMenuItem(
+                    MenuItem::linkToCrud('registration.menu.unconfirmed', '', PostalVotingRegistration::class),
+                    [
+                        'confirmed' => 0
+                    ]
+                ),
+
+
+                MenuItem::linkToCrud('registration.menu.all', '', PostalVotingRegistration::class)
+            ]);
 
         yield MenuItem::linkToCrud('user.labelp', 'fas fa-user', User::class)
             ->setPermission('ROLE_READ_USER');
