@@ -42,7 +42,7 @@ class PostalVotingCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('registration.label')
             ->setEntityLabelInPlural('registration.labelp')
-            ->setSearchFields(['id','email', 'student_number', 'first_name', 'last_name', 'address.city', 'address.postal_code']);
+            ->setSearchFields(['id','email', 'student_number', 'first_name', 'last_name', 'address.city', 'address.postal_code', 'address.street_and_number']);
     }
 
     public function configureActions(Actions $actions): Actions
