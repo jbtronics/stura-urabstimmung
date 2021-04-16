@@ -104,7 +104,7 @@ class PostalVotingCrudController extends AbstractCrudController
                     Languages::getName('de') => 'de',
                     Languages::getName('en') => 'en'
                 ])->hideOnIndex(),
-            BooleanField::new('voting_kit_requested', 'registration.voting_kit_requested')->hideOnIndex(),
+            //BooleanField::new('voting_kit_requested', 'registration.voting_kit_requested')->hideOnIndex(),
 
             FormField::addPanel('registration.new.shipping'),
             TextField::new('address.street_and_number', 'address.street_and_number')->hideOnIndex(),
