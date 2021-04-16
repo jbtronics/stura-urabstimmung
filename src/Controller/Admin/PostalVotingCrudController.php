@@ -141,7 +141,7 @@ class PostalVotingCrudController extends AbstractCrudController
             ->add(BooleanFilter::new('verified', 'registration.verified'))
             ->add(BooleanFilter::new('printed', 'registration.printed'))
             ->add(BooleanFilter::new('counted', 'registration.counted'))
-            ->add(ChoiceFilter::new('language', 'registration.language')->setChoices(['de', 'en']))
+            ->add(ChoiceFilter::new('language', 'registration.language')->setChoices(['Deutsch' => 'de', 'Englisch' => 'en']))
             ->add(DateTimeFilter::new('creation_date', 'creation_date'))
             ->add(DateTimeFilter::new('last_modified', 'last_modified'))
             ;
