@@ -30,3 +30,7 @@
 dl.datalist .data-row {
     padding: 10px 20px;
 }
+
+.datagrid td {
+    padding: 5px;
+}

@@ -104,6 +104,7 @@ class PostalVotingCrudController extends AbstractCrudController
             TextField::new('student_number', 'registration.student_number'),
             TextField::new('secret', 'registration.secret')
                 ->setFormTypeOption('disabled', true)
+                ->hideOnIndex()
                 ->setPermission('ROLE_REGISTRATION_SECRET'),
             ChoiceField::new('language', 'registration.language')
                 ->setChoices([
@@ -113,12 +114,12 @@ class PostalVotingCrudController extends AbstractCrudController
             //BooleanField::new('voting_kit_requested', 'registration.voting_kit_requested')->hideOnIndex(),
 
             FormField::addPanel('registration.new.shipping'),
-            TextField::new('address.street_and_number', 'address.street_and_number')->hideOnIndex(),
+            TextField::new('address.street_and_number', 'address.street_and_number'),
             TextField::new('address.address_addition', 'address.address_addition')
                 ->setRequired(false)
                 ->hideOnIndex(),
-            TextField::new('address.postal_code', 'address.postal_code')->hideOnIndex(),
-            TextField::new('address.city', 'address.city')->hideOnIndex(),
+            TextField::new('address.postal_code', 'address.postal_code'),
+            TextField::new('address.city', 'address.city'),
             CountryField::new('address.country', 'address.country')->hideOnIndex(),
 
             FormField::addPanel('registration.status'),
