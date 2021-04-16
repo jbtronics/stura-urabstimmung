@@ -118,6 +118,7 @@ class PostalVotingCrudController extends AbstractCrudController
             TextField::new('address.street_and_number', 'address.street_and_number'),
             TextField::new('address.address_addition', 'address.address_addition')
                 ->setRequired(false)
+                ->setFormTypeOption('empty_data', '')
                 ->hideOnIndex(),
             TextField::new('address.postal_code', 'address.postal_code'),
             TextField::new('address.city', 'address.city'),
