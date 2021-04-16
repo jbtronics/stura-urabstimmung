@@ -23,6 +23,7 @@ class PersonalEmailAddressValidatorTest extends TestCase
         return [
             [true, 'max.muster@uni-jena.de'],
             [true, 'max.m.muster@uni-jena.de'],
+            [true, 'max.moritz.muster@uni-jena.de'],
             [true, 'm.muster@uni-jena.de'],
             [true, 'muster.m@uni-jena.de'],
             //Allow dashes
