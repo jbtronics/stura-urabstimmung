@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Exception\UnexpectedValueException;
 class PersonalEmailAddressValidator extends ConstraintValidator
 {
 
-    public const PERSONAL_EMAIL_REGEX = "/(^\w+(\.\w+)+|\w{1,2}\d\w{3,4})@.*/";
+    public const PERSONAL_EMAIL_REGEX = "/(^[\w\-]+(\.[\w\-]+)+|\w{1,2}\d\w{3,4})@.*/";
 
     public const EMAIL_BLACKLIST = [
         'fsr.wiwi@uni-jena.de',
