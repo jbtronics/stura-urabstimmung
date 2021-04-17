@@ -39,7 +39,7 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
      * @ORM\Column(type="string", unique=true)
      * @Assert\Regex("/^.*@uni-jena.de$/", message="validator.must_be_uni_jena_address")
      * @Assert\Email(mode="strict")
-     * @PersonalEmailAddress()
+     * @PersonalEmailAddress(groups="registration")
      * @Assert\NotBlank()
      */
     private $email = "";

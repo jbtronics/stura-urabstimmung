@@ -58,5 +58,6 @@ class PostalVotingRegistrationType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefault('data_class', PostalVotingRegistration::class);
+        $resolver->setDefault('validation_groups', ['Default', 'registration']);
     }
 }
