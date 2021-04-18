@@ -117,6 +117,12 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
     private $printed = false;
 
     /**
+     * @var bool True if the registration is unwarranted
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $unwarranted = false;
+
+    /**
      * @var bool True if the ballot paper was received and counted
      * @ORM\Column(type="boolean")
      */
@@ -334,6 +340,26 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
     {
         return $this->printed;
     }
+
+    /**
+     * @return bool
+     */
+    public function isUnwarranted(): bool
+    {
+        return $this->unwarranted;
+    }
+
+    /**
+     * @param  bool  $unwarranted
+     * @return PostalVotingRegistration
+     */
+    public function setUnwarranted(bool $unwarranted): PostalVotingRegistration
+    {
+        $this->unwarranted = $unwarranted;
+        return $this;
+    }
+
+
 
     /**
      * @param  bool  $printed

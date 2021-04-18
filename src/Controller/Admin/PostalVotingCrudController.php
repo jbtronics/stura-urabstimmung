@@ -132,7 +132,7 @@ class PostalVotingCrudController extends AbstractCrudController
             /** @var PostalVotingRegistration $registration */
             $registration = $entityManager->find($batchActionDto->getEntityFqcn(), $id);
             //Only allow to verify the registration if the postal voting is confirmed
-            if ($registration->isConfirmed() && $registration->isVerified() && !$registration->isPrinted()) {
+            if ($registration->isConfirmed() && $registration->isVerified() && !$registration->isUnwarranted() && !$registration->isPrinted()) {
                 $registration->setPrinted(true);
                 $registrations_to_print[] = $registration;
             }
@@ -170,8 +170,6 @@ class PostalVotingCrudController extends AbstractCrudController
             if (!$registration->isConfirmed()) {
                 $this->dispatchMessage(new SendEmailConfirmation($registration));
             }
-
-
         }
 
         $this->addFlash('success', 'registration.send_confirmation_email.success');
@@ -198,7 +196,7 @@ class PostalVotingCrudController extends AbstractCrudController
             /** @var PostalVotingRegistration $registration */
             $registration = $entityManager->find($batchActionDto->getEntityFqcn(), $id);
             //Only allow to verify the registration if the postal voting is confirmed
-            if ($registration->isConfirmed()) {
+            if ($registration->isConfirmed() && !$registration->isUnwarranted()) {
                 $registration->setVerified(true);
             }
         }
@@ -245,6 +243,7 @@ class PostalVotingCrudController extends AbstractCrudController
             BooleanField::new('verified', 'registration.verified')->hideOnIndex(),
             BooleanField::new('printed', 'registration.printed')->hideOnIndex(),
             BooleanField::new('counted', 'registration.counted')->hideOnIndex(),
+            BooleanField::new('unwarranted', 'registration.unwarranted')->hideOnIndex(),
         ];
     }
 
@@ -256,6 +255,7 @@ class PostalVotingCrudController extends AbstractCrudController
             ->add(BooleanFilter::new('verified', 'registration.verified'))
             ->add(BooleanFilter::new('printed', 'registration.printed'))
             ->add(BooleanFilter::new('counted', 'registration.counted'))
+            ->add(BooleanFilter::new('unwarranted', 'registration.unwarranted'))
             ->add(ChoiceFilter::new('language', 'registration.language')->setChoices(['Deutsch' => 'de', 'Englisch' => 'en']))
             ->add(DateTimeFilter::new('creation_date', 'creation_date'))
             ->add(DateTimeFilter::new('last_modified', 'last_modified'))
@@ -266,13 +266,24 @@ class PostalVotingCrudController extends AbstractCrudController
     {
         /** @var PostalVotingRegistration $entityInstance */
         //Forbit delete process if PaymentOrder was already exported or booked
-        if ($entityInstance->isPrinted()
-                || $entityInstance->isCounted()) {
-            $this->addFlash('warning', 'payment_order.flash.can_not_delete_checked_payment_order');
+        if ($entityInstance->isVerified()
+            || $entityInstance->isPrinted()
+            || $entityInstance->isCounted()) {
+            $this->addFlash('warning', 'registration.flash.can_not_delete_printed_votes');
 
             return;
         }
 
-        parent::deleteEntity($entityManager, $entityInstance);
+        //Just soft delete entity after it was confirmed
+        if ($entityInstance->isConfirmed()) {
+            $entityInstance->setUnwarranted(true);
+            $entityManager->flush();
+            return;
+        }
+
+        //If it is unconfirmed we can really delete it.
+        if (!$entityInstance->isConfirmed()) {
+            parent::deleteEntity($entityManager, $entityInstance);
+        }
     }
 }

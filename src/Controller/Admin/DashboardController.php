@@ -99,6 +99,7 @@ class DashboardController extends AbstractDashboardController
                     MenuItem::linkToCrud('registration.menu.verification_required', '', PostalVotingRegistration::class),
                     [
                         'confirmed' => 1,
+                        'unwarranted' => 0,
                         'verified' => 0,
                     ]
                 ),
@@ -107,6 +108,7 @@ class DashboardController extends AbstractDashboardController
                     [
                         'confirmed' => 1,
                         'verified' => 1,
+                        'unwarranted' => 0,
                         'printed' => 0,
                     ]
                 ),
@@ -115,6 +117,7 @@ class DashboardController extends AbstractDashboardController
                     [
                         'confirmed' => 1,
                         'verified' => 1,
+                        'unwarranted' => 0,
                         'printed' => 1,
                     ]
                 ),
@@ -130,6 +133,14 @@ class DashboardController extends AbstractDashboardController
                     MenuItem::linkToCrud('registration.menu.unconfirmed', '', PostalVotingRegistration::class),
                     [
                         'confirmed' => 0
+                    ]
+                ),
+
+                $this->addFiltersToMenuItem(
+                    MenuItem::linkToCrud('registration.menu.unwarranted', '', PostalVotingRegistration::class),
+                    [
+                        'confirmed' => 1,
+                        'unwarranted' => 1,
                     ]
                 ),
 

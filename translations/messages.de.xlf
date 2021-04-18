@@ -1296,5 +1296,23 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Berechtigung überprüft</target>
       </segment>
     </unit>
+    <unit id="otfCxbV" name="registration.unwarranted">
+      <segment>
+        <source>registration.unwarranted</source>
+        <target>Unberechtigt</target>
+      </segment>
+    </unit>
+    <unit id="8zPaQsm" name="registration.menu.unwarranted">
+      <segment>
+        <source>registration.menu.unwarranted</source>
+        <target>Unberechtigt</target>
+      </segment>
+    </unit>
+    <unit id="5bznRC4" name="registration.flash.can_not_delete_printed_votes">
+      <segment>
+        <source>registration.flash.can_not_delete_printed_votes</source>
+        <target>Gedruckte oder gezählte Stimmen können nicht gelöscht werden!</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
