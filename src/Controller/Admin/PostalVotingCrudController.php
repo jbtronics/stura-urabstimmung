@@ -7,6 +7,7 @@ namespace App\Controller\Admin;
 use App\Admin\Filter\ConfirmedFilter;
 use App\Entity\PostalVotingRegistration;
 use App\Message\SendEmailConfirmation;
+use App\Services\PDFGenerator\BallotPaperGenerator;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
@@ -14,6 +15,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Dto\BatchActionDto;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CountryField;
@@ -26,11 +28,19 @@ use EasyCorp\Bundle\EasyAdminBundle\Filter\BooleanFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\ChoiceFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\DateTimeFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\TextFilter;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Intl\Languages;
 
 
 class PostalVotingCrudController extends AbstractCrudController
 {
+    private $ballotPaperGenerator;
+
+    public function __construct(BallotPaperGenerator $ballotPaperGenerator)
+    {
+        $this->ballotPaperGenerator = $ballotPaperGenerator;
+    }
 
     public static function getEntityFqcn(): string
     {
@@ -82,16 +92,89 @@ class PostalVotingCrudController extends AbstractCrudController
             $actions->add('edit', $sendConfirmationEmail);
         }
 
+        if ($this->isGranted('ROLE_REGISTRATION_VERIFY')) {
+            $verifyRegistration = Action::new('verify', 'registration.verify')
+                ->addCssClass('btn btn-primary')
+                ->linkToCrudAction('verifyRegistration');
+
+            $actions->addBatchAction($verifyRegistration);
+        }
+
+        if ($this->isGranted('ROLE_REGISTRATION_PRINT')) {
+            $printBallot = Action::new('ballotPaperMass', 'registration.generate_ballot_paper')
+                ->addCssClass('btn btn-primary')
+                ->linkToCrudAction('ballotPaperMass');
+
+            $actions->addBatchAction($printBallot);
+        }
+
         return $actions->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
 
-    public function sendConfirmationEmail(AdminContext $context)
+    public function ballotPaperMass(BatchActionDto $batchActionDto): Response
+    {
+        $entityManager = $this->getDoctrine()->getManagerForClass($batchActionDto->getEntityFqcn());
+        if ($entityManager === null) {
+            throw new \RuntimeException('entityManager must not be null!');
+        }
+
+        $registrations_to_print = [];
+
+        foreach ($batchActionDto->getEntityIds() as $id) {
+            /** @var PostalVotingRegistration $registration */
+            $registration = $entityManager->find($batchActionDto->getEntityFqcn(), $id);
+            //Only allow to verify the registration if the postal voting is confirmed
+            if ($registration->isConfirmed() && $registration->isVerified() && !$registration->isPrinted()) {
+                $registration->setPrinted(true);
+                $registrations_to_print[] = $registration;
+            }
+        }
+
+        $pdf = $this->ballotPaperGenerator->generateMultipleBallotPapers($registrations_to_print);
+
+        $response = new Response($pdf);
+        $response->headers->set('Content-type', 'application/pdf');
+        $response->headers->set('Content-length', strlen($pdf));
+        $response->headers->set('Cache-Control', 'private');
+        // Create the disposition of the file
+        $disposition = $response->headers->makeDisposition(
+            ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+            'Wahlscheine_' . date('Y-m-d_H-i-s') . '.pdf'
+        );
+        $response->headers->set('Content-Disposition', $disposition);
+
+        $entityManager->flush();
+
+        return $response;
+    }
+
+    public function sendConfirmationEmail(AdminContext $context): Response
     {
         $registration = $context->getEntity()->getInstance();
         $this->dispatchMessage(new SendEmailConfirmation($registration));
         $this->addFlash('success', 'registration.send_confirmation_email.success');
 
         return $this->redirect($context->getReferrer());
+    }
+
+    public function verifyRegistration(BatchActionDto $batchActionDto): Response
+    {
+        $entityManager = $this->getDoctrine()->getManagerForClass($batchActionDto->getEntityFqcn());
+        if ($entityManager === null) {
+            throw new \RuntimeException('entityManager must not be null!');
+        }
+        foreach ($batchActionDto->getEntityIds() as $id) {
+            /** @var PostalVotingRegistration $registration */
+            $registration = $entityManager->find($batchActionDto->getEntityFqcn(), $id);
+            //Only allow to verify the registration if the postal voting is confirmed
+            if ($registration->isConfirmed()) {
+                $registration->setVerified(true);
+            }
+        }
+
+        $entityManager->flush();
+
+        return $this->redirect($batchActionDto->getReferrerUrl());
     }
 
     public function configureFields(string $pageName): iterable

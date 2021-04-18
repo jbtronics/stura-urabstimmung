@@ -1290,5 +1290,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Gezählt</target>
       </segment>
     </unit>
+    <unit id="gz_Fhvz" name="registration.verify">
+      <segment>
+        <source>registration.verify</source>
+        <target>Berechtigung überprüft</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
