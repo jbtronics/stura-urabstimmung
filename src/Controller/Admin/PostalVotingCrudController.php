@@ -69,6 +69,7 @@ class PostalVotingCrudController extends AbstractCrudController
 
         if ($this->isGranted('ROLE_REGISTRATION_PRINT')) {
             $ballotPaper = Action::new('ballotPaper', 'registration.generate_ballot_paper')
+                ->addCssClass('btn btn-secondary')
                 ->displayIf(function (PostalVotingRegistration $registration) {
                     return $registration->isConfirmed();
                 })
@@ -83,6 +84,7 @@ class PostalVotingCrudController extends AbstractCrudController
 
         if ($this->isGranted('ROLE_REGISTRATION_EDIT')) {
             $sendConfirmationEmail = Action::new('sendConfirmationEmail', 'registration.send_confirmation_email')
+                ->addCssClass('btn btn-secondary')
                 ->displayIf(function (PostalVotingRegistration $registration) {
                     return !$registration->isConfirmed();
                 })
@@ -90,6 +92,12 @@ class PostalVotingCrudController extends AbstractCrudController
 
             $actions->add('detail', $sendConfirmationEmail);
             $actions->add('edit', $sendConfirmationEmail);
+
+            $sendConfirmationEmailMass = Action::new('sendConfirmationEmailMass', 'registration.send_confirmation_email')
+                ->addCssClass('btn btn-secondary')
+                ->linkToCrudAction('sendConfirmationEmailMass');
+
+            $actions->addBatchAction($sendConfirmationEmailMass);
         }
 
         if ($this->isGranted('ROLE_REGISTRATION_VERIFY')) {
@@ -146,6 +154,29 @@ class PostalVotingCrudController extends AbstractCrudController
         $entityManager->flush();
 
         return $response;
+    }
+
+    public function sendConfirmationEmailMass(BatchActionDto $batchActionDto): Response
+    {
+        $entityManager = $this->getDoctrine()->getManagerForClass($batchActionDto->getEntityFqcn());
+        if ($entityManager === null) {
+            throw new \RuntimeException('entityManager must not be null!');
+        }
+
+        foreach ($batchActionDto->getEntityIds() as $id) {
+            /** @var PostalVotingRegistration $registration */
+            $registration = $entityManager->find($batchActionDto->getEntityFqcn(), $id);
+            //Only allow to verify the registration if the postal voting is confirmed
+            if (!$registration->isConfirmed()) {
+                $this->dispatchMessage(new SendEmailConfirmation($registration));
+            }
+
+
+        }
+
+        $this->addFlash('success', 'registration.send_confirmation_email.success');
+
+        return $this->redirect($batchActionDto->getReferrerUrl());
     }
 
     public function sendConfirmationEmail(AdminContext $context): Response

@@ -83,6 +83,10 @@ class ConfirmationEmailSender
             throw new InvalidArgumentException('$registration must be persisted / have an ID so than an confirmation URL can be generated!');
         }
 
+        if ($registration->isConfirmed()) {
+            throw new InvalidArgumentException('Given $registration was already confirmed! Can not resend email.');
+        }
+
         $email = new TemplatedEmail();
 
         $email->priority(Email::PRIORITY_HIGH);
