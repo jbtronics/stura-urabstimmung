@@ -49,6 +49,7 @@ class BallotPaperGenerator
         ]);
 
         $dompdf->loadHtml($html);
+        $dompdf->getOptions()->setIsRemoteEnabled(true);
 
         $dompdf->setPaper('A4', 'portrait');
 
