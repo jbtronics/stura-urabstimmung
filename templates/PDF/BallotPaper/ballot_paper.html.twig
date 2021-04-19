@@ -28,14 +28,15 @@
             </div>
         </aside>
         <main>
-            <div class="content" style="font-size: 9pt; top: 70mm;">
-                <ol>
+            <div class="content" style="font-size: 9pt; top: 90mm;">
+                {# <ol>
                     <li>Prüfe ob du alle benötigten Unterlagen erhalten hast (Wahlschein, Stimmzettel, Stimmzettelumschlag, Rücksendeumschlag). Sollte etwas fehlen, kontaktiere urabstimmung@stura.uni-jena.de</li>
                     <li>Fülle den Stimmzettel aus (du musst den Stimmzettel unbeobachtet und persönlich ausfüllen). Legen den Stimmzettel anschließend in den unbeschrifteten Stimmzettelumschlag und klebe diesen zu.</li>
                     <li>Fülle das Datum beim untenstehenden Wahlschein aus, und unterschreibe die Versicherung, dass du den Stimmzettel persönlich und unbeobachtet ausgefüllt hast.
                         Schneide anschließend den Wahlschein an der der gestrichelten Linie ab, und lege ihn zusammen mit dem Stimmzettelumschlag in den Rückantwortumschlag. Klebe den Umschlag anschließend zu.</li>
                     <li>Wenn es dir möglich ist, werfe den Rückumschlag mit dem oben beschrieben Inhalt, in das Postfach des Studierendenrates in der Carl-Zeiss-Straße 3 (neben der Wache), ansonsten kannst du den Brief auch ohne Frankierung in einen Briefkasten der deutschen Post werfen.</li>
-                </ol>
+                </ol> #}
+                <br>
                 <p style="font-size: 12pt; font-weight: bold; text-align: center;">Die Stimmabgabe per Brief ist bis zum 30. April möglich!</p>
             </div>
         </main>
@@ -47,6 +48,7 @@
             <span><b style="font-size: 12pt;">Wahlschein</b> für die Urabstimmung beschlossen vom Studierendenrat am 6. April 2021</span>
         </header>
 
+        {#
         <div class="address-field">
             <div class="return-address-zone">
                 {{ registration.address.formatSingleLine(registration.fullName, " · ") }}
@@ -58,10 +60,13 @@
                 Carl-Zeiss-Straße 3<br>
                 07743 Jena<br>
             </div>
-        </div>
-        <div class="fold-mark"></div>
+        </div> #}
+        {# <div class="fold-mark"></div> #}
 
         <aside>
+            <div class="counting-qr">
+                <img class="rounded-border" src="{{ qrCode }}" style="height: 40mm; display: block; margin-left: 22.5mm;">
+            </div>
             <div class="counting-info">
                 <div style="border: solid 0.3mm black; padding: 0 3mm; margin-bottom: 5mm; font-size: 11pt; font-weight: bold;">
                     {{ registration.fullName }} <br>
@@ -69,7 +74,6 @@
                     {{ registration.email }} <br>
                     {{ registration.secret }} <br>
                 </div>
-                <img class="rounded-border" src="{{ qrCode }}" style="height: 35mm; display: block; margin-left: 22.5mm;">
             </div>
         </aside>
 
@@ -78,7 +82,7 @@
                 <p id="ballot-affirmation">
                     Hiermit versichere ich, dass ich den Stimmzettel persönlich und unbeobachtet ausgefüllt habe und in den Stimmbriefumschlag gelegt habe.
                 </p>
-                <div class="signature-area" style="margin-top: 25mm;">
+                <div class="signature-area" style="margin-top: 30mm;">
                     <span style="display: inline;">{{ registration.address.city }}, den </span>
                     <div style="border-top: solid 0.2mm black; margin-left: 80mm;">{{ registration.fullName }}</div>
                 </div>
