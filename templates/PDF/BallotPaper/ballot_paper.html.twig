@@ -47,7 +47,7 @@
         <header class="header-line">
             <span><b style="font-size: 12pt;">Wahlschein</b> für die Urabstimmung beschlossen vom Studierendenrat am 6. April 2021</span>
         </header>
-        
+
         {#
         <div class="address-field">
             <div class="return-address-zone">
@@ -64,16 +64,35 @@
         {# <div class="fold-mark"></div> #}
 
         <aside>
-            <div class="counting-qr">
-                <img class="rounded-border" src="{{ qrCode }}" style="height: 40mm; display: block; margin-left: 22.5mm;">
-            </div>
-            <div class="counting-info">
-                <div style="border: solid 0.3mm black; padding: 0 3mm; margin-bottom: 5mm; font-size: 11pt; font-weight: bold;">
-                    {{ registration.fullName }} <br>
-                    {{ registration.studentNumber }} <br>
-                    {{ registration.email }} <br>
-                    {{ registration.secret }} <br>
-                </div>
+            <div class="border" style="padding-top: 0; position: absolute; left: 10mm; right: 10mm; top: 15mm; height: 50mm;">
+                <p class="hint-text" style="text-align: left; font-size: 10pt;"><b>Für die Urabstimmungskommission:</b> Dient zur Überprüfung der Echtheit dieses Wahlscheins</p>
+                <table>
+                    <tr>
+                        <td class="">
+                            <img class="" src="{{ qrCode }}" style="height: 35mm; display: block;">
+                        </td>
+                        <td style="margin-left: 10mm; font-weight: bold;">
+                            <table>
+                                <tr>
+                                    <td><span class="hint-text">Name</span></td>
+                                    <td>{{ registration.fullName }}</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hint-text">Matrikel-Nr.</span></td>
+                                    <td>{{ registration.studentNumber }}</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hint-text">E-Mail</span></td>
+                                    <td>{{ registration.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="hint-text">Kennwort<br>zur<br>Überprüfung</span></td>
+                                    <td>{{ registration.secret }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </aside>
 
