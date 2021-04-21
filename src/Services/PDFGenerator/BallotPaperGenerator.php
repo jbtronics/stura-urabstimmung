@@ -10,6 +10,7 @@ use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Writer\SvgWriter;
 use iio\libmergepdf\Merger;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Twig\Environment;
 
@@ -17,11 +18,13 @@ class BallotPaperGenerator
 {
     private $twig;
     private $urlGenerator;
+    private $cacheDir;
 
-    public function __construct(Environment $twig, UrlGeneratorInterface $urlGenerator)
+    public function __construct(Environment $twig, UrlGeneratorInterface $urlGenerator, KernelInterface $kernel)
     {
         $this->twig = $twig;
         $this->urlGenerator = $urlGenerator;
+        $this->cacheDir = $kernel->getCacheDir();
     }
 
     /**
@@ -50,6 +53,9 @@ class BallotPaperGenerator
 
         $dompdf->loadHtml($html);
         $dompdf->getOptions()->setIsRemoteEnabled(true);
+        $dompdf->getOptions()->setFontCache($this->cacheDir);
+        $dompdf->getOptions()->setTempDir($this->cacheDir);
+
 
         $dompdf->setPaper('A4', 'portrait');
 
