@@ -53,6 +53,7 @@ class BallotPaperGenerator
 
         $dompdf->loadHtml($html);
         $dompdf->getOptions()->setIsRemoteEnabled(true);
+        //Use cache proper cache dir
         $dompdf->getOptions()->setFontCache($this->cacheDir);
         $dompdf->getOptions()->setTempDir($this->cacheDir);
 
