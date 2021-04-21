@@ -8,42 +8,46 @@ body {
     font-family: 'Roboto Condensed';
 }
 
-div.page-upper {
+div.page-third1 {
     position: fixed;
     top: 0;
     left: 0;
     width: 210mm;
-    height: 148.5mm;
-
-    padding: 10mm;
-
-    /*background-color: red;*/
+    height: 105mm;
+    padding: 5mm 20mm;
 }
-div.page-lower {
+
+div.page-third2 {
     position: fixed;
-    top: 148.5mm;
+    top: 105mm;
     left: 0;
     width: 210mm;
-    height: 148.5mm;
-
-    padding: 10mm;
-
-    /*background-color: blue;*/
+    height: 100mm;
+    padding: 5mm 20mm;
 }
 
-hr.half-separator {
+div.page-third3 {
     position: fixed;
-    top: 148.5mm;
-    border: 0;
-    height: 0;
-    margin-left: 5mm;
-    margin-right: 5mm;
-    border-top: 0.3mm dashed black;
+    top: 205mm;
+    left: 0;
+    width: 210mm;
+    height: 92mm;
+    padding: 5mm 20mm;
 }
 
 div.fold-mark {
-    position: absolute;
+    position: fixed;
     top: 105mm;
+    left: 5mm;
+    width: 5mm;
+    height: 0;
+    border: 0;
+    border-top: 0.1mm solid black;
+}
+
+div.fold-mark2 {
+    position: fixed;
+    top: 205mm;
     left: 5mm;
     width: 5mm;
     height: 0;
@@ -69,7 +73,7 @@ footer.footer-line {
 
     color: darkgray;
     padding-right: 25mm;
-    padding-left: 20mm;
+    padding-left: 15mm;
 }
 
 .hint-text {
@@ -78,14 +82,11 @@ footer.footer-line {
     font-weight: lighter;
 }
 
-
-div.content {
-    position: absolute;
-    top: 70mm;
-    left: 0;
-    padding-left: 25mm;
-    padding-right: 20mm;
+.border {
+    border: solid 0.3mm black;
+    padding: 0 3mm;
 }
+
 
 div.address-field {
     position: absolute;
@@ -108,11 +109,6 @@ div.address-field > div.return-address-zone {
     font-size: 7pt;
     border-bottom: 0.2mm solid black;
 
-}
-
-.border {
-    border: solid 0.3mm black;
-    padding: 0 3mm;
 }
 
 div.address-field > div.comment-zone {
