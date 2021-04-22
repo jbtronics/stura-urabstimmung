@@ -42,18 +42,14 @@ class BallotPaperGenerator
         $writer = new PngWriter();
         $qrCodeResult = $writer->write($qrCode);
 
-        $helpQrCode = QrCode::create('CHANGEME');
-        $helpQrCodeResult = $writer->write($helpQrCode);
 
         $html = $this->twig->render('PDF/BallotPaper/ballot_paper.html.twig', [
             'registration' => $postalVotingRegistration,
             'qrCode' => $qrCodeResult->getDataUri(),
-            'help_qrCode' => $helpQrCodeResult->getDataUri(),
         ]);
 
         $dompdf->loadHtml($html);
         $dompdf->getOptions()->setIsRemoteEnabled(true);
-        //Use cache proper cache dir
         $dompdf->getOptions()->setFontCache($this->cacheDir);
         $dompdf->getOptions()->setTempDir($this->cacheDir);
 
