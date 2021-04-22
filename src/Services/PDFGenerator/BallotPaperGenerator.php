@@ -43,7 +43,13 @@ class BallotPaperGenerator
         $qrCodeResult = $writer->write($qrCode);
 
 
-        $html = $this->twig->render('PDF/BallotPaper/ballot_paper.html.twig', [
+        if ($postalVotingRegistration->getLanguage() === 'en') {
+            $template = 'PDF/BallotPaper/ballot_paper.en.html.twig';
+        } else {
+            $template = 'PDF/BallotPaper/ballot_paper.html.twig';
+        }
+
+        $html = $this->twig->render($template, [
             'registration' => $postalVotingRegistration,
             'qrCode' => $qrCodeResult->getDataUri(),
         ]);
