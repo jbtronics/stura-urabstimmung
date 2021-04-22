@@ -23,6 +23,7 @@
         "fortawesome/font-awesome": "^5.14",
         "genphrase/genphrase": "^1.2",
         "iio/libmergepdf": "^4.0",
+        "league/csv": "^9.7",
         "league/html-to-markdown": "^5.0",
         "nelmio/security-bundle": "^2.10",
         "php-translation/symfony-bundle": "^0.12.1",

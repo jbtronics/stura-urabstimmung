@@ -254,6 +254,9 @@
     "lcobucci/jwt": {
         "version": "3.4.5"
     },
+    "league/csv": {
+        "version": "9.7.1"
+    },
     "league/html-to-markdown": {
         "version": "5.0.0"
     },

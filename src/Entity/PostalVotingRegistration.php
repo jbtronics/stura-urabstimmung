@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\IdGenerator\UuidV4Generator;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="\App\Repository\PostalVotingRegistrationRepository")
  * @ORM\HasLifecycleCallbacks()
  * @ORM\EntityListeners({"App\EntityListener\FillSecretEntityListener"})
  * @UniqueEntity(fields={"email"}, message="validator.email_already_used")
@@ -143,7 +143,7 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
      */
     public function getEmail(): string
     {
-        return $this->email;
+        return strtolower($this->email);
     }
 
     /**
@@ -152,7 +152,7 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
      */
     public function setEmail(string $email): PostalVotingRegistration
     {
-        $this->email = $email;
+        $this->email = strtolower($email);
         return $this;
     }
 
