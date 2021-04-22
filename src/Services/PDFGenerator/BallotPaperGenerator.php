@@ -6,6 +6,7 @@ namespace App\Services\PDFGenerator;
 
 use App\Entity\PostalVotingRegistration;
 use Dompdf\Dompdf;
+use Endroid\QrCode\Logo\Logo;
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Writer\SvgWriter;
@@ -39,9 +40,9 @@ class BallotPaperGenerator
             'id' => $postalVotingRegistration->getId()->toRfc4122()
         ], UrlGeneratorInterface::ABSOLUTE_URL));
 
+
         $writer = new PngWriter();
         $qrCodeResult = $writer->write($qrCode);
-
 
         if ($postalVotingRegistration->getLanguage() === 'en') {
             $template = 'PDF/BallotPaper/ballot_paper.en.html.twig';
