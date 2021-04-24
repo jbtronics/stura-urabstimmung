@@ -25,6 +25,7 @@ monolog:
             subject: 'An Error Occurred! %%message%%'
             # Uncomment this line and comment the emergency line to enable emails
             #level: debug
+            channels: '!fail2ban'
             level: emergency
             formatter: monolog.formatter.html
             content_type: text/html
