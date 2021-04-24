@@ -825,7 +825,7 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
     <unit id="DRl6loh" name="homepage.welcome">
       <segment>
         <source>homepage.welcome</source>
-        <target>Urabstimmungportal des Studierendenrates der Friedrich-Schiller-Universität Jena</target>
+        <target><![CDATA[Urabstimmungs<wbr>portal des Studierenden<wbr>rates der Friedrich-Schiller-Universität Jena]]></target>
       </segment>
     </unit>
     <unit id="0AmiUaU" name="dashboard.menu.github">
@@ -1312,6 +1312,12 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
       <segment>
         <source>registration.flash.can_not_delete_printed_votes</source>
         <target>Gedruckte oder gezählte Stimmen können nicht gelöscht werden!</target>
+      </segment>
+    </unit>
+    <unit id="dZouawy" name="postal_voting.info">
+      <segment>
+        <source>postal_voting.info</source>
+        <target>Anleitung zur Briefabstimmung</target>
       </segment>
     </unit>
   </file>

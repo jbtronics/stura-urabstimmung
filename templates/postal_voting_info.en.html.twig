@@ -1,0 +1,42 @@
+{% extends "info_content_page.html.twig" %}
+
+{% block inner_content %}
+<h1>Instructions for voting by letter</h1>
+
+    <h2>Documents supplied</h2>
+    You received a voting kit in the mail, which should contain the following items:
+    <ul>
+        <li><b>1 ballot paper</b> (gray DIN A4 paper)</li>
+        <li><b>1 ballot for voting</b> (small colorful printed slip, with german text)</li>
+        <li><b>1 ballot paper envelope</b></li>
+        <li><b>1 return envelope</b></li>
+    </ul>
+    You no longer need the gray envelope with window that the documents came in.
+    <br>
+    If anything is missing, please contact the ballot committee at <a href="mailto:urabstimmung@stura.uni-jena.de">urabstimmung@stura.uni-jena.de</a>.
+
+
+    <h2>Voting</h2>
+    Once you have all the required documents, you can vote:
+    <ol>
+        <li><b>Fill out the ballot according to your opinion.</b> For each voting text, exactly one cross must be placed at <i>Yes</i> or <i>No</i>.
+            The filling out of the ballot must happen personally and secretly. You can find an unoffical translated version of the ballot text <a href="{{ path('info') }}">here</a>.</li>
+        <li><b>Fold the ballot and place it in the ballot envelope. </b>Make sure that only the ballot is in the ballot envelope.</li>
+        <li><b>Seal the ballot envelope well.</b> To do this, pull the strip off the adhesive strip of the envelope and seal the envelope this way.</li>
+        <li><b>Fill in the date on the ballot paper and sign the declaration by hand.</b> Unfortunately, without a signature your vote cannot be counted.</li>
+        <li><b>Place the signed ballot and sealed ballot envelope in the return envelope.</b></li>
+        <li><b>Seal the return envelope and write your return address on the lines at the top left of the return envelope.</b></li>
+    </ol>
+    The return envelope is now ready to be mailed.
+
+
+    <h2>Shipping</h2>
+    There are several options available to you for return shipping
+    <ul>
+        <li>You can post the envelope at the <b>Main Building of the University</b>. For this purpose, use the deadline mailbox at the entrance Schlossgasse.</li>
+        <li>You can post the envelope at the <b>Main Campus at Carl-Zeiss-Straße 3</b>. You can find the mailboxes on the wall to the right of the campus guard. Drop your letter in the large drop box at the bottom left.</li>
+        <li>If you are not in Jena (or are not able to get to the above locations), you can also drop the return envelope into <b>any mailbox of the German Post</b>.
+            No postage is required, the cost of the return is borne by the Student Council.
+        </li>
+    </ul>
+{% endblock %}

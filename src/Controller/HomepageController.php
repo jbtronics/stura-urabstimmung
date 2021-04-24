@@ -44,4 +44,17 @@ class HomepageController extends AbstractController
 
         return $this->render('info.de.html.twig');
     }
+
+    /**
+     * @Route("/postal_voting/info", name="postal_voting_info")
+     * @return Response
+     */
+    public function postalVotingInfo(Request $request): Response
+    {
+        if ($request->getLocale() === 'en') {
+            return $this->render('postal_voting_info.en.html.twig');
+        }
+
+        return $this->render('postal_voting_info.de.html.twig');
+    }
 }
