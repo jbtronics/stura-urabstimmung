@@ -14,6 +14,7 @@ parameters:
     app.mail.from_name: '%env(FROM_NAME)%'
     app.mail.envelope_sender: '%env(string:ENVELOPE_SENDER)%'
     app.send_notifications: '%env(bool:SEND_NOTIFICATIONS)%'
+    app.registration_closed: '%env(bool:REGISTRATION_CLOSED)%'
 
 services:
     # default configuration for services in *this* file

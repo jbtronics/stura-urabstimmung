@@ -3,68 +3,74 @@
 {% block card_title %}<i class="fas fa-vote-yea fa-fw"></i> {% trans %}registration.new{% endtrans %}{% endblock %}
 
 {% block card_content %}
-    <p class="text-muted">{% trans %}registration.info{% endtrans %}</p>
-    <p class="text-muted">{% trans %}registration.privacy_info{% endtrans %}</p>
+    {% if not registration_closed %}
+        <p class="text-muted">{% trans %}registration.info{% endtrans %}</p>
+        <p class="text-muted">{% trans %}registration.privacy_info{% endtrans %}</p>
 
-    {{ form_start(form) }}
+        {{ form_start(form) }}
 
-    {{ form_errors(form) }}
+        {{ form_errors(form) }}
 
-    <div class="row">
+        <div class="row">
 
-        <div class="col-sm-6">
-            <fieldset>
-                <legend>{% trans %}registration.new.general{% endtrans %}</legend>
+            <div class="col-sm-6">
+                <fieldset>
+                    <legend>{% trans %}registration.new.general{% endtrans %}</legend>
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        {{ form_row(form.first_name) }}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form_row(form.first_name) }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form_row(form.last_name) }}
+                        </div>
                     </div>
-                    <div class="col-sm-6">
-                        {{ form_row(form.last_name) }}
+
+                    {{ form_row(form.email) }}
+
+                    {{ form_row(form.student_number) }}
+
+                    {{ form_row(form.language) }}
+
+                </fieldset>
+
+            </div>
+
+            <div class="col-sm-6">
+                <fieldset>
+                    <legend>{% trans %}registration.new.shipping{% endtrans %}</legend>
+                    {{ form_row(form.address.street_and_number) }}
+                    {{ form_row(form.address.address_addition) }}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ form_row(form.address.postal_code) }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ form_row(form.address.city) }}
+                        </div>
                     </div>
-                </div>
+                    {{ form_row(form.address.country) }}
+                </fieldset>
 
-                {{ form_row(form.email) }}
 
-                {{ form_row(form.student_number) }}
+            </div>
 
-                {{ form_row(form.language) }}
-
-            </fieldset>
+            <div class="col-sm-12">
+                {{ form_row(form.verification_checkbox) }}
+            </div>
 
         </div>
 
-        <div class="col-sm-6">
-            <fieldset>
-                <legend>{% trans %}registration.new.shipping{% endtrans %}</legend>
-                {{ form_row(form.address.street_and_number) }}
-                {{ form_row(form.address.address_addition) }}
-                <div class="row">
-                    <div class="col-sm-6">
-                        {{ form_row(form.address.postal_code) }}
-                    </div>
-                    <div class="col-sm-6">
-                        {{ form_row(form.address.city) }}
-                    </div>
-                </div>
-                {{ form_row(form.address.country) }}
-            </fieldset>
-
-
+        <div class="row mb-3">
+            <div class="col-12">
+                {{ form_widget(form.submit) }}
+            </div>
         </div>
 
-        <div class="col-sm-12">
-        {{ form_row(form.verification_checkbox) }}
+        {{ form_end(form) }}
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            {% trans %}registration.register.registration_closed{% endtrans %}
         </div>
-
-    </div>
-
-    <div class="row mb-3">
-        <div class="col-12">
-            {{ form_widget(form.submit) }}
-        </div>
-    </div>
-
-    {{ form_end(form) }}
+    {% endif %}
 {% endblock %}

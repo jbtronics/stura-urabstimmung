@@ -511,5 +511,17 @@
         <target>Submit</target>
       </segment>
     </unit>
+    <unit id="CUHdYl0" name="registration.register.registration_closed">
+      <segment>
+        <source>registration.register.registration_closed</source>
+        <target>Requesting a vote by letter is no longer possible!</target>
+      </segment>
+    </unit>
+    <unit id="dZouawy" name="postal_voting.info">
+      <segment>
+        <source>postal_voting.info</source>
+        <target>Instructions for postal voting</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

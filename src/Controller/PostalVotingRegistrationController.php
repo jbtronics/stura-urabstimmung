@@ -70,6 +70,7 @@ class PostalVotingRegistrationController extends AbstractController
         $response = $this->render('PostalVotingRegistration/registration.html.twig', [
             'form' => $form->createView(),
             'entity' => $new_registration,
+            'registration_closed' => $this->getParameter('app.registration_closed')
         ]);
 
         $response->headers->add(

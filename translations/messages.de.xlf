@@ -1320,5 +1320,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Anleitung zur Briefabstimmung</target>
       </segment>
     </unit>
+    <unit id="CUHdYl0" name="registration.register.registration_closed">
+      <segment>
+        <source>registration.register.registration_closed</source>
+        <target>Die Beantragung einer Abstimmung per Brief ist nicht mehr möglich!</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
