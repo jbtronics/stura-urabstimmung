@@ -18,7 +18,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",
         "dompdf/dompdf": "^1.0",
-        "easycorp/easyadmin-bundle": "^3.2.9",
+        "easycorp/easyadmin-bundle": "dev-fix_batch_action_selection",
         "endroid/qr-code": "^4.0.0",
         "fortawesome/font-awesome": "^5.14",
         "genphrase/genphrase": "^1.2",
@@ -130,6 +130,12 @@
     "conflict": {
         "symfony/symfony": "*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jbtronics/EasyAdminBundle.git"
+        }
+    ],
     "extra": {
         "symfony": {
             "allow-contrib": false,
