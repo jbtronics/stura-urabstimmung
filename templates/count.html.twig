@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Auszählen
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+            <div class="input-group mb-3">
+                {{ form_widget(form.search) }}
+                <div class="input-group-append">
+                    {{ form_widget(form.submit) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+            <hr>
+            {% if registration is null %}
+                Keine Registrierung für die Suche gefunden
+            {% else %}
+                <b>Registrierung gefunden: {{ registration.fullName }}</b> (ID: {{ registration.id.toRfc4122 }})
+            {% endif %}
+        </div>
+    </div>
+
+    {% if registration is not null %}
+        <div class="border-dark rounded mt-2">
+        <iframe width="100%" height="728" src="{{ url('postal_voting_scan', {'id': registration.id.toRfc4122}) }}"></iframe>
+    {% endif %}
+
+{% endblock %}

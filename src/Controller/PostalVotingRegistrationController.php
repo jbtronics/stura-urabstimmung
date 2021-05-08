@@ -8,11 +8,14 @@ use App\Entity\Embeddable\Address;
 use App\Entity\PostalVotingRegistration;
 use App\Form\PostalVotingRegistrationType;
 use App\Message\SendEmailConfirmation;
+use App\Repository\PostalVotingRegistrationRepository;
 use App\Services\PDFGenerator\BallotPaperGenerator;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\NonUniqueResultException;
 use InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\SubmitButton;
@@ -150,6 +153,42 @@ class PostalVotingRegistrationController extends AbstractController
         return $this->render('scan.html.twig', [
             'registration' => $registration,
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/count", name="postal_voting_count")
+     * @return Response
+     */
+    public function count(EntityManagerInterface $entityManager, Request $request): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_REGISTRATION_COUNT');
+
+        $builder = $this->createFormBuilder();
+        $builder->add('search', SearchType::class, [
+            'attr' => ['placeholder' => 'Matrikelnr. oder Email']
+        ]);
+        $builder->add('submit', SubmitType::class, [
+            'label' => 'Suchen'
+        ]);
+        $form = $builder->getForm();
+
+        $registration = null;
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var PostalVotingRegistrationRepository $repo */
+            $repo = $entityManager->getRepository(PostalVotingRegistration::class);
+            try {
+                $registration = $repo->findByMailOrStudentNumber(trim($form->get('search')->getData()));
+            } catch (NonUniqueResultException $exception) {
+                $this->addFlash('error', 'Matrikelnummer nicht eindeutig. Bitte Email-Addresse benutzen!');
+            }
+        }
+
+        return $this->render('count.html.twig', [
+            'form' => $form->createView(),
+            'registration' => $registration
         ]);
     }
 

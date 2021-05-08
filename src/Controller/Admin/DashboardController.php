@@ -155,6 +155,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Version '.$version, 'fas fa-info');
         yield MenuItem::linktoRoute('dashboard.menu.audits', 'fas fa-binoculars', 'dh_auditor_list_audits')
             ->setPermission('ROLE_VIEW_AUDITS');
+        yield MenuItem::linktoRoute('dashboard.menu.postal_voting_count', 'fas fa-flag', 'postal_voting_count')
+            ->setPermission('ROLE_REGISTRATION_COUNT');
         yield MenuItem::linktoRoute('dashboard.menu.homepage', 'fas fa-home', 'homepage');
         yield MenuItem::linkToUrl('dashboard.menu.stura', 'fab fa-rebel', 'https://www.stura.uni-jena.de/');
         yield MenuItem::linkToUrl('dashboard.menu.github', 'fab fa-github', 'https://github.com/jbtronics/stura-urabstimmung');

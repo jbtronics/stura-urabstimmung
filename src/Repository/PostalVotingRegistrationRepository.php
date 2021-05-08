@@ -4,6 +4,7 @@
 namespace App\Repository;
 
 use App\Entity\PostalVotingRegistration;
+use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\EntityRepository;
 
 class PostalVotingRegistrationRepository extends EntityRepository
@@ -25,5 +26,19 @@ class PostalVotingRegistrationRepository extends EntityRepository
         return $this->findOneBy([
             'email' => $email
         ]);
+    }
+
+    public function findByMailOrStudentNumber(string $email_or_student_number): ?PostalVotingRegistration
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->select('r')
+            ->Where('r.student_number = :student_number')
+            ->orWhere('r.email = :email')
+            ->setParameters([
+                'student_number' => $email_or_student_number,
+                'email' => $email_or_student_number
+            ]);
+
+        return $qb->getQuery()->getOneOrNullResult();
     }
 }

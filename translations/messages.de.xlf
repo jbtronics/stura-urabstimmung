@@ -1350,5 +1350,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Wahlschein ungültig</target>
       </segment>
     </unit>
+    <unit id="7d1zjwy" name="dashboard.menu.postal_voting_count">
+      <segment>
+        <source>dashboard.menu.postal_voting_count</source>
+        <target>Auszählungstool</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
