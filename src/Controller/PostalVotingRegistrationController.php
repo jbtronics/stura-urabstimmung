@@ -125,14 +125,26 @@ class PostalVotingRegistrationController extends AbstractController
             'attr' => ['class'=> 'btn btn-primary btn-block btn-lg'],
             'label' => 'Der Wahlschein ist gültig',
         ]);
+        $builder->add('invalid', SubmitType::class, [
+            'attr' => ['class'=> 'btn btn-secondary btn-sm text-center'],
+            'label' => 'Der Wahlschein ist ungültig',
+        ]);
         $form = $builder->getForm();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid() && $registration !== null) {
-            $this->addFlash('success', 'Wahlschein wurde als gezählt vermerkt');
-            $registration->setCounted(true);
-            $entityManager->flush();
-            return $this->redirectToRoute('homepage');
+            if ($form->get('submit')->isClicked()) {
+                $this->addFlash('success', 'Wahlschein wurde als gezählt vermerkt');
+                $registration->setCounted(true);
+                $registration->setBallotPaperInvalid(false);
+                $entityManager->flush();
+                return $this->redirectToRoute('homepage');
+            } elseif($form->get('invalid')->isClicked()) {
+                $this->addFlash('success', 'Wahlschein wurde als ungültig vermerkt');
+                $registration->setCounted(false);
+                $registration->setBallotPaperInvalid(true);
+                $entityManager->flush();
+            }
         }
 
         return $this->render('scan.html.twig', [

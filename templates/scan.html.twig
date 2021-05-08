@@ -28,6 +28,15 @@
                 <p class="card-text">Wahlschein ID: {{ registration.id.toRfc4122 }}</p>
             </div>
         </div>
+    {% elseif registration.ballotPaperInvalid %}
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Wahlschein wurde als ungültig markiert</div>
+            <div class="card-body">
+                <h5 class="card-title">Dieser Wahlschein wurde bereits einmal kontrolliert und als ungültig markiert.</h5>
+                <p class="card-text">Wenn dies ein Fehler ist, wende dich an die Urabstimmungskommission.</p>
+                <p class="card-text">Wahlschein ID: {{ registration.id.toRfc4122 }}</p>
+            </div>
+        </div>
     {% elseif not registration.counted %}
         <div class="card text-white bg-success mb-3">
             <div class="card-header">Wahlschein gültig</div>
@@ -37,7 +46,11 @@
                 <h1 class="text-center">{{ registration.secret }}</h1>
                 <p class="card-text">Wenn der Wahlschein gültig ist, klicke auf untenstehenden Button. Ansonsten wende dich zur Klärung an die Urabstimmungskommission.</p>
                 {{ form_start(form) }}
-                    {{ form_row(form.submit) }}
+                {{ form_row(form.submit) }}
+                <p class="card-text">Wenn der Wahlschein ungültig ist, klicke auf den folgenden Button.</p>
+                <div class="d-flex justify-content-center">
+                        {{ form_widget(form.invalid) }}
+                </div>
                 {{ form_end(form) }}
                 <p class="card-text">Wahlschein ID: {{ registration.id.toRfc4122 }}</p>
             </div>

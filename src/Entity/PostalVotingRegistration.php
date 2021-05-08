@@ -123,6 +123,12 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
     private $unwarranted = false;
 
     /**
+     * @var bool True if the ballot paper was registered as invalid
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $ballot_paper_invalid = false;
+
+    /**
      * @var bool True if the ballot paper was received and counted
      * @ORM\Column(type="boolean")
      */
@@ -388,6 +394,26 @@ class PostalVotingRegistration implements UUIDDBElementInterface, TimestampedEle
         $this->counted = $counted;
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function isBallotPaperInvalid(): bool
+    {
+        return $this->ballot_paper_invalid;
+    }
+
+    /**
+     * @param  bool  $ballot_paper_invalid
+     * @return PostalVotingRegistration
+     */
+    public function setBallotPaperInvalid(bool $ballot_paper_invalid): PostalVotingRegistration
+    {
+        $this->ballot_paper_invalid = $ballot_paper_invalid;
+        return $this;
+    }
+
+
 
     /**
      * @return bool

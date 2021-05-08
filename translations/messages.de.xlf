@@ -1344,5 +1344,11 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <i>Wichtig:</i> Wenn du bereits eine Briefabstimmung beantragt hast, und du jetzt an der Urne abstimmen möchtest, bringe deine Briefwahlunterlagen mit, ansonsten darfst du nicht abstimmen!]]></target>
       </segment>
     </unit>
+    <unit id="U7sQeCA" name="registration.ballot_paper_invalid">
+      <segment>
+        <source>registration.ballot_paper_invalid</source>
+        <target>Wahlschein ungültig</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

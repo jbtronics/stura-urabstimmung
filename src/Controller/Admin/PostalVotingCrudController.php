@@ -243,6 +243,7 @@ class PostalVotingCrudController extends AbstractCrudController
             BooleanField::new('verified', 'registration.verified')->hideOnIndex(),
             BooleanField::new('printed', 'registration.printed')->hideOnIndex(),
             BooleanField::new('counted', 'registration.counted')->hideOnIndex(),
+            BooleanField::new('ballot_paper_invalid', 'registration.ballot_paper_invalid')->hideOnIndex(),
             BooleanField::new('unwarranted', 'registration.unwarranted')->hideOnIndex(),
         ];
     }
