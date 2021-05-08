@@ -12,7 +12,10 @@ use App\Services\PDFGenerator\BallotPaperGenerator;
 use Doctrine\ORM\EntityManagerInterface;
 use InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Form;
+use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -111,13 +114,31 @@ class PostalVotingRegistrationController extends AbstractController
      * @param  PostalVotingRegistration  $registration
      * @return Response
      */
-    public function scan(PostalVotingRegistration $registration): Response
+    public function scan(?PostalVotingRegistration $registration = null, EntityManagerInterface $entityManager, Request $request): Response
     {
         $this->denyAccessUnlessGranted('ROLE_REGISTRATION_COUNT');
 
-        $this->addFlash('error', 'Not implemented yet!');
+        //$this->addFlash('error', 'Not implemented yet!');
 
-        return $this->render('homepage.html.twig');
+        $builder = $this->createFormBuilder();
+        $builder->add('submit', SubmitType::class, [
+            'attr' => ['class'=> 'btn btn-primary btn-block btn-lg'],
+            'label' => 'Der Wahlschein ist gültig',
+        ]);
+        $form = $builder->getForm();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid() && $registration !== null) {
+            $this->addFlash('success', 'Wahlschein wurde als gezählt vermerkt');
+            $registration->setCounted(true);
+            $entityManager->flush();
+            return $this->redirectToRoute('homepage');
+        }
+
+        return $this->render('scan.html.twig', [
+            'registration' => $registration,
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
