@@ -523,5 +523,23 @@
         <target>Instructions for postal voting</target>
       </segment>
     </unit>
+    <unit id="YXz0Sgq" name="homepage.ballot_vote_info">
+      <segment>
+        <source>homepage.ballot_vote_info</source>
+        <target><![CDATA[<h4>Information on the ballot</h4>
+        Dear Students,<br>
+        The ballot is now entering its second phase. If you have not yet voted by mail, you can still vote at the ballot box.<br>
+        <b>When</b>
+        Monday 10.05 13:00-17:00<br>
+        Tuesday 11.05. 10:00-14:00<br>
+        Wednesday 12.05 09:00-14:00<br>
+        <b>Where</b><br>
+        Voting will take place in the premises of the Student Council at Carl-Zeiß-str. 3. The way to the StuRa will be signposted when you enter the building.<br>
+        <b>How</b><br>
+        Bring your thoska (or photo ID) so we can verify your eligibility to vote. Then you will receive a ballot on us which you can fill out secretly in a voting booth before it goes into the ballot box.<br>
+        Due to the pandemic there will be the possibility to keep enough distance to each other and to disinfect hands. Adhere to the existing regulations in the building.<br>
+        <i>Important:</i> If you have already requested an absentee ballot and you would like to vote at the ballot box now, bring your absentee ballot with you, otherwise you will not be allowed to vote.]]></target>
+      </segment>
+    </unit>
   </file>
 </xliff>
