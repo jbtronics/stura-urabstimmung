@@ -1356,5 +1356,14 @@ Ein Serveradministrator kann die Zwei-Faktor-Methoden aber mit <code>php bin/con
         <target>Auszählungstool</target>
       </segment>
     </unit>
+    <unit id="GjrzHFF" name="homepage.result">
+      <segment>
+        <source>homepage.result</source>
+        <target><![CDATA[ <h4>Ergebnis der Urabstimmung</h4>
+        An der Urabstimmung haben <b>2461</b> Studierendene teilgenommen, was einer Abstimmungsbeteiligung von ca. <b>15%</b> entspricht. Damit ist die Urabstimmung gültig.<br>
+        Beide Urabstimmungen sind mit einer guten Mehrheit positiv ausgefallen. Die teilgenommenen Studierenden haben sich daher <b>für</b>
+        eine Fortführung des DB- und VMT-Semestertickets mit Preiserhöhung über die nächsten Jahre und die Einführung des E-Tickets ausgesprochen.]]></target>
+      </segment>
+    </unit>
   </file>
 </xliff>

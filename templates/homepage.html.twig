@@ -1,7 +1,13 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
+    <div class="alert alert-warning">
+        {% trans %}homepage.result{% endtrans %}
+           </div>
+
+
     <div class="jumbotron">
+        <hr class="my-4">
         <h1 class="display-4">{% trans %}homepage.welcome{% endtrans %}</h1>
         <p class="lead">{% trans %}homepage.explaination{% endtrans %}</p>
         <hr class="my-4">

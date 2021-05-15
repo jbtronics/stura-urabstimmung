@@ -541,5 +541,14 @@
         <i>Important:</i> If you have already requested an absentee ballot and you would like to vote at the ballot box now, bring your absentee ballot with you, otherwise you will not be allowed to vote.]]></target>
       </segment>
     </unit>
+    <unit id="GjrzHFF" name="homepage.result">
+      <segment>
+        <source>homepage.result</source>
+        <target><![CDATA[ <h4>Result of the ballot</h4>
+        <b>2461</b> students participated in the ballot, which corresponds to a voting turnout of about <b>15%</b>. Thus, the ballot is valid.<br>
+        Both ballots were positive with a good majority. The students who participated therefore voted <b>for</b>.
+        a continuation of the DB and VMT semester ticket with price increase over the next years and the introduction of the e-ticket.]]></target>
+      </segment>
+    </unit>
   </file>
 </xliff>
